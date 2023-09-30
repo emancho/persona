@@ -1,0 +1,48 @@
+.green-background {
+    background-color: green;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .content-container {
+    text-align: center;
+  }
+  
+  .centered-image {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .text-container {
+    margin-top: 20px;
+    color: white;
+  }
+  
+  .text-container h2 {
+    font-size: 24px;
+  }
+  
+  .text-container p {
+    font-size: 16px;
+  }
+  
+  .button-container {
+    margin-top: 30px;
+  }
+  
+  .button-container button {
+    background-color: white;
+    color: green;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 5px;
+    cursor: pointer;
+  }
+  
+  .button-container button:hover {
+    background-color: #ddd;
+  }

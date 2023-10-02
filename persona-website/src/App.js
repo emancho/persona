@@ -1,12 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
-import PlaylistPage from './Pages/PlaylistPage';
-import CP from './Pages/CreativePage';
+import HomePage from './Pages/PlaylistPage';
 
 function App() {
   return (
     <div className="App">
-    <CP />
+    <HomePage />
   </div>
   );
 }

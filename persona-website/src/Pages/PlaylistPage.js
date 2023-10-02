@@ -1,36 +1,55 @@
 import React from 'react';
-import ClickableImage from '../Components/ClickableImage'
-import backButton from '../Images/fast-backward.png'
-import playButton from '../Images/play-button.png'
-import forwardButton from '../Images/fast-forward.png'
+import { Router,Link } from 'react-router-dom';
+import { useTheme } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import SkipPreviousIcon from '@mui/icons-material/FastRewind';
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import SkipNextIcon from '@mui/icons-material/FastForward';
+
 
 function PlaylistPage() {
+  const theme = useTheme();
+
   return (
-    <div className="green-background">
-      <div className="content-container">
-        <img
-          src="path_to_your_image.jpg" // Replace with your image path
-          alt="Centered Image"
-          className="centered-image"
+    <Card sx={{ display: 'flex' }}>
+      <Box sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+        {/* This section is the Title and Artist Namne */}
+        <CardContent sx={{ flex: '1 0 auto' }}>
+          <Typography component="div" variant="h5">
+            The Journey of an Artist
+          </Typography>
+          <Typography variant="subtitle1" color="text.secondary" component="div">
+            Ed___d w/o the war
+          </Typography>
+        </CardContent>
+        {/* This section is the music image */}
+        <CardMedia
+          component="img"
+          sx={{ width: 300, height: 300 }}
+          image={process.env.PUBLIC_URL + "/images/sample_profile.png"}
+          alt="Live from space album cover"
         />
-        <div className="text-container">
-          <h2>Ed____d w/o the war</h2>
-          <p>Personal Website</p>
-        </div>
-      </div>
-      <div className="button-container">
-        <div className='button sectiom'>
-            {/* backwards button - Socials */}
-            < ClickableImage className='fast-backward-button' src={backButton} alt='this button will lead to the socials page. Backward Button' onClick={false}/>
-            {/* play button - About me page */}
-            < ClickableImage className='play-button' src='https://clipart-library.com/images/8i65B8AXT.png' alt='this button will lead to the about me page. Play button' onClick={false}/> 
-            {/* forward button - Creative Projects */}
-            < ClickableImage className='fast-foward-button' src={forwardButton} alt='this button will lead to the creative outlet page. Forward Button' onClick={false}/>  
-        <div/>
-      
-      </div>
-      </div>
-    </div>
+        {/* This section is the play song buttons */}
+        <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}>
+          <IconButton aria-label="previous">
+              {theme.direction === 'rtl' ? <SkipNextIcon /> : <SkipPreviousIcon />}
+          </IconButton>
+          <IconButton aria-label="play/pause">
+            <PlayArrowIcon sx={{ height: 38, width: 38 }} />
+          </IconButton>
+          <IconButton aria-label="next">
+            {theme.direction === 'rtl' ? <SkipPreviousIcon /> : <SkipNextIcon />}
+          </IconButton>
+        </Box>
+        {/*End section for buttons*/}
+      </Box>
+      {/*End section of outter Box*/}
+    </Card>
   );
 }
 

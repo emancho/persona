@@ -7,4 +7,7 @@ whatever that fucking means
 // Oct - 3
 - Still keeping at it. I figured out how to implement the buttons and navigation of pages. I think once I get a template of a page then
 I can take a break. Let's get it!!!!
-- Was a littlr stressed out by an error but I figured it out
+- Was a little stressed out with an error but I figured it out
+
+//Oct - 4 
+- I'm moving onto mapping out the layouts for the website. Let's get it!

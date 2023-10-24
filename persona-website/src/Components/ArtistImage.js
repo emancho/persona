@@ -5,9 +5,9 @@ function ArtistImage(){
     return(
         <CardMedia
         component="img"
-        sx={{ width: 300, height: 300 }}
-        image={process.env.PUBLIC_URL + "/images/sample_profile.png"}
-        alt="Live from space album cover"
+        sx={{ width: 500, height: 500 }}
+        image={process.env.PUBLIC_URL + "/images/AboutMeImg.png"}
+        alt="My Adorable Face"
       />
     );
 }

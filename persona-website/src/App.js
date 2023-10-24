@@ -10,8 +10,6 @@ import ArtistImage from './Components/ArtistImage'
 import ArtistTitle from './Components/ArtistTitle'
 //Pages
 import AboutMePage from './Pages/AboutMePage';
-import CreativePage from './Pages/CreativePage';
-import SocialLinks from './Pages/SocialLinks';
 
 // App - The Homepage containing the Playlist style profile
 // Uses Material UI to Layer the sections and design the page
@@ -24,8 +22,6 @@ function App() {
         {/* Render to 'About Me' Page */}
         <Route exact path="/" component={HomePage} />
         <Route exact path='/AboutMe' component={AboutMePage} />
-        <Route exact path='/CanvasPage' component={CreativePage} />
-        <Route exact path='/SocialLinks' component={SocialLinks} />
       </Switch>
   </Router>
   );

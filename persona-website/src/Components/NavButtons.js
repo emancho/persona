@@ -13,21 +13,17 @@ function NavButtons() {
     
     return (
         <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}>
-            <Link to="/SocialLinks"> {/* Specify the target page's route */}
             <IconButton aria-label="previous">
                 {theme.direction === 'rtl' ? <SkipNextIcon /> : <SkipPreviousIcon />}
             </IconButton>
-            </Link>
             <Link to="/AboutMe"> {/* Specify the target page's route */}
-            <IconButton aria-label="play/pause">
-                <PlayArrowIcon sx={{ height: 38, width: 38 }} />
-            </IconButton>
+                <IconButton aria-label="play/pause">
+                    <PlayArrowIcon sx={{ height: 38, width: 38 }} />
+                </IconButton>
             </Link>
-            <Link to="/CanvasPage"> {/* Specify the target page's route */}
             <IconButton aria-label="next">
                 {theme.direction === 'rtl' ? <SkipPreviousIcon /> : <SkipNextIcon />}
             </IconButton>
-            </Link>
         </Box>
   );
 }

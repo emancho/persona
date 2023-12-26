@@ -1,31 +1,39 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { useTheme } from '@mui/material/styles';
-import SkipPreviousIcon from '@mui/icons-material/FastRewind';
-import PlayArrowIcon from '@mui/icons-material/PlayArrow';
-import SkipNextIcon from '@mui/icons-material/FastForward';
 import IconButton from '@mui/material/IconButton';
-import Box from '@mui/material/Box';
+import Stack from '@mui/material/Stack';
 
-
-function NavButtons() {
-    const theme = useTheme();
+function NavButtons({buttonData}) {
     
     return (
-        <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}>
-            <IconButton aria-label="previous">
-                {theme.direction === 'rtl' ? <SkipNextIcon /> : <SkipPreviousIcon />}
+        <Stack direction="row" spacing={2} justifyContent="center" alignItems="center">
+          {buttonData.map(({ icon, link }, index) => (
+            <IconButton key={index} onClick={() => window.location.href = link}>
+              {React.createElement(icon, { fontSize: 'large' })}
             </IconButton>
-            <Link to="/AboutMe"> {/* Specify the target page's route */}
-                <IconButton aria-label="play/pause">
-                    <PlayArrowIcon sx={{ height: 38, width: 38 }} />
-                </IconButton>
-            </Link>
-            <IconButton aria-label="next">
-                {theme.direction === 'rtl' ? <SkipPreviousIcon /> : <SkipNextIcon />}
-            </IconButton>
-        </Box>
-  );
+          ))}
+        </Stack>
+      );
+
+
+
+
+
+
+
+
+
+
+
+
+//     const iconSize = 'large';
+
+//   return (
+//     <Stack direction="row" spacing={2} justifyContent="center" alignItems="center" >
+//       <IconButton><SkipPrevIcon fontSize={iconSize} /></IconButton>
+//       <IconButton><PlayArrowIcon fontSize={iconSize} /></IconButton>
+//       <IconButton><SkipNextIcon fontSize={iconSize} /></IconButton>
+//     </Stack>
+//   );
 }
 
 export default NavButtons;

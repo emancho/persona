@@ -1,13 +1,7 @@
 import React from 'react';
 import NavBar from '../Components/NavBar';
-import { AppBar, Toolbar, Button, Typography, Container, Grid, Card, 
-  CardActionArea, CardMedia, CardContent } from '@mui/material';
-// Imported Images
-import tt_vinyl from '../Images/tok_vinyl.png';
-import insta_vinyl from '../Images/insta_vinyl.png';
-import tt_vinyl_case from '../Images/tok_vinyl_case_only.png';
-import insta_vinyl_case from '../Images/insta_vinyl_case_only.png';
-
+import HoverableCardMedia from '../Components/HoverableCardMedia'
+import { Button, Typography, Container, Grid, Card } from '@mui/material';
 
 function ContactPage() {
   return (
@@ -24,24 +18,24 @@ function ContactPage() {
         <Grid container spacing={4} justifyContent="center">
           <Grid item>
             <Card>
-              <CardActionArea onClick={() => console.log('Image 1 clicked')}>
-                <CardMedia
-                  component="img"
-                  image={insta_vinyl}
-                  alt="Description of Image 1"
-                />
-              </CardActionArea>
+              <HoverableCardMedia
+                name={'Instagram'} 
+                path={process.env.PUBLIC_URL + '/images/insta_vinyl_case_only.png'}
+                altPath={process.env.PUBLIC_URL + '/images/insta_vinyl.png'}
+                descipt={'Instagram Vinyl connecting to social media'}
+                webref={'https://www.instagram.com/ededd_or_eddy/'}
+              />
             </Card>
           </Grid>
           <Grid item>
             <Card>
-              <CardActionArea onClick={() => console.log('Image 2 clicked')}>
-                <CardMedia
-                  component="img"
-                  image={tt_vinyl}
-                  alt="Description of Image 2"
-                />
-              </CardActionArea>
+              <HoverableCardMedia
+                  name={'Tik Tok'} 
+                  path={process.env.PUBLIC_URL + '/images/tok_vinyl_case_only.png'}
+                  altPath={process.env.PUBLIC_URL + '/images/tok_vinyl.png'}
+                  descipt={'Tik Tok Vinyl connecting to social media'}
+                  webref={'https://www.tiktok.com/@edollarsigns'}
+              />
             </Card>
           </Grid>
         </Grid>

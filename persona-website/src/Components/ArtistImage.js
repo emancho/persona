@@ -1,13 +1,13 @@
 import React from 'react';
 import { CardMedia } from "@mui/material";
 
-function ArtistImage(){
+function ArtistImage({path, altDesc, w, h}){
     return(
         <CardMedia
         component="img"
-        sx={{ width: 500, height: 500 }}
-        image={process.env.PUBLIC_URL + "/images/AboutMeImg.png"}
-        alt="My Adorable Face"
+        sx={{ width: w ,height: h }}
+        image={process.env.PUBLIC_URL + path}
+        alt={altDesc}
       />
     );
 }

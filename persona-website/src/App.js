@@ -8,15 +8,15 @@ import Card from '@mui/material/Card';
 // Icon buttons
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import SkipNextIcon from '@mui/icons-material/SkipNext'; 
-import SkipPrevIcon from '@mui/icons-material/SkipPrevious'
+import SkipPrevIcon from '@mui/icons-material/SkipPrevious';
 //== Components
 import NavButtons from './Components/NavButtons';
-import ArtistImage from './Components/ArtistImage'
-import ArtistTitle from './Components/ArtistTitle'
+import ArtistImage from './Components/ArtistImage';
+import ArtistTitle from './Components/ArtistTitle';
 //== Pages
 import AboutMePage from './Pages/AboutPage.js';
-import ContactPage from './Pages/ContactPage.js'
-import ProjPage from './Pages/ProjectsPage.js'
+import ContactPage from './Pages/ContactPage.js';
+import ProjPage from './Pages/ProjectsPage.js';
 
 // Description:
 //   Displays the homepage. Consist of a layout similar to a music player containing a 
@@ -60,7 +60,7 @@ function HomePage() {
     }}>
       {/*== This is the section where I have my homepage layout */}
       <Card sx={{
-          maxWidth: 345,
+          maxWidth: 700,
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
@@ -69,8 +69,13 @@ function HomePage() {
           padding: '20px'
         }}>
         {/* This section is the profile image */}
-        <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
-          <ArtistImage />
+        <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', marginBottom: '20px'}}>
+          <ArtistImage 
+            path={"/images/HomepageImg.jpg"} 
+            altDesc={"Very attractive man smiling very attractively."}
+            w={500}
+            h={500}
+            />
         </Box>
         {/* This section is the Title and Artist Name */}
         <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>

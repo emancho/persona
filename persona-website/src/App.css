@@ -9,3 +9,69 @@ body {
 img {
   background-color: transparent; /* Ensure no background color */
 }
+
+/* Css for navbar used */
+.navbar {
+  background-color: #333;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-links {
+  list-style-type: none;
+  display: flex; /* Ensures horizontal layout */
+  padding: 0;
+  margin: 0;
+}
+
+.nav-item {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.nav-item:hover {
+  background-color: #ddd;
+  color: black;
+}
+/* Css for About Page */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+}
+
+.left-image {
+  max-width: 50%; /* Adjust as needed */
+  height: auto;
+  margin-right: 20px; /* Space between the image and the paragraph */
+}
+
+.right-paragraph {
+  border: 2px solid white; /* White border around the paragraph */
+  padding: 20px;
+  max-width: 50%; /* Adjust as needed */
+  margin: 0; /* Adjust margins as needed */
+  /* Optional: Add more styling to the paragraph as needed */
+}
+
+/* Responsive Design: Adjust for smaller screens if necessary */
+@media screen and (max-width: 600px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .left-image, .right-paragraph {
+    max-width: 100%;
+  }
+
+  .left-image {
+    margin-bottom: 20px; /* Space between the image and the paragraph on small screens */
+  }
+}
+

@@ -4,13 +4,13 @@ import InfoIcon from '@mui/icons-material/Info';
 
 const AlertIcon = ({ item }) => {
   const handleClick = () => {
-    alert(`Info about ${item.alert}`);
+    alert(`${item.alert}`);
   };
 
   return (
     <IconButton
       sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
-      aria-label={`info about ${item.title}`}
+      aria-label={`${item.title}`}
       onClick={handleClick}  // Add the onClick event handler here
     >
       <InfoIcon />

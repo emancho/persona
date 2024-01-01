@@ -43,7 +43,7 @@ const itemData = [
     img: `${process.env.PUBLIC_URL}/images/proj1.png`,
     title: 'The Gals Just Want to Dance (Music Project)',
     author: '@ed___d w/o the WAR',
-    alert: 'Release Date: TBD',
+    alert: 'Release Date of project: TBD',
     rows: 1,
     cols: 1,
     featured: true,

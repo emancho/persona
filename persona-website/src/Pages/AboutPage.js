@@ -37,7 +37,7 @@ function AboutPage() {
         {/* Typography */}
         <Box sx={{
           border: '2px solid #ffffff',
-          padding: '16px',
+          padding: '20px',
           borderRadius: '4px',
           backgroundColor: '#7ed8d2',
           marginTop: '20px', // Space between image and text

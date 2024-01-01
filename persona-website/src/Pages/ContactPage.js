@@ -15,33 +15,34 @@ function ContactPage() {
         <Typography variant="h2" align="center">Contact Me</Typography>
       </Container>
 
-      {/* Clickable Images Section */}
-      <Container style={{ padding: '2rem 0' }}>
-        <Grid container spacing={4} justifyContent="center">
-          <Grid item>
-            <Card>
-              <HoverableCardMedia
-                name={'Instagram'} 
-                path={process.env.PUBLIC_URL + '/images/insta_vinyl_case_only.png'}
-                altPath={process.env.PUBLIC_URL + '/images/insta_vinyl.png'}
-                descipt={'Instagram Vinyl connecting to social media'}
-                webref={'https://www.instagram.com/ededd_or_eddy/'}
-              />
-            </Card>
+      {/* Adding blue border */}
+        {/* Clickable Images Section */}
+        <Container style={{ padding: '2rem 0' }}>
+          <Grid container spacing={4} justifyContent="center">
+            <Grid item>
+              <Card>
+                <HoverableCardMedia
+                  name={'Instagram'} 
+                  path={process.env.PUBLIC_URL + '/images/insta_vinyl_case_only.png'}
+                  altPath={process.env.PUBLIC_URL + '/images/insta_vinyl.png'}
+                  descipt={'Instagram Vinyl connecting to social media'}
+                  webref={'https://www.instagram.com/ededd_or_eddy/'}
+                />
+              </Card>
+            </Grid>
+            <Grid item>
+              <Card>
+                <HoverableCardMedia
+                    name={'Tik Tok'} 
+                    path={process.env.PUBLIC_URL + '/images/tok_vinyl_case_only.png'}
+                    altPath={process.env.PUBLIC_URL + '/images/tok_vinyl.png'}
+                    descipt={'Tik Tok Vinyl connecting to social media'}
+                    webref={'https://www.tiktok.com/@edollarsigns'}
+                />
+              </Card>
+            </Grid>
           </Grid>
-          <Grid item>
-            <Card>
-              <HoverableCardMedia
-                  name={'Tik Tok'} 
-                  path={process.env.PUBLIC_URL + '/images/tok_vinyl_case_only.png'}
-                  altPath={process.env.PUBLIC_URL + '/images/tok_vinyl.png'}
-                  descipt={'Tik Tok Vinyl connecting to social media'}
-                  webref={'https://www.tiktok.com/@edollarsigns'}
-              />
-            </Card>
-          </Grid>
-        </Grid>
-      </Container>
+        </Container>
 
       {/* Join my Newsletter Title Section */}
       <Container style={{ padding: '2rem 0' }}>
@@ -49,8 +50,16 @@ function ContactPage() {
       </Container>
 
       {/* Subscribe Button Section */}
-      <Container style={{ padding: '2rem 0', textAlign: 'center' }}>
-        <Button variant="contained" color="primary" onClick={() => console.log('Subscribe button clicked')}>
+      <Container style={{ padding: '1rem 0', textAlign: 'center' }}>
+        <Button 
+          variant="contained" 
+          color="primary" 
+          onClick={() => window.location.href ='https://forms.gle/vPYRvZFx1ixtdFvp7'}
+          style={{ 
+            fontSize: '30px', // Larger font size
+            padding: '10px 20px' // More padding
+          }}
+        >
           Subscribe
         </Button>
       </Container>

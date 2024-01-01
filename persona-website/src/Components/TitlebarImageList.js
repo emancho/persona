@@ -11,13 +11,14 @@ function TitlebarImageList({title}) {
     return (
 
         <div className="sky-blue-tag">
-            <ImageList sx={{ width: 500, height: 700 }} cols={1}> {/* Updated cols to 1 */}
+            <ImageList sx={{ width: 600, height: 750 }} cols={1}> {/* Updated cols to 1 */}
           <ImageListItem key="Subheader" cols={1}> {/* Updated cols to 1 */}
             <ListSubheader component="div">{title}</ListSubheader>
           </ImageListItem>
           {itemData.map((item) => (
             <ImageListItem key={item.img} cols={1}> {/* Updated cols to 1 */}
               <img
+                className="image-border"
                 srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
                 src={`${item.img}?w=248&fit=crop&auto=format`}
                 alt={item.title}

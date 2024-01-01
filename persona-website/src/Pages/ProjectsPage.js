@@ -7,14 +7,19 @@ import CenteredContent from '../Components/CenteredContent'
 //== Material UI
 import Typography from '@mui/material/Typography';
 
+const projCaption = `
+  Welcome to the gallery. Here are my creative projects of past, present and future...
+`
+
 function ProjectsPage() {
   return (
     <div>
       <NavBar />
       <div className="centered-typography">
-          <Typography variant="h3" color="#0a3e0a">{"Projects"}</Typography>
+          <Typography variant="h2" color="#0a3e0a" >{"The Gallery"}</Typography>
+          <Typography variant="h6" color="#0a3e0a">{projCaption}</Typography>
       </div>
-      <CenteredContent webpage={<ImgList title={'The Gallery'}/>}/>
+      <CenteredContent webpage={<ImgList title={"Projects"}/>}/>
     </div>
   );
 }

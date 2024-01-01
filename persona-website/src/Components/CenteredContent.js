@@ -7,7 +7,7 @@ const CenteredContent = ({webpage}) => {
       display="flex" // Enables Flexbox
       justifyContent="center" // Centers horizontally
       alignItems="center" // Centers vertically
-      height="120vh" // Full viewport height
+      height="95vh" // Full viewport height
     >
       {/* Your content goes here */}
       <div>{webpage}</div>

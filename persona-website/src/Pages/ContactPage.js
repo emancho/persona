@@ -1,6 +1,8 @@
 import React from 'react';
+//== Components
 import NavBar from '../Components/NavBar';
 import HoverableCardMedia from '../Components/HoverableCardMedia'
+//== Material UI
 import { Button, Typography, Container, Grid, Card } from '@mui/material';
 
 function ContactPage() {

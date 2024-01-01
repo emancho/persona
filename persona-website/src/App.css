@@ -75,3 +75,20 @@ img {
   }
 }
 
+.centered-typography {
+  text-align: center;
+  padding-top: 35px;
+  padding-bottom: 25px;
+}
+
+/*== Infill border - Skyblue ==*/
+.sky-blue-tag {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: skyblue;
+  border: 15px solid skyblue;
+  border-radius: 5px; /* Rounded corners */
+  color: white; /* Text color */
+  font-size: 1rem;
+  text-align: center;
+}

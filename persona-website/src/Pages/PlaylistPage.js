@@ -1,11 +1,11 @@
 import React from 'react';
-import { Box, Stack } from '@mui/material';
-
 //=== Components
 import NaviList from '../Components/NaviList';
 import ArtistBar from '../Components/TitleBar'
+//== Image
 import ArtistImg from '../Images/test_img.png'
-
+//== Material UI
+import { Box, Stack } from '@mui/material';
 
 function PlaylistPage() {
   return (

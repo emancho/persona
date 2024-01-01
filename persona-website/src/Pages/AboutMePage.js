@@ -1,10 +1,10 @@
 import * as React from 'react';
-
-import Stack from '@mui/material/Stack';
-import Typography from '@mui/material/Typography';
-
+//== Components
 import ArtistImage from '../Components/ArtistImage';
 import ArtistTitle from '../Components/ArtistTitle';
+//== Material UI
+import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
 
 function AboutMePage() {
   return (

@@ -28,7 +28,7 @@ function AboutPage() {
       }}>
         {/* Image */}
         <ArtistImage 
-          path={"../images/AboutMeImg.png"}
+          path={"/images/AboutMeImg.png"}
           altDesc={"Very attractive man smiling very attractively."}
           w={350}
           h={350} 

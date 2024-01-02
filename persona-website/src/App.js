@@ -72,7 +72,7 @@ function HomePage() {
         <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', marginBottom: '20px'}}>
           <ArtistImage 
             path={"/images/HomepageImg.jpg"} 
-            altDesc={"Very attractive man smiling very attractively."}
+            altDesc={"Blur image of artist."}
             w={500}
             h={500}
             />

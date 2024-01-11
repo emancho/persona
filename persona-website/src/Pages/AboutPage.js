@@ -5,7 +5,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
 const aboutText = `I am Ed__d w/o the War. Cameroonian-American born on the East Coast 
-with a passion to create, ever since childhood. I was making comic books,
+with a passion to create, ever since childhood. From a very young age; I was making comic books,
 writing short stories, creating mini movie scripts and drawing random characters
 inspired by the my favorite shows or movies. As I got older, I stopped creating 
 and honestly I wasn't a fan of that. 
@@ -31,7 +31,7 @@ function AboutPage() {
           path={"/images/AboutMeImg.png"}
           altDesc={"Very attractive man smiling very attractively."}
           w={350}
-          h={350} 
+          h={420} 
         />
 
         {/* Typography */}

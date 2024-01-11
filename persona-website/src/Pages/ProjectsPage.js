@@ -16,7 +16,7 @@ function ProjectsPage() {
     <div>
       <NavBar />
       <div className="centered-typography">
-          <Typography variant="h2" color="#0a3e0a" >{"The Gallery"}</Typography>
+          <Typography variant="h1" color="#0a3e0a" >{"The Gallery"}</Typography>
           <Typography variant="h6" color="#0a3e0a">{projCaption}</Typography>
       </div>
       <CenteredContent webpage={<ImgList title={"Projects"}/>}/>

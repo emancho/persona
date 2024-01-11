@@ -6,10 +6,6 @@ body {
   width: 100%;
 }
 
-img {
-  background-color: transparent; /* Ensure no background color */
-}
-
 /* Css for navbar used */
 .navbar {
   background-color: #333;
@@ -47,7 +43,11 @@ img {
 }
 
 .image-border {
-  border: 3px solid black;
+  border: 1px solid black;
+}
+
+.item-border{
+  padding-bottom: 30px;
 }
 
 .left-image {
@@ -81,18 +81,18 @@ img {
 
 .centered-typography {
   text-align: center;
-  padding-top: 20px;
-  padding-bottom: 25px;
+  padding-top: 30px;
+  padding-bottom: 5px;
 }
 
 /*== Infill border - Skyblue ==*/
 .sky-blue-tag {
   display: inline-block;
   align-items: center;
-  padding: 9px 9px;
-  background-color: skyblue;
-  border: 15px solid skyblue;
-  border-radius: 5px; /* Rounded corners */
+  padding: 5px 10px;
+  background-color: #3cf0ff ;
+  border: 12px solid #3cf0ff ;
+  border-radius: 2px; /* Rounded corners */
   color: white; /* Text color */
   font-size: 1rem;
   text-align: center;

@@ -2,19 +2,15 @@ import * as React from 'react';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
-import ListSubheader from '@mui/material/ListSubheader';
 //Component
 import AlertIcon from './AlertIcon'
 
 
-function TitlebarImageList({title}) {
+function TitlebarImageList() {
     return (
 
         <div className="sky-blue-tag">
             <ImageList sx={{ width: 500, height: 600 }} cols={1}> {/* Updated cols to 1 */}
-              <ImageListItem key="Subheader" cols={1}> {/* Updated cols to 1 */}
-                <ListSubheader>{title}</ListSubheader>
-              </ImageListItem>
               {itemData.map((item) => (
                 <ImageListItem key={item.img} cols={1}> {/* Updated cols to 1 */}
                   <img
@@ -45,8 +41,6 @@ const itemData = [
     title: 'The Gals Just Want to Dance (Music Project)',
     author: '@ed___d w/o the WAR',
     alert: 'Release Date of project: TBD',
-    rows: 1,
-    cols: 1,
     featured: true
   },
   {
@@ -54,8 +48,6 @@ const itemData = [
     title: 'Tech Bro ( Screen Write )',
     author: '@ed___d w/o the WAR',
     alert: 'Release Date of project: TBD',
-    rows: 1,
-    cols: 1,
     featured: true
   },
 ];

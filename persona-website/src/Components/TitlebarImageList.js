@@ -45,7 +45,7 @@ const itemData = [
   },
   {
     img: `${process.env.PUBLIC_URL}/images/techbro_drac.png`,
-    title: 'Tech Bro ( Screen Write )',
+    title: 'Tech Bro Dracula ( Screen Write )',
     author: '@ed___d w/o the WAR',
     alert: 'Release Date of project: TBD',
     featured: true

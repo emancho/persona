@@ -23,15 +23,15 @@ function AboutPage() {
         justifyContent: 'center', // Center horizontally
         alignItems: 'center', // Center vertically
         flexDirection: 'column', // Stack children vertically
-        height: 'calc(100vh - 64px)', // Adjust height based on NavBar height
         textAlign: 'center', // Center text
+        paddingTop: '35px'
       }}>
         {/* Image */}
         <ArtistImage 
           path={"/images/AboutMeImg.png"}
           altDesc={"Very attractive man smiling very attractively."}
-          w={350}
-          h={420} 
+          w={250}
+          h={300} 
         />
 
         {/* Typography */}

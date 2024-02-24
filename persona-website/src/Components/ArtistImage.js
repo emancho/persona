@@ -1,13 +1,13 @@
 import React from 'react';
 import { CardMedia } from "@mui/material";
 
-function ArtistImage(){
+function ArtistImage({path, altDesc, w, h}){
     return(
         <CardMedia
         component="img"
-        sx={{ width: 300, height: 300 }}
-        image={process.env.PUBLIC_URL + "/images/sample_profile.png"}
-        alt="Live from space album cover"
+        sx={{ width: w ,height: h }}
+        image={process.env.PUBLIC_URL + path}
+        alt={altDesc}
       />
     );
 }

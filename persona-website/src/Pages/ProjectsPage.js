@@ -2,8 +2,9 @@ import React from 'react';
 import '../App.css';
 //== Components
 import NavBar from '../Components/NavBar';
-import ImgList from '../Components/TitlebarImageList';
+// import ImgList from '../Components/TitlebarImageList';
 import CenteredContent from '../Components/CenteredContent'
+import CustomizedAccordions from '../Components/CustomizedAccordions'
 //== Material UI
 import Typography from '@mui/material/Typography';
 
@@ -19,7 +20,7 @@ function ProjectsPage() {
           <Typography variant="h1" color="#0a3e0a" >{"The Gallery"}</Typography>
           <Typography variant="h6" color="#0a3e0a">{projCaption}</Typography>
       </div>
-      <CenteredContent webpage={<ImgList title={"Projects"}/>}/>
+      <CenteredContent webpage={<CustomizedAccordions/>}/>
     </div>
   );
 }

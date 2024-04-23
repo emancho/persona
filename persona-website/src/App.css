@@ -81,8 +81,8 @@ body {
 
 .centered-typography {
   text-align: center;
-  padding-top: 30px;
-  padding-bottom: 5px;
+  padding-top: 10px;
+  /* padding-bottom:5px; */
 }
 
 /*== Infill border - Skyblue ==*/

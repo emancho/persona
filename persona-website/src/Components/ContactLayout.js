@@ -57,6 +57,7 @@ function ContactLayout() {
 // The list of Vinyls added to the Contact Page
 const Vinyl_list = [
     {
+        id:1,
         name:'Tik Tok', 
         path:process.env.PUBLIC_URL + '/images/tok_vinyl_case_only.png',
         altPath:process.env.PUBLIC_URL + '/images/tok_vinyl.png',
@@ -64,6 +65,7 @@ const Vinyl_list = [
         webref:'https://www.tiktok.com/@edollarsigns'
     }
     // ,{
+    //     id:2,
     //     name:'Instagram', 
     //     path:process.env.PUBLIC_URL + '/images/insta_vinyl_case_only.png',
     //     altPath:process.env.PUBLIC_URL + '/images/insta_vinyl.png',

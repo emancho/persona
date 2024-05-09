@@ -7,7 +7,7 @@ import WebPageOutline from '../Components/WebpageOutline'
 function AboutPage() {
   return (
     <WebPageOutline
-      pageTitle={'About Me'}
+      pageTitle={'Behind the Artist'}
       pageComponent={<AboutMeLayout/>}
     />
   );  

@@ -34,8 +34,7 @@ const listOfProjectsPage = [
         img: ``,
         imgTitle: 'Display of EDDperience Radio',
         projTitle:'EDDPerience Radio',
-        projDesc: 'I love music and wanted to share some songs I listen to in a fun format. I want to make this a series but for\
-        now stay tuned for the first of the series'
+        projDesc: 'I love music and wanted to share some songs I listen to in a fun format. I want to make this a series but for now stay tuned for the first of the series'
     },
     {
         id:2,

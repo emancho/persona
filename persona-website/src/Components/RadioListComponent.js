@@ -6,17 +6,11 @@ import {
     ListItem,
     ListItemText,
     ListItemAvatar,
-    Avatar } from '@mui/material';
+    Avatar,
+    Box } from '@mui/material';
 import MusicNote from '@mui/icons-material/MusicNote';
-
-// subHeader func
-const listSubHeader =()=>{
-    return(
-        <ListSubheader component="div" id="nested-list-subheader">
-            Song List
-        </ListSubheader>
-    )
-}
+//== Stlying
+import '../App.css';
 
 /*
 Component -
@@ -26,24 +20,37 @@ listOfEpisodes := List of objects which each object consisting on the { song tit
 */
 
 function RadioList( {listOfEpisodes} ){
+    // console.log('== RadioList ==');
 
     return (
-        <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper', subheader: {listSubHeader}}}>
-            {
-                _.map( listOfEpisodes, ( episode ) => {
-                    return(
-                        <ListItem>
-                            <ListItemAvatar>
-                                <Avatar>
-                                    <MusicNote />
-                                </Avatar>
-                            </ListItemAvatar>
-                            <ListItemText primary={episode.songTitle} secondary={episode.artistCredit} />
-                        </ListItem>
-                    )
-                })
-            }
-        </List>
+        <div>
+            {/*== The Section above the list contains: play button and `Song List` title ==*/}
+            <Box>
+
+            </Box>
+            {/*==  List of Songs in the Radio Show ==*/}
+            <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper'}}> 
+                {
+                    _.map( listOfEpisodes, ( episode ) => {
+                        return(
+                            <ListItem
+                            sx={{
+                                borderStyle: 'solid',
+                                borderWidth: '2px',
+                                borderColor: '#000000'
+                            }}>
+                                <ListItemAvatar>
+                                    <Avatar>
+                                        <MusicNote />
+                                    </Avatar>
+                                </ListItemAvatar>
+                                <ListItemText primary={episode.songTitle} secondary={episode.artistCredit} />
+                            </ListItem>
+                        )
+                    })
+                }
+            </List>
+        </div>
     );
 }
 

@@ -17,6 +17,5 @@ export const episodes = [
     src: null,
     epTitle: 'Trusting the process',
     thumbnail: ep1
-
   },
 ];

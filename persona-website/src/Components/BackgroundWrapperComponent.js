@@ -5,10 +5,9 @@ const BackgroundWrapper = ({ children }) => {
   return (
     <Box
       sx={{
-        backgroundColor: '#c5d7cd', // Dark green color
-        padding: 5, // Adjust the padding as needed
-        borderRadius: 4, // Optional: for rounded corners
-        // Add other styles as needed
+        backgroundColor: '#c5d7cd',
+        padding: 5, 
+        borderRadius: 4,
       }}
     >
       {children}

@@ -89,17 +89,3 @@ body {
   background-color:'#3f51b5';
   font-size: '20px';
 }
-
-
-/*== Infill border - Skyblue ==*/
-.sky-blue-tag {
-  display: inline-block;
-  align-items: center;
-  padding: 5px 10px;
-  background-color: #3cf0ff ;
-  border: 12px solid #3cf0ff ;
-  border-radius: 2px; /* Rounded corners */
-  color: white; /* Text color */
-  font-size: 1rem;
-  text-align: center;
-}

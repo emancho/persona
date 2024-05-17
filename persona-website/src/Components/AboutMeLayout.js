@@ -3,14 +3,14 @@ import ArtistImage from '../Components/ArtistImage';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
-const aboutText = `I am Ed__d w/o the War. Cameroonian-American born on the East Coast, 
-with a passion to create since childhood. From a very young age; I was making comic books,
-writing short stories, creating mini movie scripts and drawing random characters
-inspired by the my favorite shows or movies. Unfortunately as I got older, the creating stop with the blueprints of new ideas figuratively
-collecting dust in my head...which honestly I'm not a fan of. 
+const aboutText = `I am Ed__d w/o the War. A Cameroonian-American born in the East Coast, 
+with a passion to create since childhood. From an early age; I was making comic books,
+writing short stories, creating rough drafts for movie scripts and drawing random characters
+inspired by my favorite animated shows or the world around me. Unfortunately as I got older, the creating stop and any new idea would figuratively
+become tossed away due to "growing up"...and honestly I'm not a fan of that. 
 
-I'm in my 30s now but that passion is still there despite the lack of creating. I want to explore my creative side again and  
-want to use this site as the mainhub for all my creative projects. Especailly when it comes to music. Come along with me on my journey and subscribe to ya boi.`;
+As I enter my 30s, I'm still getting older but the passion is still there and I have the power of "Trying". So as I rediscover my creative side again, I  
+want to use this site as the start of this creative journey. Be sure to join the newsletter on the Contact Page for updates.`;
 
 function AboutMeLayout() {
   return (
@@ -25,7 +25,7 @@ function AboutMeLayout() {
         {/* Image */}
         <ArtistImage 
           path={"/images/AboutMeImg.png"}
-          altDesc={"Very attractive man smiling very attractively."}
+          altDesc={"A very attractive man smiling very attractively."}
           w={250}
           h={300} 
         />
@@ -33,15 +33,15 @@ function AboutMeLayout() {
         {/* Typography */}
         <Box sx={{
           border: '2px solid #ffffff',
-          padding: '20px',
+          padding: '15px',
           borderRadius: '4px',
           backgroundColor: '#7ed8d2',
           alignItems: 'center', // Center vertically
-          marginTop: '20px', // Space between image and text
+          marginTop: '15px', // Space between image and text
           display: 'flex',
           maxWidth: '80vh'
         }}>
-          <Typography variant="body" color="#000000">
+          <Typography variant="body" color="#0a3e0a">
             {aboutText}
           </Typography>
         </Box>

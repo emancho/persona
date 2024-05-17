@@ -12,7 +12,7 @@ const WebPageOutline = ({pageTitle, pageComponent })=>{
                 <Typography variant="h2" 
                 sx={{ 
                     textAlign: 'center', 
-                    marginTop: '30px',
+                    marginTop: '15px',
                     marginBottom: '25px', 
                     color: '#0a3e0a',
                     fontStyle: 'italic', // Italic font style

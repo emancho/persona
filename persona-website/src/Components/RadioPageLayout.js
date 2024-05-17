@@ -1,6 +1,7 @@
 import React from 'react';
 //== Components
 import AudioPlayer from './AudioPlayer';
+import BackgroundWrapper from '../Components/BackgroundWrapperComponent'
 
 /*
 Layout -
@@ -10,7 +11,7 @@ Main layout for the Radio Page.
 function RadioPageLayout() {
     return(
         <div>
-             <AudioPlayer />
+            <BackgroundWrapper children={<AudioPlayer />}/>
         </div>
     );
 }

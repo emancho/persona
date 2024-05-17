@@ -8,7 +8,7 @@ import ProjectCardComponent from './ProjectCardComponent'
 
 function ListComponent(){
     return(
-        <List sx={{ maxWidth: 600, bgcolor: '#3cf0ff' }}>
+        <List sx={{ maxWidth: 600, bgcolor: '#c5d7cd' }}>
         {
             // Mapping that list the individual projects based on listOfProjectsPage
             _.map(listOfProjectsPage, (project) => {

@@ -1,20 +1,31 @@
-import { useState, useEffect, useRef, useCallback } from 'react';
+//== React
+import { 
+    useState, 
+    useEffect, 
+    useRef, 
+    useCallback 
+} from 'react';
 
-// icons
+//== Icons
+//= Playback icons
 import {
-  IoPlayBackSharp,
-  IoPlayForwardSharp,
   IoPlaySkipBackSharp,
   IoPlaySkipForwardSharp,
   IoPlaySharp,
   IoPauseSharp,
 } from 'react-icons/io5';
-
+//= Volume icons
 import {
   IoMdVolumeHigh,
   IoMdVolumeOff,
   IoMdVolumeLow,
 } from 'react-icons/io';
+
+
+/*
+Function: Controls
+Component that represents the controls (Playback and Volume) for the radio page
+*/
 
 const Controls = ({
   audioRef,
@@ -49,6 +60,7 @@ const Controls = ({
     playAnimationRef.current = requestAnimationFrame(repeat);
   }, [audioRef, duration, progressBarRef, setTimeProgress]);
 
+  // useEffect relating to the play feature
   useEffect(() => {
     if (isPlaying) {
       audioRef.current.play();
@@ -58,14 +70,7 @@ const Controls = ({
     playAnimationRef.current = requestAnimationFrame(repeat);
   }, [isPlaying, audioRef, repeat]);
 
-  const skipForward = () => {
-    audioRef.current.currentTime += 15;
-  };
-
-  const skipBackward = () => {
-    audioRef.current.currentTime -= 15;
-  };
-
+  // Func relating to behavior of selecting the previous track
   const handlePrevious = () => {
     if (trackIndex === 0) {
       let lastTrackIndex = tracks.length - 1;
@@ -77,6 +82,7 @@ const Controls = ({
     }
   };
 
+  // useEffect relating to state of volume being muted
   useEffect(() => {
     if (audioRef) {
       audioRef.current.volume = volume / 100;
@@ -86,24 +92,19 @@ const Controls = ({
 
   return (
     <div className="controls-wrapper">
+        {/*=== playback control section ===*/}
       <div className="controls">
         <button onClick={handlePrevious}>
           <IoPlaySkipBackSharp />
         </button>
-        <button onClick={skipBackward}>
-          <IoPlayBackSharp />
-        </button>
-
         <button onClick={togglePlayPause}>
           {isPlaying ? <IoPauseSharp /> : <IoPlaySharp />}
-        </button>
-        <button onClick={skipForward}>
-          <IoPlayForwardSharp />
         </button>
         <button onClick={handleNext}>
           <IoPlaySkipForwardSharp />
         </button>
       </div>
+        {/*=== volume section ===*/}
       <div className="volume">
         <button onClick={() => setMuteVolume((prev) => !prev)}>
           {muteVolume || volume < 5 ? (

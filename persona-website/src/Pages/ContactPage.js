@@ -3,12 +3,17 @@ import React from 'react';
 import WebPageOutline from '../Components/WebpageOutline'
 //== Material UI
 import ContactLayout from '../Components/ContactLayout'
+import BackgroundWrapper from '../Components/BackgroundWrapperComponent'
 
 function ContactPage() {
   return (
     <WebPageOutline
       pageTitle={'Contact Me'}
-      pageComponent={<ContactLayout />}
+      pageComponent={
+        <BackgroundWrapper children={
+          <ContactLayout />}
+        />
+      }
     />
   );  
 }

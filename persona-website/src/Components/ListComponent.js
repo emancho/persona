@@ -8,12 +8,12 @@ import ProjectCardComponent from './ProjectCardComponent'
 
 function ListComponent(){
     return(
-        <List sx={{ maxWidth: 600, bgcolor: '#c5d7cd' }}>
+        <List sx={{ maxWidth: 600}}>
         {
             // Mapping that list the individual projects based on listOfProjectsPage
-            _.map(listOfProjectsPage, (project) => {
+            _.map(listOfProjectsPage, (project, index) => {
                 return (
-                    <ListItem>
+                    <ListItem key={index} sx={{ pt: index === 0 ? 0 : 7 }}>
                         <ProjectCardComponent
                             img={project.img}
                             imgTitle={project.imgTitle}

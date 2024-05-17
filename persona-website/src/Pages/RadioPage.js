@@ -7,7 +7,7 @@ import RadioLayout from '../Components/RadioPageLayout'
 function RadioPage() {
   return (
     <WebPageOutline
-      pageTitle={'EDDperience Radio'}
+      pageTitle={'eddPerience Radio'}
       pageComponent={<RadioLayout/>}
       />
   );

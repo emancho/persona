@@ -2,6 +2,7 @@ import React from 'react';
 import '../App.css';
 //== Components
 import ListComponent from '../Components/ListComponent'
+import BackgroundWrapper from '../Components/BackgroundWrapperComponent'
 //== Material UI
 import {Box,Typography} from '@mui/material';
 
@@ -14,7 +15,10 @@ function ProjectLayout() {
             {projCaption}
         </Typography>
         <div>
+          <BackgroundWrapper children={
             <ListComponent/>
+          }
+          />
         </div>
     </Box>
   );

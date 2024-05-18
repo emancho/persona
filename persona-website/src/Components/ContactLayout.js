@@ -45,7 +45,9 @@ function ContactLayout() {
         {
             _.map(Vinyl_list, (obj) => {
                 return (
-                    <Grid item>
+                    <Grid 
+                      item 
+                      key={obj.name}>
                         <Card>
                             <HoverableCardMedia
                                 name={obj.name} 

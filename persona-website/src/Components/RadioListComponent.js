@@ -7,7 +7,8 @@ import {
     ListItemText,
     ListItemAvatar,
     Avatar,
-    Box } from '@mui/material';
+    Box,
+    ListSubheader } from '@mui/material';
 import MusicNote from '@mui/icons-material/MusicNote';
 //== Stlying
 import '../App.css';
@@ -20,25 +21,39 @@ listOfEpisodes := List of objects which each object consisting on the { song tit
 */
 
 function RadioList( {listOfEpisodes} ){
-    // console.log('== RadioList ==');
-
     return (
-        <div>
+        <Box display="flex" justifyContent="center" alignItems="center">
             {/*== The Section above the list contains: play button and `Song List` title ==*/}
-            <Box>
-
-            </Box>
+            
             {/*==  List of Songs in the Radio Show ==*/}
-            <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper'}}> 
+            <List sx={{ 
+                width: '100%',
+                maxWidth: 360, 
+                bgcolor: 'background.paper'}}
+                subheader={
+                    <ListSubheader 
+                        component="div" 
+                        sx={{ // Add styling for subheader
+                            textAlign: 'center', // Center text
+                            fontSize: '36px', // Increase font size
+                            backgroundColor: '#f0f0f0', // Add background color
+                            padding: '20px', // Add padding
+                            border: '2px solid #000000' // Add border bottom
+                        }}
+                    >
+                        Track List
+                    </ListSubheader>
+                }>
                 {
                     _.map( listOfEpisodes, ( episode ) => {
                         return(
                             <ListItem
-                            sx={{
-                                borderStyle: 'solid',
-                                borderWidth: '2px',
-                                borderColor: '#000000'
-                            }}>
+                                key={episode.id}
+                                sx={{
+                                    borderStyle: 'solid',
+                                    borderWidth: '2px',
+                                    borderColor: '#000000'
+                                }}>
                                 <ListItemAvatar>
                                     <Avatar>
                                         <MusicNote />
@@ -50,7 +65,7 @@ function RadioList( {listOfEpisodes} ){
                     })
                 }
             </List>
-        </div>
+        </Box>
     );
 }
 

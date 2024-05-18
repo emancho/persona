@@ -3,7 +3,7 @@ import { Typography } from '@mui/material';
 
 /*
 Function: DisplayTrack
-Component that represents the progress bar of the radio page
+Component that represents the Radio Episode Title, Radio Title and Thumbnail
 */
 
 const DisplayTrack = ({

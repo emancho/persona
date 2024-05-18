@@ -49,17 +49,18 @@ const Controls = ({
   const playAnimationRef = useRef();
 
   const repeat = useCallback(() => {
-    const currentTime = audioRef.current.currentTime;
-    setTimeProgress(currentTime);
-    progressBarRef.current.value = currentTime;
-    progressBarRef.current.style.setProperty(
-      '--range-progress',
-      `${(progressBarRef.current.value / duration) * 100}%`
-    );
-
-    playAnimationRef.current = requestAnimationFrame(repeat);
+    if (progressBarRef.current) {
+      const currentTime = audioRef.current ? audioRef.current.currentTime : 0;
+      setTimeProgress(currentTime);
+      progressBarRef.current.value = currentTime;
+      progressBarRef.current.style.setProperty(
+        '--range-progress',
+        `${(progressBarRef.current.value / duration) * 100}%`
+      );
+      playAnimationRef.current = requestAnimationFrame(repeat);
+    }
   }, [audioRef, duration, progressBarRef, setTimeProgress]);
-
+  
   // useEffect relating to the play feature
   useEffect(() => {
     if (isPlaying) {
@@ -72,13 +73,17 @@ const Controls = ({
 
   // Func relating to behavior of selecting the previous track
   const handlePrevious = () => {
+    console.log('=== CONTROL FUNCTION ===')
+
     if (trackIndex === 0) {
-      let lastTrackIndex = tracks.length - 1;
-      setTrackIndex(lastTrackIndex);
-      setCurrentTrack(tracks[lastTrackIndex]);
+        console.log('CONTROL FUNCTION: index is indexed @ 0');
+        let lastTrackIndex = tracks.length - 1;
+        console.log('The index of the last track is: ' + lastTrackIndex );
+        setTrackIndex(lastTrackIndex);
+        setCurrentTrack(tracks[lastTrackIndex]);
     } else {
-      setTrackIndex((prev) => prev - 1);
-      setCurrentTrack(tracks[trackIndex - 1]);
+        setTrackIndex((prev) => prev - 1);
+        setCurrentTrack(tracks[trackIndex - 1]);
     }
   };
 

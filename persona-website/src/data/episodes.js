@@ -7,15 +7,17 @@ import ep1 from './radio_ep1.png'
 
 export const episodes = [
   {
+    id: 1,
+    title:'ep.1',
+    src: world,
+    epTitle: 'Trusting the process',
+    thumbnail: ep1
+  },  
+  {
+    id: 2,
     title: 'Michael Jackson – We Are The World',
     src: world,
     epTitle: 'Michael Jackson',
     thumbnail: jackson,
-  },
-  {
-    title:'ep.1',
-    src: null,
-    epTitle: 'Trusting the process',
-    thumbnail: ep1
-  },
+  }
 ];

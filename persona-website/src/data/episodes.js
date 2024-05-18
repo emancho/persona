@@ -11,7 +11,8 @@ export const episodes = [
     title:'ep.1',
     src: world,
     epTitle: 'Trusting the process',
-    thumbnail: ep1
+    thumbnail: ep1,
+    alt:'A sideway containing pink hue color flowers on green grass'
   },  
   {
     id: 2,
@@ -19,5 +20,6 @@ export const episodes = [
     src: world,
     epTitle: 'Michael Jackson',
     thumbnail: jackson,
+    alt:'test image'
   }
 ];

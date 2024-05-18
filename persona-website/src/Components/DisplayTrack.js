@@ -1,5 +1,6 @@
 import { BsMusicNoteBeamed } from 'react-icons/bs';
 import { Typography } from '@mui/material';
+import '../App.css';
 
 /*
 Function: DisplayTrack
@@ -30,7 +31,7 @@ const DisplayTrack = ({
       <div className="audio-info">
         <div className="audio-image">
           {currentTrack.thumbnail ? (
-            <img src={currentTrack.thumbnail} width={500} height={650} alt="audio avatar" />
+            <img src={currentTrack.thumbnail} alt={currentTrack.alt} />
           ) : (
             <div className="icon-wrapper">
               <span className="audio-icon">

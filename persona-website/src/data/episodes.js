@@ -1,5 +1,6 @@
 // audio files
 import world from './We_Are_The_World.mp3';
+import test from './test.wav'
 
 // audio thumbnails
 import jackson from './jackson.jpeg';
@@ -9,7 +10,7 @@ export const episodes = [
   {
     id: 1,
     title:'ep.1',
-    src: world,
+    src: test,
     epTitle: 'Trusting the process',
     thumbnail: ep1,
     alt:'A sideway containing pink hue color flowers on green grass'

@@ -1,3 +1,6 @@
+//== CSS
+import '../App.css'
+
 const ProgressBar = ({
     progressBarRef,
     audioRef,
@@ -22,7 +25,7 @@ const ProgressBar = ({
     };
   
     return (
-      <div className="progress">
+      <div className="progress-bar-section">
         <span className="time current">{formatTime(timeProgress)}</span>
         <input
           type="range"

@@ -55,6 +55,14 @@ const AudioPlayer = () => {
             progressBarRef={progressBarRef}
             handleNext={handleNext}/>
           </Grid>
+          {/* Section for the Progress Bar */}
+          <Grid item>
+            <ProgressBar
+                progressBarRef={progressBarRef}
+                audioRef={audioRef}
+                timeProgress={timeProgress}
+                duration={duration}/>
+          </Grid>
           {/* Section for Radio Controls */}
           <Grid item>
             <Controls
@@ -67,14 +75,6 @@ const AudioPlayer = () => {
                 setTrackIndex={setTrackIndex}
                 setCurrentTrack={setCurrentTrack}
                 handleNext={handleNext}/>
-          </Grid>
-          {/* Section for the Progress Bar */}
-          <Grid item>
-            <ProgressBar
-                progressBarRef={progressBarRef}
-                audioRef={audioRef}
-                timeProgress={timeProgress}
-                duration={duration}/>
           </Grid>
           {/* Section for the List of Songs associated with the radio episode */}
           <Grid item>

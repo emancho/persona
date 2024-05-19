@@ -1,5 +1,10 @@
 // Here lays the constants file where I'll be listing things that shouldn't change...IN THEORY
 
+// Radio Playback Buttons
+export const PLAYBACK_BUTTON_SIZE = 30;
+
+// Radio Playback Buttons
+export const VOLUME_BUTTON_SIZE = 20;
 //===== Radio Show Dets
 export const RADIO_EPS = [
     {

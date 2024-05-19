@@ -99,8 +99,9 @@ body {
   align-items: center;
 }
 .audio-image img {
-  width: 100%; /* Set the width of the image to fill its container */
+  width: 95%; /* Set the width of the image to fill its container */
   height: auto; /* Automatically adjust the height to maintain aspect ratio */
+  border: 2px solid white;
 }
 
 /*== Section representing the volume option on the radio page */
@@ -111,7 +112,6 @@ body {
 /*== Section representing the playback buttons*/
 .controls-section{
   padding: 15px 5px;
-
 }
 
 /* Container for the progress bar section */
@@ -131,4 +131,8 @@ body {
   font-family: Arial, sans-serif;
   font-size: 14px;
   color: #333;
+}
+
+.episode_listing{
+  padding-top: 15px;
 }

@@ -28,31 +28,36 @@ function RadioList( {listOfEpisodes} ){
             {/*==  List of Songs in the Radio Show ==*/}
             <List sx={{ 
                 width: '100%',
-                maxWidth: 360, 
+                minWidth: 400, 
+                maxWidth: 600,
+                border: 'solid',
                 bgcolor: 'background.paper'}}
                 subheader={
                     <ListSubheader 
                         component="div" 
                         sx={{ // Add styling for subheader
-                            textAlign: 'center', // Center text
-                            fontSize: '36px', // Increase font size
-                            backgroundColor: '#f0f0f0', // Add background color
-                            padding: '20px', // Add padding
-                            border: '2px solid #000000' // Add border bottom
+                            textAlign: 'center',
+                            fontSize: '36px',
+                            backgroundColor: '#f0f0f0', 
+                            padding: '10px',
+                            border: '2px solid #000000'
                         }}
                     >
                         Track List
                     </ListSubheader>
                 }>
                 {
-                    _.map( listOfEpisodes, ( episode ) => {
+                    _.map( listOfEpisodes, ( episode, index ) => {
                         return(
                             <ListItem
                                 key={episode.id}
                                 sx={{
                                     borderStyle: 'solid',
                                     borderWidth: '2px',
-                                    borderColor: '#000000'
+                                    borderColor: '#000000',
+                                    borderBottom: 'none',
+                                    borderLeft:'none',
+                                    borderRight: 'none',
                                 }}>
                                 <ListItemAvatar>
                                     <Avatar>

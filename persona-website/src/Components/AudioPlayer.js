@@ -74,16 +74,13 @@ const AudioPlayer = () => {
                 trackIndex={trackIndex}
                 setTrackIndex={setTrackIndex}
                 setCurrentTrack={setCurrentTrack}
-                handleNext={handleNext}/>
+                handleNext={handleNext}
+                setCurPlaylistState={setCurTrackList}/>
           </Grid>
           {/* Section for the List of Songs associated with the radio episode */}
           <Grid item>
             <RadioList listOfEpisodes={curTrackList.radioTrackList}/>
           </Grid>
-
-
-
-
         </Grid>
     </Box> 
   );

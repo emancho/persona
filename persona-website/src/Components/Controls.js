@@ -23,9 +23,9 @@ import {
 //== Constant
 import {
     PLAYBACK_BUTTON_SIZE, 
-    VOLUME_BUTTON_SIZE
+    VOLUME_BUTTON_SIZE,
+    RADIO_EPS
 } from '../Constants'
-
 
 /*
 Function: Controls
@@ -42,6 +42,7 @@ const Controls = ({
   setTrackIndex,
   setCurrentTrack,
   handleNext,
+  setCurPlaylistState
 }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [volume, setVolume] = useState(60);
@@ -73,9 +74,11 @@ const Controls = ({
         let lastTrackIndex = tracks.length - 1;
         setTrackIndex(lastTrackIndex);
         setCurrentTrack(tracks[lastTrackIndex]);
+        setCurPlaylistState(RADIO_EPS[lastTrackIndex]);
     } else {
         setTrackIndex((prev) => prev - 1);
         setCurrentTrack(tracks[trackIndex - 1]);
+        setCurPlaylistState(RADIO_EPS[trackIndex - 1])
     }
   };
 

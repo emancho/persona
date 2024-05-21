@@ -7,11 +7,7 @@ import ListItem from '@mui/material/ListItem';
 import ProjectCardComponent from './ProjectCardComponent'
 
 function ListComponent(){
- // locations of Check IT! Options ::: below :
-
-
-
-
+    
     return(
         <List sx={{ maxWidth: 600}}>
         {
@@ -24,6 +20,7 @@ function ListComponent(){
                             imgTitle={project.imgTitle}
                             projTitle={project.projTitle}
                             projDesc={project.projDesc}
+                            projectFunc={project.projFunc}
                         />
                     </ListItem>
                 )
@@ -39,21 +36,30 @@ const listOfProjectsPage = [
         img:  `${process.env.PUBLIC_URL}/images/radio_logo.png`,
         imgTitle: 'Display of eddPerience Radio',
         projTitle:'eddPerience Radio',
-        projDesc: 'I love music and wanted to create a fun way to share songs I listen to. Welcome to eddPerience radio and give it a listen'
+        projDesc: 'Tune in to your friendly neighbourhood radio host, DJ [Blank Space], for some songs you can add to your playlist in the format of a radio show.  [Series]',
+        projFunc: ()=>{
+            console.log('Ed Radio');
+        }
     },
     {
         id:2,
         img: `${process.env.PUBLIC_URL}/images/proj1.png`,
         imgTitle: 'Display of The Gals Just Want to Dance',
         projTitle:'The Gals Just Want to Dance',
-        projDesc: 'This album is will be my first music album. Album cover is based on a true story.'
+        projDesc: 'Currently in the process of making an album consisting of music that women can dance to. The album is planned to be muli-tracked and will be a blend of multiple genres (Funk, Disco, RnB, House, Etc). Album cover is based on a true story and is one of my inspirations behind making this album.',
+        projFunc: ()=>{
+            console.log('Dance Album');
+        }
     },
     {
         id:3,
         img: `${process.env.PUBLIC_URL}/images/techbro_drac.png`,
         title: 'Display of Tech Bro Dracula',
         projTitle:'Tech Bro Dracula',
-        projDesc: 'This is a screenplay Im writing to take advantage of the public domain use of Dracula. Currently cooking with the script so just wait on it!!!',
+        projDesc: `This is a screenplay I'm working on. Taking advantage of Dracula's public domain usage, I writing a version of Dracula where he is attempting to survive in a technologically advanced world. Rough Draft will most likely be posted on this site when finished!!!`,
+        projFunc: ()=>{
+            console.log('Tech Bro Dracula');
+        }
     },
 ]
 

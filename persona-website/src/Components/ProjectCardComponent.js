@@ -7,25 +7,9 @@ function ProjectCardComponent({
     img,
     imgTitle,
     projTitle,
-    projDesc
+    projDesc,
+    projectFunc
 }) {
-
-    // The function for the button
-    // Switch: page redirect and message
-    const handleButtonClick =( action, actionType )=>{
-
-        switch (action) {
-            case 'redirect':
-                return actionType;
-                break;
-            case 'popup':
-                return actionType;
-                break;
-            default:
-          }
-
-    } 
-
 
   return (
     <Card sx={{ minWidth: minWid }}>
@@ -41,7 +25,7 @@ function ProjectCardComponent({
             <Typography variant="h6" color="#0a3e0a">{projDesc}</Typography>
         </CardContent>
         <CardActions>
-            <Button size="large">Check IT!</Button>
+            <Button size="large" onClick={projectFunc}>Check IT!</Button>
         </CardActions>
     </Card>
   );

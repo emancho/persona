@@ -47,7 +47,7 @@ function RadioList( {listOfEpisodes} ){
                     </ListSubheader>
                 }>
                 {
-                    _.map( listOfEpisodes, ( episode, index ) => {
+                    _.map( listOfEpisodes, ( episode ) => {
                         return(
                             <ListItem
                                 key={episode.id}

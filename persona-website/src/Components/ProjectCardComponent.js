@@ -9,6 +9,24 @@ function ProjectCardComponent({
     projTitle,
     projDesc
 }) {
+
+    // The function for the button
+    // Switch: page redirect and message
+    const handleButtonClick =( action, actionType )=>{
+
+        switch (action) {
+            case 'redirect':
+                return actionType;
+                break;
+            case 'popup':
+                return actionType;
+                break;
+            default:
+          }
+
+    } 
+
+
   return (
     <Card sx={{ minWidth: minWid }}>
         <Box border="3px solid #0a3e0a" overflow="hidden">

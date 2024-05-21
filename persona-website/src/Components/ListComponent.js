@@ -7,6 +7,11 @@ import ListItem from '@mui/material/ListItem';
 import ProjectCardComponent from './ProjectCardComponent'
 
 function ListComponent(){
+ // locations of Check IT! Options ::: below :
+
+
+
+
     return(
         <List sx={{ maxWidth: 600}}>
         {
@@ -31,10 +36,10 @@ function ListComponent(){
 const listOfProjectsPage = [
     {
         id:1,
-        img: ``,
-        imgTitle: 'Display of EDDperience Radio',
-        projTitle:'EDDPerience Radio',
-        projDesc: 'I love music and wanted to share some songs I listen to in a fun format. I want to make this a series but for now stay tuned for the first of the series'
+        img:  `${process.env.PUBLIC_URL}/images/radio_logo.png`,
+        imgTitle: 'Display of eddPerience Radio',
+        projTitle:'eddPerience Radio',
+        projDesc: 'I love music and wanted to create a fun way to share songs I listen to. Welcome to eddPerience radio and give it a listen'
     },
     {
         id:2,

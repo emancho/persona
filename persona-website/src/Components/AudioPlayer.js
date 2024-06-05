@@ -13,6 +13,11 @@ import RadioList from './RadioListComponent'
 //== Constant
 import {RADIO_EPS} from '../Constants'
 
+/*
+Function: AudioPlayer
+Description: This is the layout of the Audio Player consisting of the Controls, Progress Bar and Display Track 
+*/
+
 const AudioPlayer = () => {
   // states
   const [trackIndex, setTrackIndex] = useState(0);

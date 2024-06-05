@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import { Grid, Card, CardActionArea, CardMedia, CardContent, Typography } from '@mui/material';
 
+
+/*
+Function: HoverableCardMedia
+Description: Component used for the Contact Layout
+*/
+
 function HoverableCardMedia({name, path, altPath, descipt, webref}) {
   // Used to track the state of card to be hovered 
   const [isHovered, setIsHovered] = useState(false);

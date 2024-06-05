@@ -2,7 +2,6 @@ import React from 'react';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 
-
 function ArtistTitle(){
     return (
         <CardContent sx={{ flex: '1 0 auto' }}>

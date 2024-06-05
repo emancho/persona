@@ -4,7 +4,7 @@ import '../App.css';
 
 /*
 Function: DisplayTrack
-Component that represents the Radio Episode Title, Radio Title and Thumbnail
+Component that represents the Radio Episode Title, Radio Title and Thumbnail of the radio episode
 */
 
 const DisplayTrack = ({

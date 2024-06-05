@@ -5,6 +5,11 @@ import HoverableCardMedia from '../Components/HoverableCardMedia'
 //== Material UI
 import { Button, Typography, Container, Grid, Card } from '@mui/material';
 
+/*
+Function: ContactLayout
+Description: This is a layout for the contact page
+*/
+
 function ContactLayout() {
   return (
     <div id='pageLayout'>

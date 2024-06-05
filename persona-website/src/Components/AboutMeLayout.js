@@ -12,6 +12,10 @@ become tossed away due to "growing up"...and honestly I'm not a fan of that.
 As I enter my 30s, I'm still getting older but the passion is still there and I have the power of "Trying". So as I rediscover my creative side again, I  
 want to use this site as the start of this creative journey. Be sure to join the newsletter on the Contact Page for updates.`;
 
+/*
+Function: AboutMeLayout
+Description: This is responsble for dictating the layout of the 'About Me' Page
+*/
 function AboutMeLayout() {
   return (
     <div>

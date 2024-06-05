@@ -73,8 +73,8 @@ function HomePage() {
         {/* This section is the profile image */}
         <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', marginBottom: '20px'}}>
           <ArtistImage 
-            path={"/images/HomepageImg.jpg"} 
-            altDesc={"Blur image of artist."}
+            path={"/images/HomepageImgv4.gif"} 
+            altDesc={"Blurred gif of my cute self."}
             w={500}
             h={500}
             />

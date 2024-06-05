@@ -29,7 +29,7 @@ import {
 
 /*
 Function: Controls
-Component that represents the controls (Playback and Volume) for the radio page
+Description: Component that represents the controls (Playback and Volume) for the radio page
 */
 
 const Controls = ({

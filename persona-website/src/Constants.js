@@ -14,7 +14,8 @@ export const RADIO_EPS = [
             { id: 'ep_1_song_2', songTitle: 'Freefall', artistCredit: 'KAYTRANADA (ft. Durand Bernarr)' },
             { id: 'ep_1_song_3', songTitle: 'The Highs & The Lows', artistCredit: 'Chance the Rapper (ft. Joey Bada$$)' }, 
             { id: 'ep_1_song_4', songTitle: 'KAYTRANADA_WAITIN_115 BPM', artistCredit: 'Kelela & KAYTRANADA' },
-            { id: 'ep_1_song_5', songTitle: 'The Boss', artistCredit: 'Diana Ross' }
+            { id: 'ep_1_song_5', songTitle: 'The Boss', artistCredit: 'Diana Ross' },
+            { id: 'ep_1_song6', songTitle: 'Somtimes', artistCredit: 'DMX'}
         ]
     },
     {

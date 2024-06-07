@@ -136,3 +136,36 @@ body {
 .episode_listing{
   padding-top: 15px;
 }
+
+/*== CSS for Animatedc Text */
+.animated-text{
+  color: #0a3e0a;
+  text-align: center;
+  font-size: 3.2em;
+  font-style: italic; /* Italic font style */
+  font-weight: bold;  /* Bold font weight */
+  font-family: Arial, sans-serif; /* Custom font family */
+  padding-top: 20px;
+  padding-bottom: 25px;
+}
+
+/*== About Me Page ==*/
+#about_me_img_section {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center;     /* Center vertically */
+  flex-direction: column;  /* Stack children vertically */
+  text-align: center;      /* Center text */
+}
+
+#about_me_bio_section{
+  border: 2px solid #ffffff;
+  padding: 15px;
+  border-radius: 4px;
+  background-color: #7ed8d2;
+  align-items: center; /* Center vertically */
+  margin-top: 15px;    /* Space between image and text */
+  display: flex;
+  max-width: 80vh;
+}
+

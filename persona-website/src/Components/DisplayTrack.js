@@ -41,7 +41,7 @@ const DisplayTrack = ({
           )}
         </div>
         <div className="episode_listing">
-            <Typography variant="h4" align="center">{'eddPerience Radio ' + currentTrack.title}</Typography>
+            <Typography variant="h4" align="center">{currentTrack.title}</Typography>
             <Typography variant="h5" align="center">{'~' + currentTrack.epTitle + '~'}</Typography>
         </div>
       </div>

@@ -6,7 +6,7 @@ import BackgroundWrapper from '../Components/BackgroundWrapperComponent'
 //== Material UI
 import {Box,Typography} from '@mui/material';
 
-const projCaption = `Welcome to the gallery. My creative projects of past, present and future...simultaneously.`
+const projCaption = `Welcome to the gallery. Here lays my creative projects of past, present and future.`
 
 function ProjectLayout() {
   return (

@@ -2,10 +2,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
-//== Material UI
+//== Material UI Components
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
-// Icon buttons
+// Material UI Icon buttons
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import SkipNextIcon from '@mui/icons-material/SkipNext'; 
 import SkipPrevIcon from '@mui/icons-material/SkipPrevious';
@@ -19,9 +19,9 @@ import ContactPage from './Pages/ContactPage.js';
 import ProjPage from './Pages/ProjectsPage.js';
 import RadioPage from './Pages/RadioPage.js';
 
-// Description:
-//   Displays the homepage. Consist of a layout similar to a music player containing a 
-//   profile picture, artist name and button options that navigate to other pages. 
+// == Description:
+// The homepage. Consists of a layout similar to a music player containing a 
+// profile picture, artist name and button options that navigate to other pages. 
 // ** Uses Material UI for design and display options.
 
 function App() {
@@ -40,13 +40,17 @@ function App() {
             {/* Render to 'Projects' Page */}
             <Route path='/radioPage' element={<RadioPage />} />
             {/*==Wildcard Route ==*/}
+            {/* Redirects to Homepage when an invalid path is entered*/}
             <Route path="*" element={<HomePage />} />     
           </Routes>
     </Router>
   );
 }
 
+/* The layout of the HomePage. */
 function HomePage() {
+
+  /* An array of button objects. The icon represents the button type and the link is the page the button directs to */
   const buttons = [
     { icon: SkipPrevIcon, link: '/contact' },
     { icon: PlayArrowIcon, link: '/aboutme' },
@@ -60,7 +64,7 @@ function HomePage() {
         alignItems: 'center', 
         height: '100vh'
     }}>
-      {/*== This is the section where I have my homepage layout */}
+      {/*== This is the section represents the homepage layout */}
       <Card sx={{
           maxWidth: 700,
           display: 'flex',
@@ -79,7 +83,7 @@ function HomePage() {
             h={500}
             />
         </Box>
-        {/* This section is the Title and Artist Name */}
+        {/* This section is the Title + Artist Name */}
         <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
           <ArtistTitle />
         </Box>

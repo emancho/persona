@@ -1,8 +1,13 @@
 import React from 'react';
-import ArtistImage from '../Components/ArtistImage';
+// Material UI
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
+// Component
+import ArtistImage from '../Components/ArtistImage';
+// CSS
+import '../App.css';
 
+// The Bio of the About Me Page
 const aboutText = `I am Ed__d w/o the War. A Cameroonian-American born in the East Coast, 
 with a passion to create since childhood. From an early age; I was making comic books,
 writing short stories, creating rough drafts for movie scripts and drawing random characters
@@ -14,19 +19,14 @@ want to use this site as the start of this creative journey. Be sure to join the
 
 /*
 Function: AboutMeLayout
-Description: This is responsble for dictating the layout of the 'About Me' Page
+Description: This is responsible for dictating the layout of the 'About Me' Page
 */
 function AboutMeLayout() {
   return (
     <div>
-      <Box sx={{
-        display: 'flex',
-        justifyContent: 'center', // Center horizontally
-        alignItems: 'center', // Center vertically
-        flexDirection: 'column', // Stack children vertically
-        textAlign: 'center', // Center text
-      }}>
-        {/* Image */}
+      {/*== The Section that contains the Artist Image ==*/}
+      <Box id='about_me_img_section'>
+        {/* Image for the About Me Page */}
         <ArtistImage 
           path={"/images/AboutMeImg.png"}
           altDesc={"A very attractive man smiling very attractively."}
@@ -34,17 +34,8 @@ function AboutMeLayout() {
           h={300} 
         />
 
-        {/* Typography */}
-        <Box sx={{
-          border: '2px solid #ffffff',
-          padding: '15px',
-          borderRadius: '4px',
-          backgroundColor: '#7ed8d2',
-          alignItems: 'center', // Center vertically
-          marginTop: '15px', // Space between image and text
-          display: 'flex',
-          maxWidth: '80vh'
-        }}>
+        {/*== The Section containing the bio for the About Me page ==*/}
+        <Box id='about_me_bio_section'>
           <Typography variant="body" color="#0a3e0a">
             {aboutText}
           </Typography>

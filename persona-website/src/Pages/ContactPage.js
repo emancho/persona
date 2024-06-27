@@ -1,3 +1,4 @@
+//=== React Lib
 import React from 'react';
 //== Components
 import WebPageOutline from '../Components/WebpageOutline'
@@ -8,8 +9,8 @@ import BackgroundWrapper from '../Components/BackgroundWrapperComponent'
 
 // == Description:
 // The Contact Page - Location for my socials and the where users can subscribe
-// The pageTitle is the Title displayed on the page
-// The pageComponent is the Contact Layout Compontent that is wrapped around a border
+// + pageTitle: the title displayed on the page
+// + pageComponent: the Contact Layout Compontent that is wrapped around a border
 
 function ContactPage() {
   return (

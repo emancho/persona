@@ -1,3 +1,4 @@
+//=== React Lib && CSS
 import React from 'react';
 import '../App.css';
 //== Compontents 
@@ -7,8 +8,8 @@ import AnimatedText from '../Components/AnimatedText';
 
 // == Description:
 // The Projects Page - Location for list of projects I'm working on.
-// The pageTitle is the Title displayed on the page
-// The pageComponent is the Project Layout Compontent
+// + pageTitle : the title displayed on the page
+// + pageComponent : the Project Layout Compontent
 
 function ProjectsPage() {
   return (

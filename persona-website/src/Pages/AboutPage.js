@@ -5,10 +5,11 @@ import AboutMeLayout from '../Components/AboutMeLayout'
 import WebPageOutline from '../Components/WebpageOutline'
 import BackgroundWrapper from '../Components/BackgroundWrapperComponent'
 import AnimatedText from '../Components/AnimatedText';
+
 // == Description:
-// The homepage. Consists of a layout similar to a music player containing a 
-// profile picture, artist name and button options that navigate to other pages. 
-// ** Uses Material UI for design and display options.
+// The About Me Page - Location for infomation about the creator behind the website. 
+// + pageTitle: the title displayed on the page
+// + pageComponent: the AboutMe Page component
 
 function AboutPage() {
   return (

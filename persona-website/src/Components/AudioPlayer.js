@@ -1,5 +1,7 @@
+//=== React Lib && CSS
 import { useRef, useState } from 'react';
 import { episodes } from '../data/episodes';
+import '../App.css';
 //== Material UI
 import { 
   Box, 
@@ -51,8 +53,8 @@ const AudioPlayer = () => {
         alignItems="center"
         spacing={2}
         style={{ minHeight: '100vh', padding: '20px' }}>
-          {/* Section for Display Track */}
-          <Grid item>
+        {/*== Section for Display Track ==*/}
+          <Grid item id={"displaytrack_section"}>
             <DisplayTrack
             currentTrack={currentTrack}
             audioRef={audioRef}
@@ -60,16 +62,16 @@ const AudioPlayer = () => {
             progressBarRef={progressBarRef}
             handleNext={handleNext}/>
           </Grid>
-          {/* Section for the Progress Bar */}
-          <Grid item>
+        {/*== Section for the Progress Bar ==*/}
+          <Grid item id={"progressBar_section"}>
             <ProgressBar
-                progressBarRef={progressBarRef}
-                audioRef={audioRef}
-                timeProgress={timeProgress}
-                duration={duration}/>
+              progressBarRef={progressBarRef}
+              audioRef={audioRef}
+              timeProgress={timeProgress}
+              duration={duration}/>
           </Grid>
-          {/* Section for Radio Controls */}
-          <Grid item>
+        {/*== Section for Radio Controls ==*/}
+          <Grid item id={"radioControl_section"}>
             <Controls
                 audioRef={audioRef}
                 progressBarRef={progressBarRef}

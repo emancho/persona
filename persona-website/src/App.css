@@ -90,7 +90,6 @@ body {
   font-size: '20px';
 }
 
-
 /*==== Image Styling for Radio Episode Image ===*/
 .audio-image {
   max-width: 500px; /* Set maximum width */
@@ -111,30 +110,42 @@ body {
 
 /*== Section representing the playback buttons*/
 .controls-section{
-  padding: 15px 5px;
+  background-color: #f5f5f5; /* Light background */
+  border-radius: 5px;
+}
+
+#prev_radio_button {
+  padding-right: 15px;
+}
+
+#play_radio_button {
+  padding: 10px 20px;
+}
+
+#next_radio_button {
+  padding-left: 15px;
 }
 
 /* Container for the progress bar section */
 .progress-bar-section {
   display: flex;
-  align-items: center;
-  gap: 10px;
+  gap: 30px;
   width: 100%; /* You can customize this */
-  padding: 12px;
+  padding: 10px;
   background-color: #f5f5f5; /* Light background */
   border-radius: 5px;
   justify-content: center;
 }
 
-/* Time display */
+/* Time display of radio progress bar */
 .time {
   font-family: Arial, sans-serif;
-  font-size: 14px;
+  font-size: 17px;
   color: #333;
 }
 
 .episode_listing{
-  padding-top: 15px;
+  padding-top: 25px;
 }
 
 /*== CSS for Animatedc Text */
@@ -158,7 +169,7 @@ body {
   text-align: center;      /* Center text */
 }
 
-#about_me_bio_section{
+#about_me_bio_section {
   border: 2px solid #ffffff;
   padding: 15px;
   border-radius: 4px;
@@ -168,4 +179,3 @@ body {
   display: flex;
   max-width: 80vh;
 }
-

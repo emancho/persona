@@ -103,53 +103,54 @@ const Controls = ({
 
   return (
     <div className="controls-wrapper">
-        {/*=== playback control section ===*/}
-        <div className="controls-section" style={{ 
-            display: 'flex', 
-            justifyContent: 'space-between', 
-            alignItems: 'center',
-            paddingTop:'20px' }}>
-            {/* Previous Playback Button */}
-            <div style={{ display: 'inline-block', marginLeft: '5px' }}>
-                <button onClick={handlePrevious}>
-                <IoPlaySkipBackSharp size={PLAYBACK_BUTTON_SIZE} />
-                </button>
-            </div>
-            {/* Play/Pause Playback button */}
-            <div style={{ display: 'inline-block'}}>
-                <button onClick={togglePlayPause}>
-                {isPlaying ? <IoPauseSharp size={PLAYBACK_BUTTON_SIZE} /> : <IoPlaySharp size={PLAYBACK_BUTTON_SIZE} />}
-                </button>
-            </div>
-            {/* Next Playback button */}
-            <div style={{ display: 'inline-block', marginRight: '5px' }}>
-                <button onClick={handleNext}>
-                <IoPlaySkipForwardSharp size={PLAYBACK_BUTTON_SIZE} />
-                </button>
-            </div>
+      {/*=== playback control section ===*/}
+      <div className="controls-section" style={{ 
+          display: 'flex', 
+          justifyContent: 'space-between', 
+          alignItems: 'center',
+          padding: '5px'}}>
+          {/* Previous Playback Button */}
+          <div id={'prev_radio_button'} style={{ display: 'inline-block', marginLeft: '5px' }}>
+              <button onClick={handlePrevious}>
+              <IoPlaySkipBackSharp size={ PLAYBACK_BUTTON_SIZE } />
+              </button>
+          </div>
+          {/* Play/Pause Playback button */}
+          <div id={'play_radio_button'} style={{ display: 'inline-block'}}>
+              <button onClick={togglePlayPause}>
+              {isPlaying ? <IoPauseSharp size={ PLAYBACK_BUTTON_SIZE + 10 } /> : <IoPlaySharp size={ PLAYBACK_BUTTON_SIZE + 10} />}
+              </button>
+          </div>
+          {/* Next Playback button */}
+          <div id={'next_radio_button'} style={{ display: 'inline-block', marginRight: '5px' }}>
+              <button onClick={handleNext}>
+              <IoPlaySkipForwardSharp size={ PLAYBACK_BUTTON_SIZE } />
+              </button>
+          </div>
         </div>
-        {/*=== volume section ===*/}
-        <div className="volume-section">
-            <button onClick={() => setMuteVolume((prev) => !prev)}>
-            {muteVolume || volume < 5 ? (
-                <IoMdVolumeOff size={VOLUME_BUTTON_SIZE} />
-            ) : volume < 40 ? (
-                <IoMdVolumeLow size={VOLUME_BUTTON_SIZE} />
-            ) : (
-                <IoMdVolumeHigh size={VOLUME_BUTTON_SIZE}/>
-            )}
-            </button>
-            <input
-            type="range"
-            min={0}
-            max={100}
-            value={volume}
-            onChange={(e) => setVolume(e.target.value)}
-            style={{
-                background: `linear-gradient(to right, #f50 ${volume}%, #ccc ${volume}%)`,
-            }}
-            />
-        </div>
+
+    {/*=== volume section ===*/}
+    <div className="volume-section">
+      <button onClick={() => setMuteVolume((prev) => !prev)}>
+        {
+          muteVolume || volume < 5 ? (
+            <IoMdVolumeOff size={VOLUME_BUTTON_SIZE} />
+              ) : volume < 40 ? (<IoMdVolumeLow size={VOLUME_BUTTON_SIZE} />) 
+              : (<IoMdVolumeHigh size={VOLUME_BUTTON_SIZE}/>)
+        }
+        </button>
+
+        <input
+          type="range"
+          min={0}
+          max={100}
+          value={volume}
+          onChange={(e) => setVolume(e.target.value)}
+          style={{
+              background: `linear-gradient(to right, #f50 ${volume}%, #ccc ${volume}%)`,
+          }}/>
+
+      </div>
     </div>
   );
 };

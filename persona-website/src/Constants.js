@@ -4,7 +4,7 @@
 export const PLAYBACK_BUTTON_SIZE = 30;
 
 // Radio Playback Buttons
-export const VOLUME_BUTTON_SIZE = 20;
+export const VOLUME_BUTTON_SIZE = 18;
 //===== Radio Show Dets
 export const RADIO_EPS = [
     {

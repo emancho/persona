@@ -1,3 +1,4 @@
+//=== React Lib && CSS
 import React from 'react';
 import '../App.css';
 //== Compontents 
@@ -7,8 +8,8 @@ import AnimatedText from '../Components/AnimatedText';
 
 // == Description:
 // The Radio Page - Location for the radio episodes.
-// The pageTitle is the Title displayed on the page
-// The pageComponent is the Radio Layout Compontent
+// + pageTitle : the title displayed on the page
+// + pageComponent : the Radio Layout Compontent
 
 function RadioPage() {
   return (

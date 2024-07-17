@@ -10,7 +10,7 @@ import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import SkipNextIcon from '@mui/icons-material/SkipNext'; 
 import SkipPrevIcon from '@mui/icons-material/SkipPrevious';
 //== Components
-import NavButtons from './Components/NavButtons';
+import PlaylistNavButton from './Components/NavButtons';
 import ArtistImage from './Components/ArtistImage';
 import ArtistTitle from './Components/ArtistTitle';
 //== Pages
@@ -89,7 +89,7 @@ function HomePage() {
         </Box>
         {/* This section is the navigation buttons */}
         <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
-          <NavButtons buttonData={buttons}/>
+          <PlaylistNavButton buttonData={buttons}/>
         </Box>
       </Card>
     </div>

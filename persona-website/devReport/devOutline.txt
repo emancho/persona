@@ -1,0 +1,86 @@
+#This is an outline of my code based on their pages
+
+== Pages
+
++= Home Page 
+Main Component:
+    - App.js
+        |
+         -> PlaylistNavButton.js
+        |
+         -> ArtistImage.js
+        |
+         -> ArtistTitle.js
+
+====================================================
++= About Page
+Main Component:
+    - BackgroundWrapper.js
+        |
+         -> AboutMeLayout.js
+            |
+             -> ArtistImage
+
+====================================================
++= Contact Page
+Main Component:
+    - BackgroundWrapper.js
+        |
+         -> ContactLayout.js
+            |
+             -> CSS: div id: pageLayout
+
+====================================================
++= Projects Page
+Main Component:
+    - ProjectLayout.js
+        |
+         -> BackgroundWrapper.js
+            |
+             -> ListComponent.js
+                |
+                 -> ProjectCardComponent.js 
+
+====================================================
++= RadioPage
+Main Component:
+    - RadioPageLayout.js
+        |
+         -> BackgroundWrapper.js
+            |
+             -> AudioPlayer.js
+                |
+                 -> DisplayTrack.js
+                    |
+                     -> CSS: div classname: audio-info
+                    |
+                     -> CSS: div classname: audio-image
+                    |
+                     -> CSS: div classname: icon-wrapper
+                    |
+                     -> CSS: div classname: episode_listing
+                |
+                 -> Controls.js
+                    |
+                     -> CSS: div classname: controls-wrapper
+                    |
+                     -> CSS: div classname: controls-section
+                    |
+                     -> CSS: div classname: volume-section
+                    |
+                     -> CSS: div id: prev_radio_button
+                    |
+                     -> CSS: div id: play_radio_button
+                    |
+                     -> CSS: div id: next_radio_button
+                |
+                 -> ProgressBar.js
+                    |
+                     -> CSS: div classname: audio-info
+                    |
+                     -> CSS: div classname: audio-image
+                    |
+                     -> CSS: div classname: icon-wrapper
+                    |
+                |
+                 -> RadioListComponent.js

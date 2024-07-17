@@ -11,10 +11,10 @@ Main layout for the Radio Page.
 function RadioPageLayout() {
     return(
         <div>
-            <BackgroundWrapper children={<AudioPlayer />}/>
+            <BackgroundWrapper 
+                children={<AudioPlayer />}/>
         </div>
     );
 }
-
 
 export default RadioPageLayout;

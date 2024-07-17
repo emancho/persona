@@ -56,11 +56,11 @@ const AudioPlayer = () => {
         {/*== Section for Display Track ==*/}
           <Grid item id={"displaytrack_section"}>
             <DisplayTrack
-            currentTrack={currentTrack}
-            audioRef={audioRef}
-            setDuration={setDuration}
-            progressBarRef={progressBarRef}
-            handleNext={handleNext}/>
+              currentTrack={currentTrack}
+              audioRef={audioRef}
+              setDuration={setDuration}
+              progressBarRef={progressBarRef}
+              handleNext={handleNext}/>
           </Grid>
         {/*== Section for the Progress Bar ==*/}
           <Grid item id={"progressBar_section"}>

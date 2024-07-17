@@ -12,7 +12,6 @@ const WebPageOutline = ({pageTitle, pageComponent })=>{
             <div>
                 {pageTitle}
             </div>
-
             {/*== The Section for the Webpage content ==*/}
             <Box
                 display="flex" // Enables Flexbox

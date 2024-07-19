@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Card, Box, CardMedia, CardContent, Typography, CardActions, Button } from '@mui/material';
 //-- Description:
@@ -28,14 +28,29 @@ function ProjectCardComponent({
     // const handleRedirect = () => {
     //     navigate('/radioPage');
     // };
-
+    const navigate = useNavigate();
     const [message, setMessage] = useState(projDesc);
     const [buttonMessage, setButtonMessage] = useState('Check it OUT!')
 
-    const handleClick = () => {
-      setMessage((prevMessage) => (prevMessage === projDesc ? projResponse : projDesc));
-      setButtonMessage(buttonMessage === 'Check it OUT!' ? 'Back' : 'Check it OUT!');
+    const handleClick =()=> {
+        setMessage((prevMessage) => (prevMessage === projDesc ? projResponse : projDesc));
+        setButtonMessage(buttonMessage === 'Check it OUT!' ? 'Back' : 'Check it OUT!');
     };
+
+    const handleRedirect =()=> {
+        navigate('/radioPage')
+    };
+
+    const clickAction =(projAction)=>{
+        if(projAction === 'REDIRECT'){
+            return handleRedirect;
+        }else{
+            return handleClick;
+        }
+    }
+
+
+
 
     return (
 
@@ -52,7 +67,7 @@ function ProjectCardComponent({
                 <Typography variant="h6" color="#0a3e0a">{message}</Typography>
             </CardContent>
             <CardActions>
-                <Button size="large" onClick={handleClick}>{buttonMessage}</Button>
+                <Button size="large" onClick={clickAction(projAction)}>{buttonMessage}</Button>
             </CardActions>
         </Card>
     );

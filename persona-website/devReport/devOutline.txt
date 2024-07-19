@@ -1,8 +1,8 @@
-#This is an outline of my code based on their pages
+#====== PAGE OUTLINE FOR WEBSITE 
 
-== Pages
+#=============== CORE PAGES
++= HOME Page [ Splash Page ]
 
-+= Home Page 
 Main Component:
     - App.js
         |
@@ -13,7 +13,8 @@ Main Component:
          -> ArtistTitle.js
 
 ====================================================
-+= About Page
++= ABOUT Page
+
 Main Component:
     - BackgroundWrapper.js
         |
@@ -22,7 +23,8 @@ Main Component:
              -> ArtistImage
 
 ====================================================
-+= Contact Page
++= CONTACT Page
+
 Main Component:
     - BackgroundWrapper.js
         |
@@ -31,7 +33,8 @@ Main Component:
              -> CSS: div id: pageLayout
 
 ====================================================
-+= Projects Page
++= PROJECT Page
+
 Main Component:
     - ProjectLayout.js
         |
@@ -42,7 +45,8 @@ Main Component:
                  -> ProjectCardComponent.js 
 
 ====================================================
-+= RadioPage
++= RADIO Page
+
 Main Component:
     - RadioPageLayout.js
         |
@@ -52,35 +56,34 @@ Main Component:
                 |
                  -> DisplayTrack.js
                     |
-                     -> CSS: div classname: audio-info
+                     ->  ** CSS: div classname: audio-info **
                     |
-                     -> CSS: div classname: audio-image
+                     -> ** CSS: div classname: audio-image **
                     |
-                     -> CSS: div classname: icon-wrapper
+                     -> ** CSS: div classname: icon-wrapper **
                     |
-                     -> CSS: div classname: episode_listing
+                     -> ** CSS: div classname: episode_listing **
                 |
                  -> Controls.js
                     |
-                     -> CSS: div classname: controls-wrapper
+                     -> ** CSS: div classname: controls-wrapper **
                     |
-                     -> CSS: div classname: controls-section
+                     -> ** CSS: div classname: controls-section **
                     |
-                     -> CSS: div classname: volume-section
+                     -> ** CSS: div classname: volume-section **
                     |
-                     -> CSS: div id: prev_radio_button
+                     -> ** CSS: div id: prev_radio_button **
                     |
-                     -> CSS: div id: play_radio_button
+                     -> ** CSS: div id: play_radio_button **
                     |
-                     -> CSS: div id: next_radio_button
+                     -> ** CSS: div id: next_radio_button **
                 |
                  -> ProgressBar.js
                     |
-                     -> CSS: div classname: audio-info
+                     -> ** CSS: div classname: audio-info **
                     |
-                     -> CSS: div classname: audio-image
+                     -> ** CSS: div classname: audio-image **
                     |
-                     -> CSS: div classname: icon-wrapper
-                    |
+                     -> ** CSS: div classname: icon-wrapper **
                 |
                  -> RadioListComponent.js

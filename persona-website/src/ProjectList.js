@@ -18,7 +18,7 @@ export const listOfProjectsPage = [
         projTitle:'The Gals Just Want to Dance',
         projDesc: 'Currently in the process of making an album consisting of music that women can dance to. The album is planned to have 6 songs and will be a blend of multiple genres (Funk, Disco, RnB, House, Etc). Album cover is based on a true story and is one of my inspirations behind making this album.',
         projAction:'POPUP',
-        projResponse: 'Release Date: Aug' 
+        projResponse: 'Release Date: Aug'
     },
     {
         id:3,

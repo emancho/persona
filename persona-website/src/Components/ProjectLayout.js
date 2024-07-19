@@ -15,10 +15,7 @@ function ProjectLayout() {
             {projCaption}
         </Typography>
         <div>
-          <BackgroundWrapper children={
-            <ListComponent/>
-          }
-          />
+          <BackgroundWrapper children={<ListComponent/>}/>
         </div>
     </Box>
   );

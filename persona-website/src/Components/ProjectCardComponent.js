@@ -1,8 +1,6 @@
-import * as React from 'react';
-//import Box from '@mui/material/Box';
-import { Box, Button, Card, CardActions, CardContent, CardMedia, Typography } from '@mui/material';
+import React, {useEffect, useState} from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import { Card, Box, CardMedia, CardContent, Typography, CardActions, Button } from '@mui/material';
 //-- Description:
 /* The data containing the details of a project entry on the projects/gallery page */
 
@@ -12,7 +10,7 @@ import { useNavigate } from 'react-router-dom';
     projTitle = The title for the project
     projDesc = The description of the project 
     projAction = The action of the click button 
-    projResponse = The response from clicking the button
+    projResponse = The details of the project entry with more details of the proj
 */
 
 function ProjectCardComponent({
@@ -24,12 +22,23 @@ function ProjectCardComponent({
     projAction,
     projResponse 
 }) {
-    const navigate = useNavigate();
-    const handleClick = (redirectPage) => {
-        navigate(redirectPage); // This will navigate to the About page
-      };
+    // // React Router hook used to handle redirection another component 
+    // const navigate = useNavigate();
+    // // Func that redirects to
+    // const handleRedirect = () => {
+    //     navigate('/radioPage');
+    // };
+
+    const [message, setMessage] = useState(projDesc);
+    const [buttonMessage, setButtonMessage] = useState('Check it OUT!')
+
+    const handleClick = () => {
+      setMessage((prevMessage) => (prevMessage === projDesc ? projResponse : projDesc));
+      setButtonMessage(buttonMessage === 'Check it OUT!' ? 'Back' : 'Check it OUT!');
+    };
 
     return (
+
         <Card sx={{ minWidth: minWid }}>
             <Box border="3px solid #0a3e0a" overflow="hidden">
                 <CardMedia
@@ -40,10 +49,10 @@ function ProjectCardComponent({
             </Box>
             <CardContent>
                 <Typography variant="h3" color="#0a3e0a">{projTitle}</Typography>
-                <Typography variant="h6" color="#0a3e0a">{projDesc}</Typography>
+                <Typography variant="h6" color="#0a3e0a">{message}</Typography>
             </CardContent>
             <CardActions>
-                <Button size="large" onClick={handleClick(projResponse)}>Check IT!</Button>
+                <Button size="large" onClick={handleClick}>{buttonMessage}</Button>
             </CardActions>
         </Card>
     );

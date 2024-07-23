@@ -22,12 +22,6 @@ function ProjectCardComponent({
     projAction,
     projResponse 
 }) {
-    // // React Router hook used to handle redirection another component 
-    // const navigate = useNavigate();
-    // // Func that redirects to
-    // const handleRedirect = () => {
-    //     navigate('/radioPage');
-    // };
     const navigate = useNavigate();
     const [message, setMessage] = useState(projDesc);
     const [buttonMessage, setButtonMessage] = useState('Check it OUT!')
@@ -48,9 +42,6 @@ function ProjectCardComponent({
             return handleClick;
         }
     }
-
-
-
 
     return (
 

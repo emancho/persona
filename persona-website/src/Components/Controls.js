@@ -45,7 +45,7 @@ const Controls = ({
   setCurPlaylistState
 }) => {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [volume, setVolume] = useState(60);
+  const [volume, setVolume] = useState(100);
   const [muteVolume, setMuteVolume] = useState(false);
 
   const togglePlayPause = () => {

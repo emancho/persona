@@ -48,7 +48,7 @@ function ProjectCardComponent({
         <Card sx={{ minWidth: minWid }}>
             <Box border="3px solid #0a3e0a" overflow="hidden">
                 <CardMedia
-                    sx={{ height: 600 }}
+                    sx={{ height: 600}}
                     image={img}
                     title={imgTitle}
                 />

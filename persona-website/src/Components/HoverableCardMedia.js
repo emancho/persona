@@ -10,6 +10,18 @@ Description: Component used for the Contact Layout
 function HoverableCardMedia({name, path, altPath, descipt, webref}) {
   // Used to track the state of card to be hovered 
   const [isHovered, setIsHovered] = useState(false);
+  
+  // Handle touch events for mobile devices
+  const handleTouchStart = () => {
+    setIsHovered(true);
+  };
+ // Handles when touch has ended
+  const handleTouchEnd = () => {
+    setTimeout(() => {
+      setIsHovered(false);
+    }, 2000); // Keep the effect for 2 seconds or adjust as needed
+  };
+
 
   return (
       <Grid container spacing={4} justifyContent="center">
@@ -18,6 +30,8 @@ function HoverableCardMedia({name, path, altPath, descipt, webref}) {
           <Card
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
           >
             <CardActionArea onClick={() => {window.location.href = webref} }>
               <CardMedia
@@ -26,7 +40,7 @@ function HoverableCardMedia({name, path, altPath, descipt, webref}) {
                         ? altPath  // Image when hovered
                         : path } // Default image
                 alt={descipt}
-                sx={{ height: 240, width: 240 }}
+                sx={{ height: 240, width: 240, transition: 'transform 0.3s ease' }}
               />
             </CardActionArea>
             <CardContent>

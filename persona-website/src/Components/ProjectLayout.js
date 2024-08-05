@@ -11,7 +11,7 @@ const projCaption = `Welcome to the gallery. Here lays my creative projects of p
 function ProjectLayout() {
   return (
     <Box display="flex" flexDirection="column" alignItems="center">
-        <Typography variant="h6" color="#0a3e0a" textAlign="center" paddingTop="10px" paddingBottom="30px">
+        <Typography variant="h6" className="responsive-typography">
             {projCaption}
         </Typography>
         <div>

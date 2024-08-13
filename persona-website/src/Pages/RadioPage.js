@@ -17,7 +17,7 @@ function RadioPage() {
       pageTitle={<AnimatedText 
         title={'EDD-Perience Radio'}/>
       }
-      pageComponent={<RadioLayout/>}
+      borderObject={<RadioLayout/>}
       />
   );
 }

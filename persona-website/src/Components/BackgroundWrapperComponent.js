@@ -1,4 +1,6 @@
+//=== React Lib
 import React from 'react';
+//=== Material UI
 import Box from '@mui/material/Box';
 
 /*
@@ -10,7 +12,6 @@ const BackgroundWrapper = ({ children }) => {
     <Box
       sx={{
         backgroundColor: '#c5d7cd',
-        padding: 5, 
         borderRadius: 4,
         border: '#00000'
       }}

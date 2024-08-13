@@ -5,6 +5,7 @@ import AboutMeLayout from '../Components/AboutMeLayout'
 import WebPageOutline from '../Components/WebpageOutline'
 import BackgroundWrapper from '../Components/BackgroundWrapperComponent'
 import AnimatedText from '../Components/AnimatedText';
+import BorderWrapper from '../Components/BorderWrapperComponent';
 
 // == Description:
 // The About Me Page - Location for infomation about the creator behind the website. 
@@ -14,13 +15,14 @@ import AnimatedText from '../Components/AnimatedText';
 function AboutPage() {
   return (
     <WebPageOutline
-      pageTitle={<AnimatedText 
+    pageTitle={<AnimatedText 
         title={'Behind the Artist'}/>
       }
-      pageComponent={
-        <BackgroundWrapper children={
-          <AboutMeLayout/>
-        }/>
+      borderObject={
+        // <BackgroundWrapper children={
+        //   <AboutMeLayout/>
+        // }/>
+        <BorderWrapper/>
       }
     />
   );  

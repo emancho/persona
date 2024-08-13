@@ -4,16 +4,11 @@ import '../App.css';
 import ListComponent from '../Components/ListComponent'
 import BackgroundWrapper from '../Components/BackgroundWrapperComponent'
 //== Material UI
-import {Box,Typography} from '@mui/material';
-
-const projCaption = `Welcome to the gallery. Here lays my creative projects of past, present and future.`
+import {Box} from '@mui/material';
 
 function ProjectLayout() {
   return (
     <Box display="flex" flexDirection="column" alignItems="center">
-        <Typography variant="h6" className="responsive-typography">
-            {projCaption}
-        </Typography>
         <div>
           <BackgroundWrapper children={<ListComponent/>}/>
         </div>

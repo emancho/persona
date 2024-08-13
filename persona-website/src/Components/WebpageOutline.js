@@ -1,27 +1,43 @@
-//=== React Lib
-import React from "react";
-import {Box} from '@mui/material';
+import React from 'react'
+import Grid from '@mui/material/Grid'
 //=== Components
-import NavBar from '../Components/NavBar';
+import NavBar from './NavBar';
 
-const WebPageOutline = ({pageTitle, pageComponent })=>{
-    return(
-        <div>
-        <NavBar/>
-            {/*== Section for the animated Title ==*/}
-            <div>
-                {pageTitle}
-            </div>
-            {/*== The Section for the Webpage content ==*/}
-            <Box
-                display="flex" // Enables Flexbox
-                justifyContent="center" // Centers horizontally
-                alignItems="center" // Centers vertically
-                >
-                <div>{pageComponent}</div>
-            </Box>
+// == Description:
+// WebPageOutline - A flexbile layout that will be the template of webpages
+// + pageTitle: the title displayed on the page
+// + block: a block allocated for captions and outer objects not in the bordered object
+// + borderObject: The border object that will display the main layout of the page
+
+const WebPageOutline =( {pageTitle, block=null, borderObject} )=>{
+
+    return (
+        <div className='webPageOutline'>
+            <Grid container spacing={1} justifyContent="center">
+                {/*== The Navbar Segment ==*/}
+                <Grid item xs={12}>
+                    <NavBar/>
+                </Grid>
+                
+                {/*== Title Segment ==*/}
+                <Grid item xs={8}>
+                    {pageTitle}
+                </Grid>
+                
+                {/*== Block Segment ==*/}
+                {block && (
+                <Grid item xs={10}>
+                    {block}
+                </Grid>
+                )}
+                
+                {/*== BorderObj Segment for page ==*/}
+                <Grid item xs={10}>
+                    {borderObject}
+                </Grid>
+            </Grid>
         </div>
     );
-}
+};
 
-export default WebPageOutline
+export default WebPageOutline;

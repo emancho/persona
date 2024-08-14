@@ -11,13 +11,27 @@ import Grid from '@mui/material/Grid'
 // + borderObject: The border object that will display the main layout of the page
 
 
-const BorderWrapper =()=>{
+const BorderWrapper =( {image=null, topBlock, bottomBlock=null, spacing=5 } )=>{
 
     return(
         <div className='borderWrapper'>
-            <Grid container spacing={1} justifyContent="center">
-                <Grid item xs={8}>
-                </Grid>
+            <Grid container spacing={spacing} justifyContent="center">
+                {/*== Image Segment ==*/}
+                {image && (
+                    <Grid item xs={12}>
+                        {image}
+                    </Grid>
+                )}
+                {/*== Top/Main Block Segment ==*/}
+                <Grid item xs={6}>
+                    {topBlock}
+                </Grid>    
+                {/*== Bottom Block Segment ==*/}
+                {bottomBlock && (
+                    <Grid item xs={8}>
+                        {bottomBlock}
+                    </Grid>
+                )}
             </Grid>
         </div>
     );

@@ -25,7 +25,7 @@ function AboutMeLayout() {
   return (
     <div>
       {/*== The Section that contains the Artist Image ==*/}
-      <Box id='about_me_img_section'>
+      {/* <Box id='about_me_img_section'> */}
         {/* Image for the About Me Page */}
         <ArtistImage 
           path={"/images/AboutMeImg.png"}
@@ -35,12 +35,12 @@ function AboutMeLayout() {
         />
 
         {/*== The Section containing the bio for the About Me page ==*/}
-        <Box id='about_me_bio_section'>
+        {/* <Box id='about_me_bio_section'> */}
           <Typography variant="body" color="#0a3e0a">
             {aboutText}
           </Typography>
-        </Box>
-      </Box>
+        {/* </Box>
+      </Box> */}
     </div>
   );
 }

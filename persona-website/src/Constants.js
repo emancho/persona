@@ -5,7 +5,8 @@ export const PLAYBACK_BUTTON_SIZE = 30;
 
 // Radio Playback Buttons
 export const VOLUME_BUTTON_SIZE = 18;
-//===== Radio Show Dets
+
+// Radio Show Dets
 export const RADIO_EPS = [
     {
         id: 1,
@@ -29,3 +30,22 @@ export const RADIO_EPS = [
 
 ];
 
+// The list of Social Vinyl
+export const VINYL_LIST = [
+    {
+        id: 1,
+        name: 'Tik Tok', 
+        path: process.env.PUBLIC_URL + '/images/tok_vinyl_case_only.png',
+        altPath: process.env.PUBLIC_URL + '/images/tok_vinyl.png',
+        descipt: 'Tik Tok Vinyl connecting to social media',
+        webref: 'https://www.tiktok.com/@edollarsigns'
+    }
+    ,{
+        id:2,
+        name: 'Instagram', 
+        path: process.env.PUBLIC_URL + '/images/insta_vinyl_case_only.png',
+        altPath: process.env.PUBLIC_URL + '/images/insta_vinyl.png',
+        descipt: 'Instagram Vinyl connecting to social media',
+        webref: 'https://www.instagram.com/ededd_or_eddy'
+    }
+]

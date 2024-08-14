@@ -2,9 +2,11 @@
 import React from 'react';
 import '../App.css';
 //== Compontents 
+import AnimatedText from '../Components/AnimatedText';
+import BorderWrapper from '../Components/BorderWrapperComponent';
 import ProjectLayout from '../Components/ProjectLayout'
 import WebPageOutline from '../Components/WebpageOutline'
-import AnimatedText from '../Components/AnimatedText';
+import ListComponent from '../Components/ListComponent'
 //== Material UI
 import Typography from '@mui/material/Typography';
 
@@ -26,7 +28,13 @@ function ProjectsPage() {
           {projCaption}
         </Typography>
       }
-      borderObject={<ProjectLayout/>}/>
+      borderObject={
+        <BorderWrapper 
+          topBlock={
+            <ListComponent/>
+          }
+          />
+      }/>
   );
 }
 

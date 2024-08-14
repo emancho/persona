@@ -11,12 +11,12 @@ import {listOfProjectsPage} from '../ProjectList.js'
 function ListComponent(){
     
     return(
-        <List sx={{ maxWidth: 600}}>
+        <List sx={{ maxWidth: 575}}>
         {
             // Mapping that list the individual projects based on listOfProjectsPage
             _.map(listOfProjectsPage, (project, index) => {
                 return (
-                    <ListItem key={index} sx={{ pt: index === 0 ? 0 : 7 }}>
+                    <ListItem key={index} sx={{ pt: index === 0 ? 0 : 6, objectFit: "contain" }}>
                         <ProjectCardComponent
                             img={project.img}
                             imgTitle={project.imgTitle}

@@ -32,7 +32,7 @@ const WebPageOutline =( {pageTitle, block=null, borderObject} )=>{
                 )}
                 
                 {/*== BorderObj Segment for page ==*/}
-                <Grid item xs={10}>
+                <Grid item xs={5}>
                     {borderObject}
                 </Grid>
             </Grid>

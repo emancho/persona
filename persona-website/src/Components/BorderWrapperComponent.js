@@ -2,6 +2,7 @@
 import React from "react";
 //== Material UI
 import Grid from '@mui/material/Grid'
+import '../App.css';
 
 // == Description:
 // BorderWrapperComponent - A Grid component that will act as a inner grid within a nested grid.
@@ -15,24 +16,31 @@ const BorderWrapper =( {image=null, topBlock, bottomBlock=null, spacing=5 } )=>{
 
     return(
         <div className='borderWrapper'>
-            <Grid container spacing={spacing} justifyContent="center">
-                {/*== Image Segment ==*/}
-                {image && (
-                    <Grid item xs={12}>
+        
+            {/*== Image Segment ==*/}
+            {image && (
+                <Grid container spacing={spacing} justifyContent="center">
+                    <Grid item xs={3}>
                         {image}
                     </Grid>
-                )}
+                </Grid>
+            )}
+
+            <Grid container spacing={spacing} justifyContent="center">
                 {/*== Top/Main Block Segment ==*/}
                 <Grid item xs={6}>
                     {topBlock}
-                </Grid>    
+                </Grid>
+            </Grid>
+
                 {/*== Bottom Block Segment ==*/}
                 {bottomBlock && (
-                    <Grid item xs={8}>
-                        {bottomBlock}
+                    <Grid container spacing={spacing} justifyContent="center">
+                        <Grid item xs={6}>
+                            {bottomBlock}
+                        </Grid>
                     </Grid>
                 )}
-            </Grid>
         </div>
     );
 }

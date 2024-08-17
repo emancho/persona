@@ -5,8 +5,7 @@ import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import SkipNextIcon from '@mui/icons-material/SkipNext'; 
 import SkipPrevIcon from '@mui/icons-material/SkipPrevious';
 //=== Components
-import ArtistProfileSection from '../Components/HomePageMainContent'
-//=== Webpage Template 
+import HomePageMainContent from '../Components/HomePageMainContent'
 import WebpageTemplate from "../Components/WebpageTemplate";
 
 // == Description:
@@ -24,15 +23,16 @@ function HomePage(){
 
   return (
     <WebpageTemplate
-        mainContent={
-            <ArtistProfileSection
-                imagePath={"/images/HomepageImgv4.gif"} 
-                imageAlt={"Blurred gif of my cute self."}
-                imageWidth={500} 
-                imageHeight={600}
-                buttons= {navButtons}
-            />
-        }
+    bannerText = {'Turning My Thoughts Into Reality'}
+      mainContent={
+          <HomePageMainContent
+            imagePath={"/images/HomepageImgv4.gif"} 
+            imageAlt={"Blurred gif of my cute self."}
+            imageWidth={500} 
+            imageHeight={600}
+            buttons= {navButtons}
+          />
+      }
     />
   );
 }

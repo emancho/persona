@@ -16,7 +16,7 @@ import PlaylistNavButton from './NavButtons';
 // + imageHeight - The height of the image
 // + buttons - The icon buttons used in the navigation 
 
-const ArtistProfileSection = ({ imagePath, imageAlt, buttons }) => {
+const HomePageMainContent = ({ imagePath, imageAlt, buttons }) => {
     const responsiveImageSizes = {
         xs: { width: 200, height: 300 },  // Smaller size for extra-small screens (e.g., phones)
         sm: { width: 250, height: 350 },  // Medium size for small screens
@@ -60,4 +60,4 @@ const ArtistProfileSection = ({ imagePath, imageAlt, buttons }) => {
     );
 };
 
-export default ArtistProfileSection;
+export default HomePageMainContent;

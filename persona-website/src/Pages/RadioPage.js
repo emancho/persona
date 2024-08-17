@@ -2,23 +2,27 @@
 import React from 'react';
 import '../App.css';
 //== Compontents 
-import WebPageOutline from '../Components/WebpageOutline'
-import RadioLayout from '../Components/RadioPageLayout'
 import AnimatedText from '../Components/AnimatedText';
+import MainContentComponent from '../Components/MainContentComponent';
+import WebpageTemplate from "../Components/WebpageTemplate";
+import AudioPlayer from '../Components/AudioPlayer';
 
 // == Description:
 // The Radio Page - Location for the radio episodes.
-// + pageTitle : the title displayed on the page
-// + pageComponent : the Radio Layout Compontent
 
 function RadioPage() {
   return (
-    <WebPageOutline
-      pageTitle={<AnimatedText 
-        title={'EDD-Perience Radio'}/>
-      }
-      borderObject={<RadioLayout/>}
-      />
+    <WebpageTemplate
+      mainContent={
+        <MainContentComponent
+          title={
+            <AnimatedText 
+              title={'EDD-Perience Radio'}
+            />
+          }
+          topSection={<AudioPlayer/>}
+        />
+      }/>
   );
 }
 

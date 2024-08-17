@@ -3,38 +3,44 @@ import React from 'react';
 import '../App.css';
 //== Compontents 
 import AnimatedText from '../Components/AnimatedText';
-import BorderWrapper from '../Components/BorderWrapperComponent';
-import ProjectLayout from '../Components/ProjectLayout'
-import WebPageOutline from '../Components/WebpageOutline'
 import ListComponent from '../Components/ListComponent'
+import MainContentComponent from '../Components/MainContentComponent';
+import WebpageTemplate from "../Components/WebpageTemplate";
 //== Material UI
 import Typography from '@mui/material/Typography';
+//== Data
+//== List of projects
+import {listOfProjects} from '../ProjectList.js'
 
 // == Description:
 // The Projects Page - Location for list of projects I'm working on.
-// + pageTitle : the title displayed on the page
-// + pageComponent : the Project Layout Compontent
 
 const projCaption = `Welcome to the gallery. Here lays my creative projects of past, present and future.`
 
+const bottomStyle = { 
+  marginTop: '20px', 
+  backgroundColor: '#e0e0e0', 
+  padding: '30px', 
+  borderRadius: '4px' 
+}
+
+
 function ProjectsPage() {
   return (
-    <WebPageOutline
-      pageTitle={<AnimatedText 
-        title={'The Gallery'}/>
-      }
-      block = {
-        <Typography variant="h6" className="responsive-typography">
-          {projCaption}
-        </Typography>
-      }
-      borderObject={
-        <BorderWrapper 
-          topBlock={
-            <ListComponent/>
-          }
+    <WebpageTemplate
+      mainContent={<MainContentComponent
+        title={
+          <AnimatedText 
+            title={'The Gallery'}
           />
-      }/>
+        }
+        topSection={    
+          <Typography variant="h6" className="responsive-typography">
+            {projCaption}
+          </Typography>
+          }
+        bottomSection={<ListComponent projectList={listOfProjects}/>}
+        bottomStyle={bottomStyle}/>}/>
   );
 }
 

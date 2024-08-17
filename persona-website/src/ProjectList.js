@@ -1,7 +1,7 @@
 // Location of Project Details for Gallery Page
 
 //===== Radio Show Dets
-export const listOfProjectsPage = [
+export const listOfProjects = [
     {
         id:1,
         img:  `${process.env.PUBLIC_URL}/images/radio_cover.png`,

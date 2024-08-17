@@ -1,6 +1,10 @@
+//== React Libraries
 import React, { useEffect, useRef } from 'react';
 import anime from 'animejs';
+//== Material UI
 import { Grid, Box, Typography } from '@mui/material';
+//== Components
+import NavBar from './NavBar';
 
 const gridContainerStyles = {
     minHeight: '100vh',        // Ensures the Grid container takes up at least the full height of the viewport (100% of the viewport height)
@@ -29,7 +33,7 @@ const footerStyles = {
 
 const mainContentStyles = {
     padding: '20px',               // Adds 20px of padding inside the content area to create space around its content
-    backgroundColor: '#f5f5f5',    // Sets the background color of the content area to a light gray (#f5f5f5)
+    backgroundColor: '#c5d7cd',    // Sets the background color of the content area to a light shade of green (#c5d7cd)
     borderRadius: '10px',          // Rounds the corners of the content area with a radius of 10px for a softer look
     width: {
         xs: '100%',                // 100% width on extra-small screens (phones)
@@ -46,7 +50,11 @@ const mainContentStyles = {
 };
 
 
-const WebpageTemplate = ({mainContent}) => {
+// TODO
+// Have random messages on the banner text for some extra charm
+
+
+const WebpageTemplate = ({bannerText=null,mainContent}) => {
 
     const textRef = useRef(null);
 
@@ -55,7 +63,7 @@ const WebpageTemplate = ({mainContent}) => {
         targets: textRef.current,
         translateX: ['100%', '-100%'],  // Move the text from far left (-100%) to far right (100%)
         loop: true,                    // Loop the animation indefinitely
-        duration: 40000,                // Duration of the animation in milliseconds
+        duration: 15000,                // Duration of the animation in milliseconds
         easing: 'linear',              // Linear easing for a smooth, constant motion
       });
     }, []);
@@ -65,9 +73,13 @@ const WebpageTemplate = ({mainContent}) => {
         <Grid container sx={gridContainerStyles}>
             {/*=== Header ===*/}
             <Grid item xs={12}>
-                <Box sx={headerStyles}>
-                    <Typography variant="h4" ref={textRef}>Turning My Thoughts Into Reality</Typography>
+                {bannerText ? (
+                    <Box sx={headerStyles}>
+                    <Typography variant="h4" ref={textRef}>{bannerText}</Typography>
                 </Box>
+                ) :
+                (<NavBar/>)
+                }
             </Grid>
 
             {/*=== Main Content Segment ===*/}

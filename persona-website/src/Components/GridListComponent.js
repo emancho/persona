@@ -5,12 +5,20 @@ import Grid from '@mui/material/Grid';
 //== Compontents 
 import ProjectCardComponent from './ProjectCardComponent'
 
-const ListComponent = ({ projectList }) => {
+const GridListComponent = ({ projectList }) => {
     return (
-      <Grid container spacing={4} justifyContent="center">
+      <Grid 
+        container spacing={5} 
+        justifyContent="center"
+        alignItems="center">
         {
           _.map(projectList, (project, index) => (
-            <Grid item xs={12} key={index}>
+            <Grid item 
+              xs={12} 
+              sm={8}             // Takes 8/12 of the width on small screens
+              md={12}             // Takes 6/12 (half) of the width on medium screens
+              sx={{ display: 'flex', justifyContent: 'center' }} // Center the ProjectCardComponent
+              key={index}>
               <ProjectCardComponent
                 img={project.img}
                 imgTitle={project.imgTitle}
@@ -26,4 +34,4 @@ const ListComponent = ({ projectList }) => {
     );
   };
   
-  export default ListComponent;
+  export default GridListComponent;

@@ -49,10 +49,8 @@ const mainContentStyles = {
     justifyContent: 'center',      // Vertically centers the content within the content area
 };
 
-
 // TODO
 // Have random messages on the banner text for some extra charm
-
 
 const WebpageTemplate = ({bannerText=null,mainContent}) => {
 

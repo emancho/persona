@@ -3,7 +3,7 @@ import React from 'react';
 import '../App.css';
 //== Compontents 
 import AnimatedText from '../Components/AnimatedText';
-import ListComponent from '../Components/ListComponent'
+import GridListComponent from '../Components/GridListComponent'
 import MainContentComponent from '../Components/MainContentComponent';
 import WebpageTemplate from "../Components/WebpageTemplate";
 //== Material UI
@@ -39,7 +39,7 @@ function ProjectsPage() {
             {projCaption}
           </Typography>
           }
-        bottomSection={<ListComponent projectList={listOfProjects}/>}
+        bottomSection={<GridListComponent projectList={listOfProjects}/>}
         bottomStyle={bottomStyle}/>}/>
   );
 }

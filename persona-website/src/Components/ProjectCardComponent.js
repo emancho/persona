@@ -16,7 +16,6 @@ import { Card, Box, CardMedia, CardContent, Typography, CardActions, Button } fr
 function ProjectCardComponent({
     minWid = 275,
     img,
-    imgTitle,
     projTitle,
     projDesc,
     projAction,
@@ -47,14 +46,31 @@ function ProjectCardComponent({
 
         <Card sx={{ minWidth: minWid }}>
             <Box border="3px solid #0a3e0a" overflow="hidden">
-                <CardMedia
-                    sx={{ height: 600}}
-                    image={img}
-                    title={imgTitle}
+            <CardMedia
+                sx={{
+                    position: 'relative',
+                    width: '100%',          // The image takes up 100% of the container's width
+                    paddingTop: '107%',     // Height is set to maintain the 478x511 aspect ratio (511 / 478 ≈ 1.07)
+                    overflow: 'hidden',     // Ensures no overflow occurs
+                }}
+                component="div"          // Changing the component to 'div' for using a background image style
+                >
+                <Box
+                    sx={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                    backgroundImage: `url(${img})`, // Using the image as a background
+                    backgroundSize: 'cover',       // Ensures the image covers the entire area without distortion
+                    backgroundPosition: 'center',  // Centers the image
+                    }}
                 />
+            </CardMedia>
             </Box>
             <CardContent>
-                <Typography variant="h3" color="#0a3e0a">{projTitle}</Typography>
+                <Typography variant="h4" color="#0a3e0a" sx={{ textDecoration: 'underline' }}>{projTitle}</Typography>
                 <Typography variant="h6" color="#0a3e0a">{message}</Typography>
             </CardContent>
             <CardActions>

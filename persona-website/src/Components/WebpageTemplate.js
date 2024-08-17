@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import anime from 'animejs';
 import { Grid, Box, Typography } from '@mui/material';
 
 const gridContainerStyles = {
@@ -13,6 +14,8 @@ const headerStyles = {
     backgroundColor: '#3f51b5', // Sets the background color of the header to a dark blue (#3f51b5)
     color: '#fff',              // Sets the text color inside the header to white (#fff) for contrast against the dark background
     textAlign: 'center',        // Centers the text horizontally within the header
+    overflow: 'hidden',         // Ensure the text doesn't overflow out of the container
+    whiteSpace: 'nowrap'        // Prevent the text from wrapping
 };
 
 const footerStyles = {
@@ -44,13 +47,26 @@ const mainContentStyles = {
 
 
 const WebpageTemplate = ({mainContent}) => {
+
+    const textRef = useRef(null);
+
+    useEffect(() => {
+      anime({
+        targets: textRef.current,
+        translateX: ['100%', '-100%'],  // Move the text from far left (-100%) to far right (100%)
+        loop: true,                    // Loop the animation indefinitely
+        duration: 40000,                // Duration of the animation in milliseconds
+        easing: 'linear',              // Linear easing for a smooth, constant motion
+      });
+    }, []);
+
     return (
         <>
         <Grid container sx={gridContainerStyles}>
             {/*=== Header ===*/}
             <Grid item xs={12}>
                 <Box sx={headerStyles}>
-                    <Typography variant="h4">Welcome to my Creative Mind</Typography>
+                    <Typography variant="h4" ref={textRef}>Turning My Thoughts Into Reality</Typography>
                 </Box>
             </Grid>
 

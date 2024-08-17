@@ -16,7 +16,7 @@ import PlaylistNavButton from './NavButtons';
 // + imageHeight - The height of the image
 // + buttons - The icon buttons used in the navigation 
 
-const ArtistProfileSection = ({ imagePath, imageAlt, imageWidth, imageHeight, buttons }) => {
+const ArtistProfileSection = ({ imagePath, imageAlt, buttons }) => {
     const responsiveImageSizes = {
         xs: { width: 200, height: 300 },  // Smaller size for extra-small screens (e.g., phones)
         sm: { width: 250, height: 350 },  // Medium size for small screens
@@ -26,21 +26,34 @@ const ArtistProfileSection = ({ imagePath, imageAlt, imageWidth, imageHeight, bu
     return (
         <>
             {/* Profile image section */}
-            <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
-                <ArtistImage 
-                    path={imagePath} 
-                    altDesc={imageAlt}
-                    w={responsiveImageSizes} 
+            <Box sx={{ 
+                    width: '100%', 
+                    display: 'flex', 
+                    justifyContent: 'center', 
+                    marginBottom: '20px' }}>
+                    <ArtistImage 
+                        path={imagePath} 
+                        altDesc={imageAlt}
+                        w={responsiveImageSizes} 
                 />
             </Box>
 
             {/* Title + Artist Name section */}
-            <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
+            <Box sx={{ 
+                    width: '100%', 
+                    display: 'flex', 
+                    justifyContent: 'center', 
+                    marginBottom: '20px' }}>
                 <ArtistTitle />
             </Box>
 
             {/* Navigation buttons section */}
-            <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+            <Box sx={{ 
+                    width: '100%', 
+                    display: 'flex',
+                    justifyContent: 'center',
+                    transform: 'scale(1.3)',
+                    }}>
                 <PlaylistNavButton buttonData={buttons} />
             </Box>
         </>

@@ -45,7 +45,7 @@ function ProjectCardComponent({
     return (
 
         <Card sx={{ minWidth: minWid }}>
-            <Box border="3px solid #0a3e0a" overflow="hidden">
+            <Box border="3px solid #000000" overflow="hidden">
             <CardMedia
                 sx={{
                     position: 'relative',
@@ -70,8 +70,8 @@ function ProjectCardComponent({
             </CardMedia>
             </Box>
             <CardContent>
-                <Typography variant="h4" color="#0a3e0a" sx={{ textDecoration: 'underline' }}>{projTitle}</Typography>
-                <Typography variant="h6" color="#0a3e0a">{message}</Typography>
+                <Typography variant="h4" color="#000000" sx={{ textDecoration: 'underline' }}>{projTitle}</Typography>
+                <Typography variant="h6" color="#000000">{message}</Typography>
             </CardContent>
             <CardActions>
                 <Button size="large" onClick={clickAction(projAction)}>{buttonMessage}</Button>

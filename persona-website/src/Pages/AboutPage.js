@@ -32,9 +32,10 @@ const topSectionStyle = {
 // Styling for the bottom section
 const bottomStyle = { 
   marginTop: '20px', 
-  backgroundColor: '#e0e0e0', 
+  backgroundColor: '#e8f0e8', 
   padding: '10px', 
-  borderRadius: '4px' 
+  borderRadius: '4px',
+  border: '2px solid white'
 }
 
 function AboutPage() {
@@ -56,7 +57,7 @@ function AboutPage() {
           }
           topStyle={topSectionStyle}
           bottomSection={
-            <Typography variant="body" color="#0a3e0a">
+            <Typography variant="body" color="#000000">
               {aboutText}
             </Typography>
           }

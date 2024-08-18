@@ -23,53 +23,55 @@ listOfEpisodes := List of objects which each object consisting on the { song tit
 function RadioList( {listOfEpisodes} ){
     return (
         <Box display="flex" justifyContent="center" alignItems="center">
-            {/*== The Section above the list contains: play button and `Song List` title ==*/}
-            
-            {/*==  List of Songs in the Radio Show ==*/}
-            <List sx={{ 
+        {/* The Section above the list contains: play button and `Song List` title */}
+            {/* List of Songs in the Radio Show */}
+            <List
+                sx={{
                 width: '100%',
-                minWidth: 400, 
-                maxWidth: 600,
                 border: 'solid',
-                bgcolor: 'background.paper'}}
+                bgcolor: 'background.paper',
+                }}
                 subheader={
-                    <ListSubheader 
-                        component="div" 
-                        sx={{ // Add styling for subheader
-                            textAlign: 'center',
-                            fontSize: '36px',
-                            backgroundColor: '#f0f0f0', 
-                            padding: '10px',
-                            border: '2px solid #000000'
-                        }}
-                    >
-                        Track List
-                    </ListSubheader>
-                }>
-                {
-                    _.map( listOfEpisodes, ( episode ) => {
-                        return(
-                            <ListItem
-                                key={episode.id}
-                                sx={{
-                                    borderStyle: 'solid',
-                                    borderWidth: '2px',
-                                    borderColor: '#000000',
-                                    borderBottom: 'none',
-                                    borderLeft:'none',
-                                    borderRight: 'none',
-                                }}>
-                                <ListItemAvatar>
-                                    <Avatar>
-                                        <MusicNote />
-                                    </Avatar>
-                                </ListItemAvatar>
-                                <ListItemText primary={episode.songTitle} secondary={episode.artistCredit} />
-                            </ListItem>
-                        )
-                    })
+                <ListSubheader
+                    component="div"
+                    sx={{
+                    textAlign: 'center',
+                    fontSize: '36px',
+                    backgroundColor: '#f0f0f0',
+                    padding: '10px',
+                    border: '2px solid #000000',
+                    }}
+                >
+                    Track List
+                </ListSubheader>
                 }
-            </List>
+            >
+            {_.map(listOfEpisodes, (episode) => {
+            return (
+                <ListItem
+                key={episode.id}
+                sx={{
+                    borderStyle: 'solid',
+                    borderWidth: '2px',
+                    borderColor: '#000000',
+                    borderBottom: 'none',
+                    borderLeft: 'none',
+                    borderRight: 'none',
+                }}
+                >
+                <ListItemAvatar>
+                    <Avatar>
+                        <MusicNote />
+                    </Avatar>
+                </ListItemAvatar>
+                <ListItemText
+                    primary={episode.songTitle}
+                    secondary={episode.artistCredit}
+                />
+                </ListItem>
+            );
+            })}
+        </List>
         </Box>
     );
 }

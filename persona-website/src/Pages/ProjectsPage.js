@@ -17,13 +17,21 @@ import {listOfProjects} from '../ProjectList.js'
 
 const projCaption = `Welcome to the gallery. Here lays my creative projects of past, present and future.`
 
-const bottomStyle = { 
-  marginTop: '20px', 
-  backgroundColor: '#e0e0e0', 
-  padding: '30px', 
-  borderRadius: '4px' 
+
+const captionStyle = {
+  backgroundColor: '#e8f0e8', 
+  padding: '10px', 
+  borderRadius: '4px', 
+  border: '2px solid white'
 }
 
+const bottomStyle = { 
+  marginTop: '20px', 
+  backgroundColor: '#e8f0e8', 
+  padding: '30px', 
+  borderRadius: '4px',
+  border: '2px solid white' 
+}
 
 function ProjectsPage() {
   return (
@@ -39,6 +47,7 @@ function ProjectsPage() {
             {projCaption}
           </Typography>
           }
+          topStyle={captionStyle}
         bottomSection={<GridListComponent projectList={listOfProjects}/>}
         bottomStyle={bottomStyle}/>}/>
   );

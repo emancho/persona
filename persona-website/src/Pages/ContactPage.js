@@ -16,9 +16,10 @@ import {
 // The styling of the top and bottom sections
 const sectionStyle = { 
   marginTop: '20px', 
-  backgroundColor: '#e0e0e0', 
+  backgroundColor: '#e8f0e8', 
   padding: '10px', 
-  borderRadius: '4px' 
+  borderRadius: '4px', 
+  border: '2px solid white'
 }
 
 // Section for the Newsletter Option

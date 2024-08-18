@@ -26,7 +26,16 @@ const TrackControlComponent = ({
       alignItems: 'center',      // Centers vertically
       width: '100%',             // Ensures the Grid item takes the full width
       textAlign: 'center',       // Optional: Centers text if needed
+      marginTop: '20px', 
+      backgroundColor: '#e8f0e8', 
+      borderRadius: '4px',
+      border: '2px solid white' 
     }
+
+  const progressBarSectionStyle = {
+    padding: '40px 0',  // Adjust the value '20px' as needed for top and bottom padding
+  };
+
 
   return (
     <>
@@ -42,7 +51,7 @@ const TrackControlComponent = ({
       </Grid>
 
       {/* Progress Bar Section */}
-      <Grid item id="progressBar_section">
+      <Grid item sx={progressBarSectionStyle}>
         <ProgressBar
           progressBarRef={progressBarRef}
           audioRef={audioRef}

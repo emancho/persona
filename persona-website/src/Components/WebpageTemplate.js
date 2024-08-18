@@ -51,16 +51,20 @@ const mainContentStyles = {
     justifyContent: 'center',      // Vertically centers the content within the content area
 };
 
-const WebpageTemplate = ({mainContent}) => {
+const WebpageTemplate = ({bannerDisplay=false, mainContent}) => {
 
     return (
         <>
         <Grid container sx={gridContainerStyles}>
             {/*=== Header ===*/}
             <Grid item xs={12}>
-                <Box sx={headerStyles}>
-                        {bannerTexts ? (<AnimatedBanner/>) :(<NavBar/>)}
-                </Box>
+                {
+                    (bannerTexts && bannerDisplay) ? (
+                        <Box sx={headerStyles}>
+                            <AnimatedBanner/>
+                        </Box>
+                ) :(<NavBar/>)
+                }
             </Grid>
 
             {/*=== Main Content Segment ===*/}

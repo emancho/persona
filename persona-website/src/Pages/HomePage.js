@@ -23,6 +23,7 @@ function HomePage(){
 
   return (
     <WebpageTemplate
+      bannerDisplay={true}
       mainContent={
           <HomePageMainContent
             imagePath={"/images/HomepageImgv4.gif"} 

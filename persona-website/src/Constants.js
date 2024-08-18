@@ -49,3 +49,18 @@ export const VINYL_LIST = [
         webref: 'https://www.instagram.com/ededd_or_eddy'
     }
 ]
+
+// The banner text for the HomePage
+export const bannerTexts = [
+  'Turning My Thoughts Into Reality',
+  "A Creative Mind Is Useless Under Capitalism When It Doesn't Make Money",
+  'Did You Drink Water Yet?',
+  'Do Something For Yourself Today',
+  'Music Making - In Progress',
+  'Tech Bro Dracula - In Progress',
+  'The First Episode of Edd Radio is Out!!!',
+  'Have You Signed Up for the Newsletter?',
+  "Don't Be Selfish With Your Art. SHARE IT!!!",
+  "Believe In The Me That Believes In You"
+];
+

@@ -1,10 +1,12 @@
 //== React Libraries
-import React, { useEffect, useRef } from 'react';
-import anime from 'animejs';
+import React from 'react';
 //== Material UI
 import { Grid, Box, Typography } from '@mui/material';
 //== Components
 import NavBar from './NavBar';
+import AnimatedBanner from './AnimatedBanner';
+//== Constant
+import { bannerTexts } from '../Constants'
 
 const gridContainerStyles = {
     minHeight: '100vh',        // Ensures the Grid container takes up at least the full height of the viewport (100% of the viewport height)
@@ -49,35 +51,16 @@ const mainContentStyles = {
     justifyContent: 'center',      // Vertically centers the content within the content area
 };
 
-// TODO
-// Have random messages on the banner text for some extra charm
-
-const WebpageTemplate = ({bannerText=null,mainContent}) => {
-
-    const textRef = useRef(null);
-
-    useEffect(() => {
-      anime({
-        targets: textRef.current,
-        translateX: ['100%', '-100%'],  // Move the text from far left (-100%) to far right (100%)
-        loop: true,                    // Loop the animation indefinitely
-        duration: 15000,                // Duration of the animation in milliseconds
-        easing: 'linear',              // Linear easing for a smooth, constant motion
-      });
-    }, []);
+const WebpageTemplate = ({mainContent}) => {
 
     return (
         <>
         <Grid container sx={gridContainerStyles}>
             {/*=== Header ===*/}
             <Grid item xs={12}>
-                {bannerText ? (
-                    <Box sx={headerStyles}>
-                    <Typography variant="h4" ref={textRef}>{bannerText}</Typography>
+                <Box sx={headerStyles}>
+                        {bannerTexts ? (<AnimatedBanner/>) :(<NavBar/>)}
                 </Box>
-                ) :
-                (<NavBar/>)
-                }
             </Grid>
 
             {/*=== Main Content Segment ===*/}

@@ -23,7 +23,6 @@ function HomePage(){
 
   return (
     <WebpageTemplate
-    bannerText = {'Turning My Thoughts Into Reality'}
       mainContent={
           <HomePageMainContent
             imagePath={"/images/HomepageImgv4.gif"} 

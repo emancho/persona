@@ -143,17 +143,14 @@ body {
   padding-top: 25px;
 }
 
-/*== CSS for Animatedc Text for PageTitles */
+/*== CSS for Animated Text for PageTitles */
 .animated-text{
   color: #0a3e0a;
   text-align: center;
   font-size: 3.75rem;;
   font-style: italic; /* Italic font style */
   font-weight: bold;  /* Bold font weight */
-  font-family: Arial, sans-serif; /* Custom font family */
-  padding-top: 20px;
-  padding-bottom: 25px;
-
+  font-family: Roboto, sans-serif; /* Custom font family */
 }
 
 /*================= Typography for page captions ====*/

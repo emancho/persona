@@ -15,12 +15,10 @@ import {listOfProjects} from '../ProjectList.js'
 // == Description:
 // The Projects Page - Location for list of projects I'm working on.
 
-const projCaption = `Welcome to the gallery. Here lays my creative projects of past, present and future.`
-
+const projCaption = `Welcome to the gallery. Here are the current projects I'm working on.`
 
 const captionStyle = {
   backgroundColor: '#e8f0e8', 
-  padding: '10px', 
   borderRadius: '4px', 
   border: '2px solid white'
 }

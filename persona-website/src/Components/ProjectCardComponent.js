@@ -23,11 +23,11 @@ function ProjectCardComponent({
 }) {
     const navigate = useNavigate();
     const [message, setMessage] = useState(projDesc);
-    const [buttonMessage, setButtonMessage] = useState('Check it OUT!')
+    const [buttonMessage, setButtonMessage] = useState('MORE')
 
     const handleClick =()=> {
         setMessage((prevMessage) => (prevMessage === projDesc ? projResponse : projDesc));
-        setButtonMessage(buttonMessage === 'Check it OUT!' ? 'Back' : 'Check it OUT!');
+        setButtonMessage(buttonMessage === 'MORE' ? 'Back' : 'MORE');
     };
 
     const handleRedirect =()=> {

@@ -27,7 +27,7 @@ const NewsletterSection = () => {
   return (
     <Container sx={{ textAlign: 'center', paddingTop: '20px', paddingBottom: '50px' }}>
       <Typography variant="h3" align="center" gutterBottom>
-        Join the Newsletter for future updates
+        Join the Newsletter!
       </Typography>
       <Button
         variant="contained"
@@ -38,7 +38,7 @@ const NewsletterSection = () => {
           padding: '10px 20px', // More padding
         }}
       >
-        Subscribe
+        sign up
       </Button>
     </Container>
   );

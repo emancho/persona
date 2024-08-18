@@ -12,14 +12,13 @@ import Typography from '@mui/material/Typography';
 // The About Me Page - Location for infomation about the creator behind the website. 
 
 // The Bio of the About Me Page
-const aboutText = `I am Ed__d w/o the War. A Cameroonian-American born in the East Coast, 
-with a passion to create since childhood. From an early age; I was making comic books,
-writing short stories, creating rough drafts for movie scripts and drawing random characters
-inspired by my favorite animated shows or the world around me. Unfortunately as I got older, the creating stop and any new idea would figuratively
-become tossed away due to "growing up"...and honestly I'm not a fan of that. 
-
-As I enter my 30s, I'm still getting older but the passion is still there and I have the power of "Trying". So as I rediscover my creative side again, I  
-want to use this site as the start of this creative journey. Be sure to join the newsletter on the Contact Page for updates.`;
+const aboutText = `I am Ed__d w/o the War, a Cameroonian-American born on the East Coast with a passion to create since childhood. 
+  From an early age, I made comic books, wrote short stories, created rough draft scripts for movies I never filmed, and drew random
+  characters inspired by either my favorite animated shows or the world around me. Unfortunately, as I got older, the creating stopped
+  and any new idea would figuratively collect dust due to "growing up"...and honestly, I wasn't a fan of that. 
+  As I enter my 30s, I'm still getting older, but the passion to create is still there. So as I rediscover my creative side again 
+  (with the power of "trying" on my side), I want to use this website as a place to display my creative projects and share them with the world. 
+  Also, be sure to join my newsletter on the Contact Page for future updates.`;
 
 // Styling for the top section
 const topSectionStyle = {

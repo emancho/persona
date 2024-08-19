@@ -1,13 +1,17 @@
-// Oct - 2
-- I'm changing up the HomePage Format to be cleaner. So I will Have 3 boxes (Title card, image, navigation buttons). Each box will be
-it's own component that I'm creating. I'll then have the format in the App.js File for a clear presentation and maybe cleaner code...
-whatever that fucking means
-- It's been a good idea so far, Imma keep it going :]
+// Prod-Ready Release Date 8/19
+Fixes/Changes:
+- Redid layouts for the webpages
+- Added the Radio page
+- Reworked images project images to include watermarks on projects
+- Added animations to Title
+- Added a banner on the homepage to make messages display on splash page
+- Added a footer so to add the author of the website [ME!!!]
+- Added Borders on pages for better visuals and flexibility
+- Created adding 1st radio episode for radio show 
+- Made the navigation bar adjustable to screen resizing
+- Made changes to make sure the entire webpage is groomed for phone
+    desktop screens
 
-// Oct - 3
-- Still keeping at it. I figured out how to implement the buttons and navigation of pages. I think once I get a template of a page then
-I can take a break. Let's get it!!!!
-- Was a little stressed out with an error but I figured it out
-
-//Oct - 4 
-- I'm moving onto mapping out the layouts for the website. Let's get it!
+Associated branch/s:
+- testingNewLayoutChanges (*)
+- new_edition

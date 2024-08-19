@@ -12,7 +12,8 @@ import { episodes } from '../data/episodes';
 import {RADIO_EPS} from '../Constants'
 
 // == Description:
-// The Radio Page - Location for the radio episodes.
+// The Radio Page - This page is the Radio Show page. This page is the location of all radio episodes. Consist
+// of the related episode's image, playtime bar, playback buttons and list of songs within the radio show. 
 
 function RadioPage() {
     // states

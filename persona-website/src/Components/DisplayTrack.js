@@ -1,10 +1,14 @@
+//== React Libs
+import React from 'react';
 import { BsMusicNoteBeamed } from 'react-icons/bs';
+//== Material UI
 import { Typography } from '@mui/material';
+//== CSS
 import '../App.css';
 
 /*
-Function: DisplayTrack
-Component that represents the Radio Episode Title, Radio Title and Thumbnail of the radio episode
+Component Description:
+    DisplayTrack :- Component that represents the Radio Episode Title, Radio Title and Thumbnail of the radio episode
 */
 
 const DisplayTrack = ({

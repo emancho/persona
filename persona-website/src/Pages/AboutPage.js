@@ -9,7 +9,7 @@ import WebpageTemplate from "../Components/WebpageTemplate";
 import Typography from '@mui/material/Typography';
 
 // == Description:
-// The About Me Page - Location for infomation about the creator behind the website. 
+// The About Me Page - This Page consist of a very attractive face and a little bit of background on the owner of the website
 
 // The Bio of the About Me Page
 const aboutText = `I am Ed__d w/o the War, a Cameroonian-American born on the East Coast with a passion to create since childhood. 

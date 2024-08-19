@@ -1,5 +1,13 @@
+//== React Lib
 import React from 'react';
+//== Material UI
 import { Box, Typography } from '@mui/material';
+
+/*
+Component Description:
+    MainContentComponent :- This component represents the layout of the main component for WebpageTemplate. Uses a Box container
+    to stack the title at the top and optional sections below with their associated style.
+*/
 
 const MainContentComponent = ({ title, topSection, topStyle={marginTop: '20px'}, bottomSection, bottomStyle={marginTop: '20px'}}) => {
   return (

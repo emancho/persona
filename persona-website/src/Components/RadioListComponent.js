@@ -1,3 +1,4 @@
+//== Libs
 import React from "react";
 import _ from 'lodash';
 //== Material UI
@@ -10,14 +11,13 @@ import {
     Box,
     ListSubheader } from '@mui/material';
 import MusicNote from '@mui/icons-material/MusicNote';
-//== Stlying
+//== CSS
 import '../App.css';
 
 /*
-Component -
-The list display for the Radio Layout Page. Display a list of songs used in the radio episode.
-parameter - 
-listOfEpisodes := List of objects which each object consisting on the { song title and artist credit }
+Component Description:
+    RadioList :- This component displays the list of songs used in the current radio episode. Using the 
+    listOfEpisodes paramter (which is a list of objects { song title and artist credit } )
 */
 
 function RadioList( {listOfEpisodes} ){

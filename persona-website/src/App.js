@@ -10,9 +10,8 @@ import ProjPage from './Pages/ProjectsPage.js';
 import RadioPage from './Pages/RadioPage.js';
 
 // == Description:
-// Consists of a layout similar to a music player containing a 
+// Consist of a layout similar to a music player containing a 
 // profile picture, artist name and button options that navigate to other pages. 
-// ** Uses Material UI for design and display options.
 
 function App() {
 // The Routes of the entire website
@@ -30,7 +29,7 @@ function App() {
             {/* Render to 'Projects' Page */}
             <Route path='/radioPage' element={<RadioPage />} />
             {/*==Wildcard Route ==*/}
-            {/* Redirects to Homepage when an invalid path is entered*/}
+            {/* Redirects to Homepage when an invalid path is entered */}
             <Route path="*" element={<HomePage />} />     
           </Routes>
     </Router>

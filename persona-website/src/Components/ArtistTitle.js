@@ -2,6 +2,11 @@ import React from 'react';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 
+/*
+Component Description:
+    ArtistImage :- The component containing the Title and Sub-Title used in the Home page 
+*/
+
 function ArtistTitle(){
     return (
         <CardContent sx={{ flex: '1 0 auto' }}>

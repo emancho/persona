@@ -1,7 +1,16 @@
+//== React Libs
 import React, { useEffect, useRef, useState } from 'react';
 import anime from 'animejs';
+//== Material UI
 import Typography from '@mui/material/Typography';
+//== Data
 import { bannerTexts } from '../Constants';
+
+/*
+Component Description:
+    AnimatedBanner :- Using the list of text in bannerTexts, display each text at random in a right -> left
+    animation style. On intial startup, The first text in bannerTexts will always be displayed first
+*/
 
 const AnimatedBanner = () => {
   const textRef = useRef(null);
@@ -24,12 +33,10 @@ const AnimatedBanner = () => {
           
           setCurrentText(bannerTexts[nextIndex]);
           
-        }, 0); // Adjust the timeout duration if needed
+        }, 0);
       }
     });
 
-    console.log('The current index is :' + index)
-    console.log('The current str is: ' + bannerTexts[index])
     return () => animation.pause(); // Cleanup animation on unmount
   }, [index]);
 

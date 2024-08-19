@@ -88,13 +88,7 @@ body {
   border: 2px solid white;
 }
 
-/*== Section representing the volume option on the radio page */
-.volume-section{
-  padding: 10px;
-}
-
 /* Container for the progress bar section */
-/* Add this to your CSS file */
 .progress-bar {
   width: 75%;          /* Full width of the container */
   height: 8px;          /* Adjust the height to increase thickness */

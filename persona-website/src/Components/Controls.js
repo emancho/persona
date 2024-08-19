@@ -1,12 +1,10 @@
-//== React
+//== React Libs
 import { 
     useState, 
     useEffect, 
     useRef, 
     useCallback 
 } from 'react';
-//== CSS
-// import '../App.css'
 //== Playback icons
 import {
   IoPlaySkipBackSharp,
@@ -20,7 +18,7 @@ import {
   IoMdVolumeOff,
   IoMdVolumeLow,
 } from 'react-icons/io';
-//== Constant
+//== Data
 import {
     PLAYBACK_BUTTON_SIZE, 
     VOLUME_BUTTON_SIZE,
@@ -30,8 +28,8 @@ import {
 import {Box, Grid} from '@mui/material';
 
 /*
-Function: Controls
-Description: Component that represents the controls (Playback and Volume) for the radio page
+Component Description:
+    Controls :- Component that represents the controls (Playback and Volume) for the radio page.
 */
 
 const Controls = ({

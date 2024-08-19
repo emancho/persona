@@ -1,9 +1,16 @@
+//== Libs
 import React from 'react';
 import _ from 'lodash';
 //== Material UI
 import Grid from '@mui/material/Grid';
 //== Compontents 
 import ProjectCardComponent from './ProjectCardComponent'
+
+/*
+Component Description:
+    GridListComponent :- Component that represents the list of projects on the project page using the list of
+    projects passed in the parameter
+*/
 
 const GridListComponent = ({ projectList }) => {
     return (

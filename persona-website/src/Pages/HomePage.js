@@ -9,9 +9,8 @@ import HomePageMainContent from '../Components/HomePageMainContent'
 import WebpageTemplate from "../Components/WebpageTemplate";
 
 // == Description:
-// Homepage - This page is the home page. The page consist of the component layout to a music player. Has a image 
-// displayed, title and navigation buttons that led to other webpages [PrevButton - Contact page, PlayButton - About Me 
-// page, NextButton - Projects page]
+// Homepage - This page is the home page. This page contains the component layout that is similar to a music player. The
+// navigation buttons leads to other webpages [PrevButton - Contact page, PlayButton - About Me page, NextButton - Projects page]
 
 function HomePage(){
   /* An array of button objects. The icon represents the button type and the link is the page the button directs to */

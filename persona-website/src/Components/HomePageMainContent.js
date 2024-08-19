@@ -1,4 +1,4 @@
-//== React Library
+//== React Lib
 import React from 'react';
 //== Material UI
 import { Box } from '@mui/material';
@@ -7,14 +7,11 @@ import ArtistImage from './ArtistImage';
 import ArtistTitle from './ArtistTitle'; 
 import PlaylistNavButton from './NavButtons'; 
 
-// == Description:
-// ArtistProfileSection - This component represents the layout of the Artist Playlist incliuding the image, title and 
-// play nav buttonsThe page consist of similar layout to a music player.
-// + imagePath - The path of the image used
-// + imageAlt - The description of the image when image isn't shown
-// + imageWidth - The width of the image
-// + imageHeight - The height of the image
-// + buttons - The icon buttons used in the navigation 
+/*
+Component Description:
+    HomePageMainContent :- This component represents the layout of the Artist Playlist incliuding the image, title and 
+    play nav buttonsThe page consist of similar layout to a music player.
+*/
 
 const HomePageMainContent = ({ imagePath, imageAlt, buttons }) => {
     const responsiveImageSizes = {

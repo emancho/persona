@@ -1,10 +1,12 @@
+//=== React Libs
 import React, { useState } from 'react';
+//== Material UI
 import { Grid, Card, CardActionArea, CardMedia, CardContent, Typography } from '@mui/material';
 
-
 /*
-Function: HoverableCardMedia
-Description: Component used for the Contact Layout
+Component Description:
+    HoverableCardMedia :- Component used for the Contact Layout Vinyl section of the Contact Me
+    page
 */
 
 function HoverableCardMedia({name, path, altPath, descipt, webref}) {

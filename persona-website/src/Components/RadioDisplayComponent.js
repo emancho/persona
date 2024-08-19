@@ -1,6 +1,12 @@
+//== React Lib
 import React from "react";
 //== Material UI
 import { Box, Typography } from '@mui/material';
+
+/*
+Component Description:
+    RadioDisplay :- This component displays the Cover Image and Title of the current radio show episode
+*/
 
 function RadioDisplay( {imgUrl, epTitle, altDescrip} ){
 

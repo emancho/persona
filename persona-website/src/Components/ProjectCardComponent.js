@@ -1,16 +1,14 @@
+//== React Libs
 import React, { useState} from 'react';
 import { useNavigate } from 'react-router-dom';
+//== Material UI
 import { Card, Box, CardMedia, CardContent, Typography, CardActions, Button } from '@mui/material';
-//-- Description:
-/* The data containing the details of a project entry on the projects/gallery page */
 
 /*
-    img = The image of the project
-    imgTitle = the title associated with the img
-    projTitle = The title for the project
-    projDesc = The description of the project 
-    projAction = The action of the click button 
-    projResponse = The details of the project entry with more details of the proj
+Component Description:
+    ProjectCardComponent :- This component displays the data containing the details of a project
+     entry on the projects page. Also responsible for the feature that allows users to see author
+     notes of a project or redirect to another webpage.
 */
 
 function ProjectCardComponent({

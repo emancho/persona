@@ -1,6 +1,13 @@
+//== React Libs
 import React from 'react';
 import { Link } from 'react-router-dom';
+//== CSS
 import '../App.css';
+
+/*
+Component Description:
+    NavBar :- This component represents the navigation bar that redirects to any of the pages on the website.
+*/
 
 function NavBar() {
   return (

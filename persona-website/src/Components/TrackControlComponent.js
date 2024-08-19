@@ -1,8 +1,16 @@
+//== React Lib
 import React from 'react';
+//== Material UI
 import { Grid } from '@mui/material';
+//== Components
 import DisplayTrack from './DisplayTrack';
 import ProgressBar from './ProgressBar';
 import Controls from './Controls';
+
+/*
+Component Description:
+    TrackControlComponent :- This component is a combination of the DisplayTrack, ProgressBar, and Controls components
+*/
 
 const TrackControlComponent = ({
   currentTrack,

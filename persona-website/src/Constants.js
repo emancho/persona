@@ -1,5 +1,3 @@
-// Here lays the constants file where I'll be listing things that shouldn't change...IN THEORY
-
 // Radio Playback Buttons
 export const PLAYBACK_BUTTON_SIZE = 45;
 
@@ -19,14 +17,16 @@ export const RADIO_EPS = [
             { id: 'ep_1_song6', songTitle: 'Somtimes', artistCredit: 'DMX'}
         ]
     },
-    {
-        id: 2,
-        radioTrackList: [
-            { id: 'ep_2_song_1', songTitle: 'Test 1', artistCredit: 'Doo Doo'},
-            { id: 'ep_2_song_2', songTitle: 'Test 2', artistCredit: 'Boo Boo'},
-            { id: 'ep_2_song_3', songTitle: 'Test 3', artistCredit: 'Pee Pee' } 
-        ]
-    },
+    // {
+    //     id: 2,
+    //     radioTrackList: [
+    //         { id: 'ep_2_song_1', songTitle: '...', artistCredit: '...'},
+    //         { id: 'ep_2_song_2', songTitle: '...', artistCredit: '...'},
+    //         { id: 'ep_2_song_3', songTitle: '...', artistCredit: '...'}, 
+    //         { id: 'ep_2_song_4', songTitle: '...', artistCredit: '...'},
+    //         { id: 'ep_2_song_5', songTitle: '...', artistCredit: '...' } 
+    //     ]
+    // },
 
 ];
 

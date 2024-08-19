@@ -1,9 +1,9 @@
 // Location of Project Details for Gallery Page
-// img,
-// projTitle,
-// projDesc,
-// projAction,
-// projResponse 
+// img - path of image, 
+// projTitle - the title of the project,
+// projDesc - the description of the project,
+// projAction - the action of the projct [redirect/popup],
+// projResponse - the location of the page to redirect to or author notes
 
 //===== Radio Show Dets
 export const listOfProjects = [

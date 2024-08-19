@@ -9,11 +9,11 @@ import WebpageTemplate from "../Components/WebpageTemplate";
 //== Material UI
 import Typography from '@mui/material/Typography';
 //== Data
-//== List of projects
 import {listOfProjects} from '../ProjectList.js'
 
 // == Description:
-// The Projects Page - Location for list of projects I'm working on.
+// The Projects Page - This page is the project page. This page is the main hub for all the creative projects in progress.
+// Project feature either reveals author notes or redirects to another page based on the selected project  
 
 const projCaption = `Welcome to the gallery. Here are the current projects I'm working on.`
 

@@ -1,8 +1,11 @@
+//== React Libs
 import React, { useEffect, useRef } from 'react';
 import anime from 'animejs';
 
-// == Description:
-/* The component responsible for the Animated Titles on the webpage */
+/*
+Component Description:
+    AnimatedText :- The component responsible for the Animated Titles on the webpage
+*/
 
 const AnimatedText = ({title}) => {
   const textRef = useRef(null);

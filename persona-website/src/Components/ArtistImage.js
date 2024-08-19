@@ -1,5 +1,12 @@
+//== React Lib
 import React from 'react';
+//== Material UI
 import { CardMedia } from "@mui/material";
+
+/*
+Component Description:
+    ArtistImage :- The component containing my image for the About Me page
+*/
 
 function ArtistImage({path, altDesc, w, h}){
     return(

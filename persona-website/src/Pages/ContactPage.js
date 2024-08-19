@@ -78,7 +78,7 @@ const SocialLinksSection = () => {
 };
 
 // == Description:
-// The Contact Page - Location for my socials and the where users can subscribe
+// The Contact Page - This page is the contact page. This page is where my socials and subscription link is located. 
 
 function ContactPage() {
   return (

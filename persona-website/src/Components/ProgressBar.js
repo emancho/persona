@@ -1,6 +1,11 @@
 //== CSS
 import '../App.css'
 
+/*
+Component Description:
+    ProgressBar :- This component displays progress bar used in the radio show RadioDisplayComponent
+*/
+
 const ProgressBar = ({
   progressBarRef,
   audioRef,

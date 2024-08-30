@@ -1,6 +1,14 @@
+//== React Libs
 import React from 'react';
-import { IconButton, Stack } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+//== Material Ui
+import { IconButton, Stack } from '@mui/material';
+
+/*
+Component Description:
+    NavButtons :- This component displays the navigation buttons used in the HomePage. Uses the list of buttons in 
+    the parameter.
+*/
 
 function NavButtons({ buttonData }) {
   const navigate = useNavigate();

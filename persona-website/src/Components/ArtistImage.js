@@ -1,11 +1,18 @@
+//== React Lib
 import React from 'react';
+//== Material UI
 import { CardMedia } from "@mui/material";
+
+/*
+Component Description:
+    ArtistImage :- The component containing my image for the About Me page
+*/
 
 function ArtistImage({path, altDesc, w, h}){
     return(
         <CardMedia
         component="img"
-        sx={{ width: w ,height: h }}
+        sx={{ width: w ,height: h, objectFit: "contain" }}
         image={process.env.PUBLIC_URL + path}
         alt={altDesc}
       />

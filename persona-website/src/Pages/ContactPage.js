@@ -1,70 +1,102 @@
+//=== React Lib
 import React from 'react';
+import _ from 'lodash';
 //== Components
-import NavBar from '../Components/NavBar';
+import AnimatedText from '../Components/AnimatedText';
 import HoverableCardMedia from '../Components/HoverableCardMedia'
+import MainContentComponent from '../Components/MainContentComponent';
+import WebpageTemplate from "../Components/WebpageTemplate";
 //== Material UI
 import { Button, Typography, Container, Grid, Card } from '@mui/material';
+//== Constants
+import {
+  VINYL_LIST
+} from '../Constants'
+
+// The styling of the top and bottom sections
+const sectionStyle = { 
+  marginTop: '20px', 
+  backgroundColor: '#e8f0e8', 
+  padding: '10px', 
+  borderRadius: '4px', 
+  border: '2px solid white'
+}
+
+// Section for the Newsletter Option
+const NewsletterSection = () => {
+  return (
+    <Container sx={{ textAlign: 'center', paddingTop: '20px', paddingBottom: '50px' }}>
+      <Typography variant="h3" align="center" gutterBottom>
+        Join the Newsletter!
+      </Typography>
+      <Button
+        variant="contained"
+        color="primary"
+        onClick={() => window.location.href = 'https://forms.gle/vPYRvZFx1ixtdFvp7'}
+        sx={{
+          fontSize: '25px', // Larger font size
+          padding: '10px 20px', // More padding
+        }}
+      >
+        sign up
+      </Button>
+    </Container>
+  );
+};
+
+// Section for the vinyls representing my socials
+const SocialLinksSection = () => {
+  return (
+    <Container sx={{ padding: '10px 0' }}>
+      {/* Section containing the title Typography */}
+      <Typography 
+        variant="h3" 
+        align="center" 
+        gutterBottom
+      >
+        Social Links
+      </Typography>
+
+      {/* The Grid containing the vinyls */}
+      <Grid container spacing={4} justifyContent="center">
+        {_.map(VINYL_LIST, (obj) => (
+          <Grid item key={obj.name}>
+            <Card>
+              <HoverableCardMedia
+                name={obj.name}
+                path={obj.path}
+                altPath={obj.altPath}
+                descipt={obj.descipt}
+                webref={obj.webref}
+              />
+            </Card>
+          </Grid>
+        ))}
+      </Grid>
+    </Container>
+  );
+};
+
+// == Description:
+// The Contact Page - This page is the contact page. This page is where my socials and subscription link is located. 
 
 function ContactPage() {
   return (
-    <>
-      {/* Navbar Section */}
-      <NavBar />
-      {/* Contact Me Title Section */}
-      <Container style={{ padding: '2rem 0' }}>
-        <Typography variant="h2" align="center">Contact Me</Typography>
-      </Container>
-
-      {/* Adding blue border */}
-        {/* Clickable Images Section */}
-        <Container style={{ padding: '2rem 0' }}>
-          <Grid container spacing={4} justifyContent="center">
-            <Grid item>
-              <Card>
-                <HoverableCardMedia
-                  name={'Instagram'} 
-                  path={process.env.PUBLIC_URL + '/images/insta_vinyl_case_only.png'}
-                  altPath={process.env.PUBLIC_URL + '/images/insta_vinyl.png'}
-                  descipt={'Instagram Vinyl connecting to social media'}
-                  webref={'https://www.instagram.com/ededd_or_eddy/'}
-                />
-              </Card>
-            </Grid>
-            <Grid item>
-              <Card>
-                <HoverableCardMedia
-                    name={'Tik Tok'} 
-                    path={process.env.PUBLIC_URL + '/images/tok_vinyl_case_only.png'}
-                    altPath={process.env.PUBLIC_URL + '/images/tok_vinyl.png'}
-                    descipt={'Tik Tok Vinyl connecting to social media'}
-                    webref={'https://www.tiktok.com/@edollarsigns'}
-                />
-              </Card>
-            </Grid>
-          </Grid>
-        </Container>
-
-      {/* Join my Newsletter Title Section */}
-      <Container style={{ padding: '2rem 0' }}>
-        <Typography variant="h2" align="center">Join my Newsletter</Typography>
-      </Container>
-
-      {/* Subscribe Button Section */}
-      <Container style={{ padding: '1rem 0', textAlign: 'center' }}>
-        <Button 
-          variant="contained" 
-          color="primary" 
-          onClick={() => window.location.href ='https://forms.gle/vPYRvZFx1ixtdFvp7'}
-          style={{ 
-            fontSize: '30px', // Larger font size
-            padding: '10px 20px' // More padding
-          }}
-        >
-          Subscribe
-        </Button>
-      </Container>
-    </>
-  );
+    <WebpageTemplate
+      mainContent={
+        <MainContentComponent
+          title={
+            <AnimatedText 
+              title={'Contact Me'}/>
+          }
+          topSection={<NewsletterSection/>}
+          topStyle={sectionStyle}
+          bottomSection={<SocialLinksSection/>}  
+          bottomStyle={sectionStyle}
+        />
+      }
+    />
+  );  
 }
 
 export default ContactPage;

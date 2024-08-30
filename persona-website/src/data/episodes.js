@@ -1,6 +1,6 @@
 // audio files used for Radio eps
 import ep1Audio from './RadioEp1.mp3'
-// import ep2Audio from './RadioEp2.mp3'
+import ep2Audio from './RadioEp2.mp3'
 
 // image thumbnails used for Radio eps
 import ep1_cover from './radio_ep1.png'
@@ -19,7 +19,7 @@ export const episodes = [
   {
     id: 2,
     title:'Episode 2:',
-    src: ep1Audio,
+    src: ep2Audio,
     epTitle: 'All About Love',
     thumbnail: ep2_cover,
     alt:'A display of white petaled flowers with bee landed on one of them. Displays artist watermark and the title Ep.2'

@@ -18,14 +18,10 @@ const TrackControlComponent = ({
   setDuration,
   progressBarRef,
   handleNext,
+  handlePrev,
   timeProgress,
   duration,
-  setTimeProgress,
-  tracks,
-  trackIndex,
-  setTrackIndex,
-  setCurrentTrack,
-  setCurPlaylistState,
+  setTimeProgress
 }) => {
 
   const radioContentDisplay = {
@@ -75,12 +71,8 @@ const TrackControlComponent = ({
           progressBarRef={progressBarRef}
           duration={duration}
           setTimeProgress={setTimeProgress}
-          tracks={tracks}
-          trackIndex={trackIndex}
-          setTrackIndex={setTrackIndex}
-          setCurrentTrack={setCurrentTrack}
           handleNext={handleNext}
-          setCurPlaylistState={setCurPlaylistState}
+          handlePrev={handlePrev}
         />
       </Grid>
     </>

@@ -12,26 +12,11 @@ Component Description:
 */
 
 const DisplayTrack = ({
-  currentTrack,
-  audioRef,
-  setDuration,
-  progressBarRef,
-  handleNext,
+  currentTrack
 }) => {
-  const onLoadedMetadata = () => {
-    const seconds = audioRef.current.duration;
-    setDuration(seconds);
-    progressBarRef.current.max = seconds;
-  };
 
   return (
-    <div>
-      <audio
-        src={currentTrack.src}
-        ref={audioRef}
-        onLoadedMetadata={onLoadedMetadata}
-        onEnded={handleNext}
-      />
+    <>
       <div className="audio-info">
         <div className="audio-image">
           {currentTrack.thumbnail ? (
@@ -49,7 +34,7 @@ const DisplayTrack = ({
             <Typography variant="h5" align="center">{'~' + currentTrack.epTitle + '~'}</Typography>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 export default DisplayTrack;

@@ -23,10 +23,10 @@ function RadioPage() {
     const [curTrackList, setCurTrackList] = useState(RADIO_EPS[1])
     const [duration, setDuration] = useState(0);
   
-    // reference
+    // Audio and Progress bar reference
     const audioRef = useRef(null);
     const progressBarRef = useRef(null);
-  
+
     // the function responsible for the behavior of the next button
     const handleNext = () => {
       // When hitting the next button on the last episode, navigate to the first episode

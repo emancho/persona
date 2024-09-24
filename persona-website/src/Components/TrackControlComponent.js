@@ -1,5 +1,5 @@
 //== React Lib
-import React from 'react';
+import React, {useState} from 'react';
 //== Material UI
 import { Grid } from '@mui/material';
 //== Components
@@ -16,13 +16,15 @@ const TrackControlComponent = ({
   currentTrack,
   audioRef,
   setDuration,
+  duration,
   progressBarRef,
+  timeProgress,
+  setTimeProgress,
   handleNext,
   handlePrev,
-  timeProgress,
-  duration,
-  setTimeProgress
 }) => {
+  // hooks maintaining the state of the play button on the Radio Page 
+  const [isPlaying, setIsPlaying] = useState(false);
 
   const radioContentDisplay = {
       display: 'flex',
@@ -40,17 +42,34 @@ const TrackControlComponent = ({
     padding: '40px 0',  // Adjust the value '20px' as needed for top and bottom padding
   };
 
+  // Handles loading the metadata (such as duration) once the audio file is ready
+  const onLoadedMetadata = () => {
+    const seconds = audioRef.current.duration;
+    setDuration(seconds);
+    progressBarRef.current.max = seconds;
+  };
+
+  // Handles track end behavior
+  const onEnded = () => {
+    audioRef.current.pause();  // Pause the audio
+    audioRef.current.currentTime = 0;  // Reset the track to the beginning
+    setIsPlaying(false);  // Update play/pause state
+  };
 
   return (
     <>
+      {/* The actual audio element controlling playback */}
+      <audio
+        ref={audioRef}
+        src={currentTrack.src}
+        onLoadedMetadata={onLoadedMetadata}
+        onEnded={onEnded}
+      />
+
       {/* Display Track Section */}
       <Grid item sx={radioContentDisplay}>
         <DisplayTrack
           currentTrack={currentTrack}
-          audioRef={audioRef}
-          setDuration={setDuration}
-          progressBarRef={progressBarRef}
-          handleNext={handleNext}
         />
       </Grid>
 
@@ -73,6 +92,8 @@ const TrackControlComponent = ({
           setTimeProgress={setTimeProgress}
           handleNext={handleNext}
           handlePrev={handlePrev}
+          isPlaying={isPlaying}
+          setIsPlaying={setIsPlaying}
         />
       </Grid>
     </>

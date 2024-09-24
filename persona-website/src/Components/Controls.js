@@ -38,12 +38,14 @@ progressBarRef,
 duration,
 setTimeProgress,
 handleNext,
-handlePrev
+handlePrev,
+isPlaying,
+setIsPlaying
 }) => {
-const [isPlaying, setIsPlaying] = useState(false);
 const [volume, setVolume] = useState(100);
 const [muteVolume, setMuteVolume] = useState(false);
 
+// The function responsible for swapping between play and pause 
 const togglePlayPause = () => {
   setIsPlaying((prev) => !prev);
 };
@@ -52,45 +54,53 @@ const playAnimationRef = useRef();
 
 
 // OG Code Behavior
-// const repeat = useCallback(() => {
-//   if (progressBarRef.current) {
-//     const currentTime = audioRef.current ? audioRef.current.currentTime : 0;
-//     setTimeProgress(currentTime);
-//     progressBarRef.current.value = currentTime;
-//     progressBarRef.current.style.setProperty(
-//       '--range-progress',
-//       `${(progressBarRef.current.value / duration) * 100}%`
-//     );
-//     playAnimationRef.current = requestAnimationFrame(repeat);
-//   }
-// }, [audioRef, duration, progressBarRef, setTimeProgress]);
-
-// New Play Button behavior
 const repeat = useCallback(() => {
   if (progressBarRef.current) {
     const currentTime = audioRef.current ? audioRef.current.currentTime : 0;
-
-    // Check if the currentTime has reached the duration
-    if (currentTime >= duration) {
-      // Pause the audio and stop the animation
-      audioRef.current.pause();
-      cancelAnimationFrame(playAnimationRef.current);
-      setIsPlaying(false); // Optionally update the play/pause state
-      return; // Exit the function to stop further updates
-    }
-
     setTimeProgress(currentTime);
     progressBarRef.current.value = currentTime;
     progressBarRef.current.style.setProperty(
       '--range-progress',
       `${(progressBarRef.current.value / duration) * 100}%`
     );
-
-    // Request the next animation frame if the audio is still playing
     playAnimationRef.current = requestAnimationFrame(repeat);
   }
-}, [audioRef, duration, progressBarRef, setTimeProgress, setIsPlaying]);
+}, [audioRef, duration, progressBarRef, setTimeProgress]);
 
+// Hopefully the final version of the Play/Pause button feature
+  // const repeat = useCallback(() => {
+  //   if (progressBarRef.current && audioRef.current) {
+  //     const currentTime = audioRef.current.currentTime;
+
+  //     // Check if the currentTime has reached or exceeded the duration
+  //     if (currentTime >= duration) {
+  //       // Pause the audio and stop the animation
+  //       audioRef.current.pause();
+  //       cancelAnimationFrame(playAnimationRef.current);
+
+  //       // Update the play/pause state to reflect that the audio is no longer playing
+  //       setIsPlaying(false);
+
+  //       // Optionally reset the progress bar (set it to 0 if you want to restart the UI state)
+  //       setTimeProgress(0); 
+  //       progressBarRef.current.value = 0;
+  //       progressBarRef.current.style.setProperty('--range-progress', '0%');
+
+  //       return; // Exit the function to stop further updates
+  //     }
+
+  //     // Update time and progress bar while the audio is playing
+  //     setTimeProgress(currentTime);
+  //     progressBarRef.current.value = currentTime;
+  //     progressBarRef.current.style.setProperty(
+  //       '--range-progress',
+  //       `${(currentTime / duration) * 100}%`
+  //     );
+
+  //     // Continue requesting the next animation frame
+  //     playAnimationRef.current = requestAnimationFrame(repeat);
+  //   }
+  // }, [audioRef, duration, progressBarRef, setTimeProgress, setIsPlaying]);
 
 // useEffect relating to the play feature
 useEffect(() => {
@@ -115,7 +125,7 @@ useEffect(() => {
       <Grid item>
         <Box display="flex" alignItems="center" justifyContent="center">
           
-          {/* Previous Button */}
+        {/* Previous Button */}
           <Box mr={5} display="flex" flexDirection="column" alignItems="center">
             <Typography variant="body1" mb={1} align="center">
               Previous
@@ -128,7 +138,7 @@ useEffect(() => {
             </Typography>
           </Box>
 
-          {/* Play/Pause Button */}
+        {/* Play/Pause Button */}
           <Box display="flex" flexDirection="column" alignItems="center">
             <button onClick={togglePlayPause}>
               {isPlaying ? (
@@ -139,7 +149,7 @@ useEffect(() => {
             </button>
           </Box>
 
-          {/* Next Button */}
+        {/* Next Button */}
           <Box ml={5} display="flex" flexDirection="column" alignItems="center">
             <Typography variant="body1" mb={1} align="center">
               Next

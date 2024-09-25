@@ -1,133 +1,131 @@
 //== React Libs
 import { 
-    useState, 
-    useEffect, 
-    useRef, 
-    useCallback 
+  useState, 
+  useEffect, 
+  useRef, 
+  useCallback 
 } from 'react';
 //== Playback icons
 import {
-  IoPlaySkipBackSharp,
-  IoPlaySkipForwardSharp,
-  IoPlaySharp,
-  IoPauseSharp,
+IoPlaySharp,
+IoPauseSharp,
 } from 'react-icons/io5';
+import { CgPlayForwards } from "react-icons/cg";
+import { CgPlayBackwards } from "react-icons/cg";
+
 //== Volume icons
 import {
-  IoMdVolumeHigh,
-  IoMdVolumeOff,
-  IoMdVolumeLow,
+IoMdVolumeHigh,
+IoMdVolumeOff,
+IoMdVolumeLow,
 } from 'react-icons/io';
 //== Data
 import {
-    PLAYBACK_BUTTON_SIZE, 
-    VOLUME_BUTTON_SIZE,
-    RADIO_EPS
+  PLAYBACK_BUTTON_SIZE, 
+  VOLUME_BUTTON_SIZE
 } from '../Constants'
 //== Components
-import {Box, Grid} from '@mui/material';
+import {Box, Grid, Typography} from '@mui/material';
 
 /*
 Component Description:
-    Controls :- Component that represents the controls (Playback and Volume) for the radio page.
+  Controls :- Component that represents the controls (Playback and Volume) for the radio page.
 */
 
 const Controls = ({
+  trackIndex,
   audioRef,
   progressBarRef,
   duration,
   setTimeProgress,
-  tracks,
-  trackIndex,
-  setTrackIndex,
-  setCurrentTrack,
   handleNext,
-  setCurPlaylistState
+  handlePrev,
+  isPlaying,
+  setIsPlaying
 }) => {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [volume, setVolume] = useState(100);
-  const [muteVolume, setMuteVolume] = useState(false);
+const [volume, setVolume] = useState(100);
+const [muteVolume, setMuteVolume] = useState(false);
 
-  const togglePlayPause = () => {
-    setIsPlaying((prev) => !prev);
-  };
+// The function responsible for swapping between play and pause 
+const togglePlayPause = () => {
+  setIsPlaying((prev) => !prev);
+};
 
-  const playAnimationRef = useRef();
+const playAnimationRef = useRef();
 
-  const repeat = useCallback(() => {
-    if (progressBarRef.current) {
-      const currentTime = audioRef.current ? audioRef.current.currentTime : 0;
-      setTimeProgress(currentTime);
-      progressBarRef.current.value = currentTime;
-      progressBarRef.current.style.setProperty(
-        '--range-progress',
-        `${(progressBarRef.current.value / duration) * 100}%`
-      );
-      playAnimationRef.current = requestAnimationFrame(repeat);
-    }
-  }, [audioRef, duration, progressBarRef, setTimeProgress]);
-  
 
-  // Func relating to behavior of selecting the previous track
-  const handlePrevious = () => {
-    if (trackIndex === 0) {
-        let lastTrackIndex = tracks.length - 1;
-        setTrackIndex(lastTrackIndex);
-        setCurrentTrack(tracks[lastTrackIndex]);
-        setCurPlaylistState(RADIO_EPS[lastTrackIndex]);
+// OG Code Behavior
+const repeat = useCallback(() => {
+  if (progressBarRef.current) {
+    const currentTime = audioRef.current ? audioRef.current.currentTime : 0;
+    setTimeProgress(currentTime);
+    progressBarRef.current.value = currentTime;
+    progressBarRef.current.style.setProperty(
+      '--range-progress',
+      `${(progressBarRef.current.value / duration) * 100}%`
+    );
+    playAnimationRef.current = requestAnimationFrame(repeat);
+  }
+}, [audioRef, duration, progressBarRef, setTimeProgress]);
+
+// useEffect relating to the play feature
+useEffect(() => {
+    if (isPlaying) {
+      audioRef.current.play();
     } else {
-        setTrackIndex((prev) => prev - 1);
-        setCurrentTrack(tracks[trackIndex - 1]);
-        setCurPlaylistState(RADIO_EPS[trackIndex - 1])
+      audioRef.current.pause();
     }
-  };
+    playAnimationRef.current = requestAnimationFrame(repeat);
+  }, [isPlaying, audioRef, repeat]);
 
-    // useEffect relating to the play feature
-    useEffect(() => {
-        if (isPlaying) {
-          audioRef.current.play();
-        } else {
-          audioRef.current.pause();
-        }
-        playAnimationRef.current = requestAnimationFrame(repeat);
-      }, [isPlaying, audioRef, repeat]);
-    
-        // useEffect relating to state of volume being muted
-        useEffect(() => {
-            if (audioRef) {
-              audioRef.current.volume = volume / 100;
-              audioRef.current.muted = muteVolume;
-            }
-          }, [volume, audioRef, muteVolume]);
-
+// useEffect relating to state of volume being muted
+useEffect(() => {
+    if (audioRef) {
+      audioRef.current.volume = volume / 100;
+      audioRef.current.muted = muteVolume;
+    }
+  }, [volume, audioRef, muteVolume]);
 
   return (
-    <Grid container direction="column" spacing={2} justifyContent="center">
+    <Grid container direction="column" spacing={1} justifyContent="center">
       <Grid item>
         <Box display="flex" alignItems="center" justifyContent="center">
-          {/* Previous Button */}
-          <Box mr={5}>
-            <button onClick={handlePrevious}>
-              <IoPlaySkipBackSharp size={PLAYBACK_BUTTON_SIZE} />
+        
+        {/* Previous Button */}
+          <Box mr={5} display="flex" flexDirection="column" alignItems="center">
+            <Typography variant="body1" mb={1} align="center">
+              Previous
+            </Typography>
+            <button onClick={handlePrev} disabled={trackIndex === 0}>
+              <CgPlayBackwards size={PLAYBACK_BUTTON_SIZE} />
+            </button>
+            <Typography variant="body1" mt={1} align="center">
+              Episode
+            </Typography>
+          </Box>
+
+        {/* Play/Pause Button */}
+          <Box display="flex" flexDirection="column" alignItems="center">
+            <button onClick={togglePlayPause}>
+              {isPlaying ? (
+                <IoPauseSharp size={PLAYBACK_BUTTON_SIZE + 20} />
+              ) : (
+                <IoPlaySharp size={PLAYBACK_BUTTON_SIZE + 20} />
+              )}
             </button>
           </Box>
 
-          {/* Play/Pause Button */}
-          <Box mr={5}>
-            <button onClick={togglePlayPause}>
-              {isPlaying ? (
-                <IoPauseSharp size={PLAYBACK_BUTTON_SIZE} />
-              ) : (
-                <IoPlaySharp size={PLAYBACK_BUTTON_SIZE} />
-              )}
-            </button>
-            </Box>
-
-          {/* Next Button */}
-          <Box>
+        {/* Next Button */}
+          <Box ml={5} display="flex" flexDirection="column" alignItems="center">
+            <Typography variant="body1" mb={1} align="center">
+              Next
+            </Typography>
             <button onClick={handleNext}>
-              <IoPlaySkipForwardSharp size={PLAYBACK_BUTTON_SIZE} />
+              <CgPlayForwards size={PLAYBACK_BUTTON_SIZE} />
             </button>
+            <Typography variant="body1" mt={1} align="center">
+              Episode
+            </Typography>
           </Box>
         </Box>
       </Grid>
@@ -157,7 +155,7 @@ const Controls = ({
         />
       </Grid>
     </Grid>
-  );
+    );
 };
 
 export default Controls;

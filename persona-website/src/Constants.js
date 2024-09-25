@@ -7,6 +7,7 @@ export const VOLUME_BUTTON_SIZE = 18;
 // Radio Show Dets
 export const RADIO_EPS = [
     {
+        // Episode 1
         id: 1,
         radioTrackList: [
             { id: 'ep_1_song_1', songTitle: 'Boogie Oogie Oogie', artistCredit: 'A Taste of Honey' },
@@ -14,19 +15,21 @@ export const RADIO_EPS = [
             { id: 'ep_1_song_3', songTitle: 'The Highs & The Lows', artistCredit: 'Chance the Rapper (ft. Joey Bada$$)' }, 
             { id: 'ep_1_song_4', songTitle: 'KAYTRANADA_WAITIN_115 BPM', artistCredit: 'Kelela & KAYTRANADA' },
             { id: 'ep_1_song_5', songTitle: 'The Boss', artistCredit: 'Diana Ross' },
-            { id: 'ep_1_song6', songTitle: 'Somtimes', artistCredit: 'DMX'}
+            { id: 'ep_1_song_6', songTitle: 'Somtimes', artistCredit: 'DMX'}
         ]
     },
-    // {
-    //     id: 2,
-    //     radioTrackList: [
-    //         { id: 'ep_2_song_1', songTitle: '...', artistCredit: '...'},
-    //         { id: 'ep_2_song_2', songTitle: '...', artistCredit: '...'},
-    //         { id: 'ep_2_song_3', songTitle: '...', artistCredit: '...'}, 
-    //         { id: 'ep_2_song_4', songTitle: '...', artistCredit: '...'},
-    //         { id: 'ep_2_song_5', songTitle: '...', artistCredit: '...' } 
-    //     ]
-    // },
+    {
+        // Episode 2
+        id: 2,
+        radioTrackList: [
+            { id: 'ep_2_song_1', songTitle: 'A Little Bit of Love', artistCredit: 'Brenda Russell'},
+            { id: 'ep_2_song_2', songTitle: 'Born to Love', artistCredit: 'Peabo Bryson & Roberta Flack'},
+            { id: 'ep_2_song_3', songTitle: 'I Love Me Some Him', artistCredit: 'Toni Braxton'}, 
+            { id: 'ep_2_song_4', songTitle: 'Luv U Better', artistCredit: 'LL Cool J'},
+            { id: 'ep_2_song_5', songTitle: 'Ribbon In the Sky', artistCredit: 'Stevie Wonder' },
+            { id: 'ep_2_song_6', songTitle: 'Share Your Love ', artistCredit: 'Angela Bofill' }
+        ]
+    },
 
 ];
 
@@ -52,13 +55,13 @@ export const VINYL_LIST = [
 
 // The banner text for the HomePage
 export const bannerTexts = [
+  'The Second Episode of EddPerience Radio is out NOW!!!',
   'Turning My Thoughts Into Reality',
   "A Creative Mind Is Useless Under Capitalism When It Doesn't Make Money",
   'Did You Drink Water Yet?',
   'Do Something For Yourself Today',
   'Music Making - In Progress',
   'Tech Bro Dracula - In Progress',
-  'The First Episode of Edd Radio is Out!!!',
   'Have You Signed Up for the Newsletter?',
   "Don't Be Selfish With Your Art. SHARE IT!!!",
   "Believe In The Me That Believes In You"

@@ -19,6 +19,12 @@
 .env.production.local
 devReport/devNotes.txt
 
+# Ignore everything in the folder
+src/data/*
+
+# Unignore the data file that is needed
+!src/data/episodes.js
+
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

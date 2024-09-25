@@ -14,6 +14,7 @@ Component Description:
 
 const TrackControlComponent = ({
   currentTrack,
+  trackIndex,
   audioRef,
   setDuration,
   duration,
@@ -88,6 +89,7 @@ const TrackControlComponent = ({
       {/* Radio Controls Section */}
       <Grid item id="radioControl_section">
         <Controls
+          trackIndex={trackIndex}
           audioRef={audioRef}
           progressBarRef={progressBarRef}
           duration={duration}

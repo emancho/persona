@@ -14,7 +14,7 @@ export const episodes = [
     src: ep1Audio,
     epTitle: 'Trusting the process',
     thumbnail: ep1_cover,
-    alt:'A sideway containing pink hue color flowers on green grass. Displays artist watermark and the title Ep.1'
+    alt:'A sideway containing pink hue color flowers on green grass. Displays artist watermark and the title: Ep.1'
   },  
   {
     id: 2,
@@ -22,6 +22,6 @@ export const episodes = [
     src: ep2Audio,
     epTitle: 'All About Love',
     thumbnail: ep2_cover,
-    alt:'A display of white petaled flowers with bee landed on one of them. Displays artist watermark and the title Ep.2'
+    alt:'A display of white petaled flowers with bee landed on one of them. Displays artist watermark and the title: Ep.2'
   },  
 ];

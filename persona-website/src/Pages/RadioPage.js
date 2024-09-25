@@ -12,7 +12,7 @@ import { episodes } from '../data/episodes';
 import {RADIO_EPS} from '../Constants'
 
 // == Description:
-// The Radio Page - This page is the Radio Show page. This page is the location of all radio episodes. Consist
+// The Radio Page - This page is the Radio Show page. This page has the location of all radio episodes. Consist
 // of the related episode's image, playtime bar, playback buttons and list of songs within the radio show. 
 
 function RadioPage() {
@@ -24,11 +24,11 @@ function RadioPage() {
     const [duration, setDuration] = useState(0);
     const [isPlaying, setIsPlaying] = useState(false);
   
-    // Audio and Progress bar reference
+    // Mutable ref objects tied to the audio and progress bar
     const audioRef = useRef(null);
     const progressBarRef = useRef(null);
 
-    // the function responsible for the behavior of the next button
+    // the function responsible for the behavior of the next button on the Radio Page
     const handleNext = () => {
       // When hitting the next button on the last episode, navigate to the first episode
       if (trackIndex >= episodes.length - 1) {
@@ -42,7 +42,7 @@ function RadioPage() {
         setCurTrackList(RADIO_EPS[trackIndex + 1]);
       }
       
-      // Plays the next episode if the episode is paused 
+      // Plays the next ep of the Radio Show when the play button is in pause state 
       if(audioRef.current){
         if(audioRef.current.pause ){ 
           setIsPlaying(true);
@@ -50,16 +50,14 @@ function RadioPage() {
       }
     };
 
-    // The function responsible for the behavior of the previous button
+    // The function responsible for the behavior of the previous button on the Radio Page
     const handlePrev = () => {
-      // Allows previous travseral except when at the first episode
-      if (trackIndex !== 0) {
-        setTrackIndex((prev) => prev - 1);
-        setCurrentTrack(episodes[trackIndex - 1]);
-        setCurTrackList(RADIO_EPS[trackIndex - 1]);
-      }
-
-      // Plays the next episode if the episode is paused 
+      // Shifts current episode to the previous track
+      setTrackIndex((prev) => prev - 1);
+      setCurrentTrack(episodes[trackIndex - 1]);
+      setCurTrackList(RADIO_EPS[trackIndex - 1]);
+      
+      // Plays the previous ep of the Radio Show when the play button is in pause state
       if(audioRef.current){
         if(audioRef.current.pause ){ 
           setIsPlaying(true);
@@ -79,6 +77,7 @@ function RadioPage() {
           topSection={      
           <TrackControlComponent
             currentTrack={currentTrack}
+            trackIndex={trackIndex}
             audioRef={audioRef}
             setDuration={setDuration}
             progressBarRef={progressBarRef}

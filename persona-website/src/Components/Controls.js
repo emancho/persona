@@ -33,14 +33,15 @@ Component Description:
 */
 
 const Controls = ({
-audioRef,
-progressBarRef,
-duration,
-setTimeProgress,
-handleNext,
-handlePrev,
-isPlaying,
-setIsPlaying
+  trackIndex,
+  audioRef,
+  progressBarRef,
+  duration,
+  setTimeProgress,
+  handleNext,
+  handlePrev,
+  isPlaying,
+  setIsPlaying
 }) => {
 const [volume, setVolume] = useState(100);
 const [muteVolume, setMuteVolume] = useState(false);
@@ -89,17 +90,17 @@ useEffect(() => {
     <Grid container direction="column" spacing={1} justifyContent="center">
       <Grid item>
         <Box display="flex" alignItems="center" justifyContent="center">
-          
+        
         {/* Previous Button */}
           <Box mr={5} display="flex" flexDirection="column" alignItems="center">
             <Typography variant="body1" mb={1} align="center">
               Previous
             </Typography>
-            <button onClick={handlePrev}>
+            <button onClick={handlePrev} disabled={trackIndex === 0}>
               <CgPlayBackwards size={PLAYBACK_BUTTON_SIZE} />
             </button>
             <Typography variant="body1" mt={1} align="center">
-            Episode
+              Episode
             </Typography>
           </Box>
 

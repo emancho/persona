@@ -22,6 +22,7 @@ function RadioPage() {
     const [timeProgress, setTimeProgress] = useState(0);
     const [curTrackList, setCurTrackList] = useState(RADIO_EPS[1])
     const [duration, setDuration] = useState(0);
+    const [isPlaying, setIsPlaying] = useState(false);
   
     // Audio and Progress bar reference
     const audioRef = useRef(null);
@@ -38,7 +39,14 @@ function RadioPage() {
       else {
         setTrackIndex((prev) => prev + 1);
         setCurrentTrack(episodes[trackIndex + 1]);
-        setCurTrackList(RADIO_EPS[trackIndex + 1])
+        setCurTrackList(RADIO_EPS[trackIndex + 1]);
+      }
+      
+      // Plays the next episode if the episode is paused 
+      if(audioRef.current){
+        if(audioRef.current.pause ){ 
+          setIsPlaying(true);
+        }
       }
     };
 
@@ -48,7 +56,14 @@ function RadioPage() {
       if (trackIndex !== 0) {
         setTrackIndex((prev) => prev - 1);
         setCurrentTrack(episodes[trackIndex - 1]);
-        setCurTrackList(RADIO_EPS[trackIndex - 1])
+        setCurTrackList(RADIO_EPS[trackIndex - 1]);
+      }
+
+      // Plays the next episode if the episode is paused 
+      if(audioRef.current){
+        if(audioRef.current.pause ){ 
+          setIsPlaying(true);
+        }
       }
     };
 
@@ -72,6 +87,8 @@ function RadioPage() {
             timeProgress={timeProgress}
             duration={duration}
             setTimeProgress={setTimeProgress}
+            isPlaying={isPlaying}
+            setIsPlaying={setIsPlaying}
           />}
           bottomSection={<RadioList listOfEpisodes={curTrackList.radioTrackList} />}
         />

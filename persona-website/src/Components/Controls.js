@@ -67,41 +67,6 @@ const repeat = useCallback(() => {
   }
 }, [audioRef, duration, progressBarRef, setTimeProgress]);
 
-// Hopefully the final version of the Play/Pause button feature
-  // const repeat = useCallback(() => {
-  //   if (progressBarRef.current && audioRef.current) {
-  //     const currentTime = audioRef.current.currentTime;
-
-  //     // Check if the currentTime has reached or exceeded the duration
-  //     if (currentTime >= duration) {
-  //       // Pause the audio and stop the animation
-  //       audioRef.current.pause();
-  //       cancelAnimationFrame(playAnimationRef.current);
-
-  //       // Update the play/pause state to reflect that the audio is no longer playing
-  //       setIsPlaying(false);
-
-  //       // Optionally reset the progress bar (set it to 0 if you want to restart the UI state)
-  //       setTimeProgress(0); 
-  //       progressBarRef.current.value = 0;
-  //       progressBarRef.current.style.setProperty('--range-progress', '0%');
-
-  //       return; // Exit the function to stop further updates
-  //     }
-
-  //     // Update time and progress bar while the audio is playing
-  //     setTimeProgress(currentTime);
-  //     progressBarRef.current.value = currentTime;
-  //     progressBarRef.current.style.setProperty(
-  //       '--range-progress',
-  //       `${(currentTime / duration) * 100}%`
-  //     );
-
-  //     // Continue requesting the next animation frame
-  //     playAnimationRef.current = requestAnimationFrame(repeat);
-  //   }
-  // }, [audioRef, duration, progressBarRef, setTimeProgress, setIsPlaying]);
-
 // useEffect relating to the play feature
 useEffect(() => {
     if (isPlaying) {

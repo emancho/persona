@@ -1,5 +1,5 @@
 //== React Lib
-import React, {useState} from 'react';
+import React from 'react';
 //== Material UI
 import { Grid } from '@mui/material';
 //== Components
@@ -22,9 +22,11 @@ const TrackControlComponent = ({
   setTimeProgress,
   handleNext,
   handlePrev,
+  isPlaying,
+  setIsPlaying
 }) => {
   // hooks maintaining the state of the play button on the Radio Page 
-  const [isPlaying, setIsPlaying] = useState(false);
+
 
   const radioContentDisplay = {
       display: 'flex',

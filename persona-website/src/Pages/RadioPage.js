@@ -17,10 +17,10 @@ import {RADIO_EPS} from '../Constants'
 
 function RadioPage() {
     // states
-    const [trackIndex, setTrackIndex] = useState(1);
+    const [trackIndex, setTrackIndex] = useState(2);
     const [currentTrack, setCurrentTrack] = useState(episodes[trackIndex]);
     const [timeProgress, setTimeProgress] = useState(0);
-    const [curTrackList, setCurTrackList] = useState(RADIO_EPS[1])
+    const [curTrackList, setCurTrackList] = useState(RADIO_EPS[2])
     const [duration, setDuration] = useState(0);
     const [isPlaying, setIsPlaying] = useState(false);
   

@@ -7,7 +7,6 @@ function SubscriptionForm({ open, onClose }) {
   const [email, setEmail] = useState('');
   const [favoriteArtist, setFavoriteArtist] = useState('');
   const [error, setError] = useState('');
-  const [successMessage, setSuccessMessage] = useState('');
 
   const isValidEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -25,38 +24,33 @@ function SubscriptionForm({ open, onClose }) {
     }
 
     setError(''); // Clear any previous errors
-      
-    // data to pass in POST request
-    const userData = {
-        body: JSON.stringify({
-            name: name,
-            email: email,
-            favoriteArtist: favoriteArtist
-        })
-    };
 
-    // console.log('The obj is: ' + JSON.stringify(userData))
+    try {
+        // User input for POST request
+        const userData = {
+            body: JSON.stringify({
+                name: name,
+                email: email,
+                favoriteArtist: favoriteArtist
+            })
+        };
 
-    axios.post('https://prlcog0y6e.execute-api.us-east-1.amazonaws.com/dev/submit', userData)
-    .then(function(response){
+        const response = await axios.post('https://prlcog0y6e.execute-api.us-east-1.amazonaws.com/dev/submit', userData)
         if (response.status === 200){
-            // New User is successfully created so activate the Magic
-            setSuccessMessage('Welcome!');
-            setTimeout(() => {
-            setSuccessMessage('');
-            onClose(); // Close the dialog on successful submission
-            }, 2000);
+            //Successful Call
+            const data = response.data
+
+            if (data.statusCode === 201) {
+                // New entry is created and added to database
+                setTimeout(() => {
+                onClose(); // Close the dialog on successful submission
+                }, 2000);
+            }
         }
-    })
-    .catch(function(err){
-        if (err.response && err.response.data.message === 'Email already exists') {
-            setError('Email is already registered.');
-        } else {
-            // Its
-            //setError('It's not your fault, it's mine');
-            setError('Error Message:- ' + err);
-        }
-    })
+    } 
+    catch (err) {
+        console.log('API Request Error: ' + err)
+    }
     };
 
   return (
@@ -88,7 +82,6 @@ function SubscriptionForm({ open, onClose }) {
           margin="dense"
         />
         {error && <p style={{ color: 'red' }}>{error}</p>}
-        {successMessage && <p style={{ color: 'green' }}>{successMessage}</p>}
       </DialogContent>
       <DialogActions>
         <Button onClick={onClose}>Cancel</Button>

@@ -1,11 +1,12 @@
 //=== React Lib
-import React from 'react';
+import React, {useState} from 'react';
 import _ from 'lodash';
 //== Components
 import AnimatedText from '../Components/AnimatedText';
 import HoverableCardMedia from '../Components/HoverableCardMedia'
 import MainContentComponent from '../Components/MainContentComponent';
-import WebpageTemplate from "../Components/WebpageTemplate";
+import WebpageTemplate from '../Components/WebpageTemplate';
+import SubscriptionForm from '../Components/SubscriptionForm';
 //== Material UI
 import { Button, Typography, Container, Grid, Card } from '@mui/material';
 //== Constants
@@ -24,22 +25,38 @@ const sectionStyle = {
 
 // Section for the Newsletter Option
 const NewsletterSection = () => {
+
+  const [openForm, setOpenForm] = useState(false); // State to control dialog visibility
+
+  // Function to open the SubscriptionForm dialog
+  const handleOpenForm = () => setOpenForm(true);
+
+  // Function to close the SubscriptionForm dialog
+  const handleCloseForm = () => setOpenForm(false);
+
   return (
     <Container sx={{ textAlign: 'center', paddingTop: '20px', paddingBottom: '50px' }}>
       <Typography variant="h3" align="center" gutterBottom>
         Join the Newsletter!
       </Typography>
-      <Button
-        variant="contained"
-        color="primary"
-        onClick={() => window.location.href = 'https://forms.gle/vPYRvZFx1ixtdFvp7'}
-        sx={{
-          fontSize: '25px', // Larger font size
-          padding: '10px 20px', // More padding
-        }}
-      >
-        sign up
-      </Button>
+      <div>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={handleOpenForm} // Open the form on click
+          sx={{
+            fontSize: '25px', // Larger font size
+            padding: '10px 20px', // More padding
+          }}
+        >
+          Subscribe
+        </Button>
+
+        {/* Render the SubscriptionForm dialog if openForm is true */}
+        {openForm && (
+          <SubscriptionForm open={openForm} onClose={handleCloseForm} />
+        )}
+      </div>
     </Container>
   );
 };

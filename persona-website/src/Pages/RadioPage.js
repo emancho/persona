@@ -16,11 +16,13 @@ import {RADIO_EPS} from '../Constants'
 // of the related episode's image, playtime bar, playback buttons and list of songs within the radio show. 
 
 function RadioPage() {
+    // The initial track representing the most recent radio episode
+    const initTrack = 3;
     // states
-    const [trackIndex, setTrackIndex] = useState(2);
+    const [trackIndex, setTrackIndex] = useState(initTrack);
     const [currentTrack, setCurrentTrack] = useState(episodes[trackIndex]);
     const [timeProgress, setTimeProgress] = useState(0);
-    const [curTrackList, setCurTrackList] = useState(RADIO_EPS[2])
+    const [curTrackList, setCurTrackList] = useState(RADIO_EPS[trackIndex])
     const [duration, setDuration] = useState(0);
     const [isPlaying, setIsPlaying] = useState(false);
   

@@ -42,6 +42,18 @@ export const RADIO_EPS = [
             { id: 'ep_3_song_6', songTitle: 'Never Knew Love Like This Before', artistCredit: 'Stephanie Mills' }
         ]
     },
+    {
+        // Episode 4
+        id: 4,
+        radioTrackList: [
+            { id: 'ep_4_song_1', songTitle: 'You Gotta Be', artistCredit: `Des’ree`},
+            { id: 'ep_4_song_2', songTitle: 'Cranes in the Sky', artistCredit: 'Solange'},
+            { id: 'ep_4_song_3', songTitle: 'Alright', artistCredit: 'Kendrick Lamar'}, 
+            { id: 'ep_4_song_4', songTitle: 'Golden', artistCredit: 'Jill Scott'},
+            { id: 'ep_4_song_5', songTitle: 'It Gets Better (With Time)', artistCredit: 'The Internet' },
+            { id: 'ep_4_song_6', songTitle: `Someday We’ll All Be Free`, artistCredit: 'Donny Hathaway' }
+        ]
+    },
 ];
 
 // The list of Social Vinyl
@@ -66,7 +78,7 @@ export const VINYL_LIST = [
 
 // The banner text for the HomePage
 export const bannerTexts = [
-  'The Third Episode of EddPerience Radio is out NOW!!!',
+  'The Fourth Episode of EddPerience Radio is out NOW!!!',
   'Turning My Thoughts Into Reality',
   "A Creative Mind Is Useless Under Capitalism When It Doesn't Make Money",
   'Did You Drink Water Yet?',

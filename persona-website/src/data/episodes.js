@@ -2,6 +2,7 @@
 import ep1Audio from './RadioEp1.mp3';
 import ep2Audio from './RadioEp2.mp3';
 import ep3Audio from './RadioEp3.mp3';
+import ep4Audio from './RadioEp4.mp3';
 
 // image thumbnails used for Radio eps
 import ep1_cover from './radio_ep1.png';
@@ -38,7 +39,7 @@ export const episodes = [
   {
     id: 4,
     title:'Episode 4:',
-    src: ep3Audio,
+    src: ep4Audio,
     epTitle: 'Things Gon Be Aight',
     thumbnail: ep4_cover,
     alt:'A display of pink hued flowers after a rainy day. Displays artist watermark and the font "Episode" with a pink hued flame with the number 4 representing the fourth episode.'

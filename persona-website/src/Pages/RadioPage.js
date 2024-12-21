@@ -17,7 +17,7 @@ import {RADIO_EPS} from '../Constants'
 
 function RadioPage() {
     // The initial track representing the most recent radio episode
-    const initTrack = 3;
+    const initTrack = 4;
     // states
     const [trackIndex, setTrackIndex] = useState(initTrack);
     const [currentTrack, setCurrentTrack] = useState(episodes[trackIndex]);

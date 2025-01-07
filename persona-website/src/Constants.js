@@ -66,6 +66,18 @@ export const RADIO_EPS = [
             { id: 'ep_5_song_6', songTitle: 'Open Your Eyes', artistCredit: 'Bobby Caldwell' }
         ]
     },
+    {
+        // Episode 6
+        id: 6,
+        radioTrackList: [
+            { id: 'ep_6_song_1', songTitle: 'When You Were Young', artistCredit: 'The Killers'},
+            { id: 'ep_6_song_2', songTitle: 'Thnks fr th Mmrs', artistCredit: 'Fall Out Boy'},
+            { id: 'ep_6_song_3', songTitle: 'Angelina', artistCredit: 'The Bravery'}, 
+            { id: 'ep_6_song_4', songTitle: 'Sun Red Sky Blue', artistCredit: 'Kenna'},
+            { id: 'ep_6_song_5', songTitle: 'Laser Life', artistCredit: 'The Blood Brothers'},
+            { id: 'ep_6_song_6', songTitle: 'Lisztomania', artistCredit: 'Phoenix'}
+        ]
+    },
 ];
 
 // The list of Social Vinyl

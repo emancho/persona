@@ -12,7 +12,7 @@ import ep2_cover from './radio_ep2.png';
 import ep3_cover from './radio_ep3.png';
 import ep4_cover from './radio_ep4.png';
 import ep5_cover from './radio_ep5.png';
-//import ep6_cover from './radio_ep6.png';
+import ep6_cover from './radio_ep6.png';
 
 // The list of objects where each entry is representing the info for each radio episode
 export const episodes = [
@@ -62,8 +62,7 @@ export const episodes = [
     // src: ep6Audio,
     src: null,
     epTitle: 'High School of Rock',
-    // thumbnail: ep6_cover,
-    thumbnail: null,
+    thumbnail: ep6_cover,
     alt:''
   }
 ];

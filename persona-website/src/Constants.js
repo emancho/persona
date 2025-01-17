@@ -72,10 +72,10 @@ export const RADIO_EPS = [
         radioTrackList: [
             { id: 'ep_6_song_1', songTitle: 'When You Were Young', artistCredit: 'The Killers'},
             { id: 'ep_6_song_2', songTitle: 'Thnks fr th Mmrs', artistCredit: 'Fall Out Boy'},
-            { id: 'ep_6_song_3', songTitle: 'Angelina', artistCredit: 'The Bravery'}, 
+            { id: 'ep_6_song_3', songTitle: 'An Honest Mistake', artistCredit: 'The Bravery'}, 
             { id: 'ep_6_song_4', songTitle: 'Sun Red Sky Blue', artistCredit: 'Kenna'},
             { id: 'ep_6_song_5', songTitle: 'Laser Life', artistCredit: 'The Blood Brothers'},
-            { id: 'ep_6_song_6', songTitle: 'Lisztomania', artistCredit: 'Phoenix'}
+            { id: 'ep_6_song_6', songTitle: 'Wolf Like Me', artistCredit: 'TV On The Radio'}
         ]
     },
 ];
@@ -102,7 +102,7 @@ export const VINYL_LIST = [
 
 // The banner text for the HomePage
 export const bannerTexts = [
-  'The Fifth Episode of EddPerience Radio is out NOW!!!',
+  'The Sixth Episode of EddPerience Radio is out NOW!!!',
   'Turning My Thoughts Into Reality',
   "A Creative Mind Is Useless Under Capitalism When It Doesn't Make Money",
   'Did You Drink Water Yet?',

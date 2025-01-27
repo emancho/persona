@@ -29,7 +29,7 @@ export const listOfProjects = [
         projTitle:'Tech Bro Dracula',
         projDesc: `This project is a script I'm working on using Dracula's public domain. The premise is that Dracula is struggling to survive in a world filled with modern-day technology and apps, making it challenging to suck blood while staying incognito. To avoid dying from starvation, Dracula reluctantly embraces the very thing he hates—technology—and transforms into a Tech Bro to satisfy his hunger.`,
         projAction:'POPUP',
-        projResponse:`Author notes: Currently working on the rough draft pilot script. Will post when completed...15 pages done so far!`
+        projResponse:`Author notes: Currently working on the rough draft pilot script. Will post when completed...33 pages done so far!`
     },
 ];
 

@@ -4,7 +4,7 @@ import ep2Audio from './RadioEp2.mp3';
 import ep3Audio from './RadioEp3.mp3';
 import ep4Audio from './RadioEp4.mp3';
 import ep5Audio from './RadioEp5.mp3';
-//import ep6Audio from './RadioEp6.mp3';
+import ep6Audio from './RadioEp6.mp3';
 
 // image thumbnails used for Radio eps
 import ep1_cover from './radio_ep1.png';
@@ -59,10 +59,9 @@ export const episodes = [
   {
     id: 6,
     title:'Episode 6:',
-    // src: ep6Audio,
-    src: null,
+    src: ep6Audio,
     epTitle: 'High School of Rock',
     thumbnail: ep6_cover,
-    alt:''
+    alt:'Edited a highschool photo of myself. Has me with green flame hair, red shades and red scarf with white stars and an easter egg with Rawr XD on the paper'
   }
 ];

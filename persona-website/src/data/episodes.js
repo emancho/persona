@@ -4,6 +4,7 @@ import ep2Audio from './RadioEp2.mp3';
 import ep3Audio from './RadioEp3.mp3';
 import ep4Audio from './RadioEp4.mp3';
 import ep5Audio from './RadioEp5.mp3';
+import ep6Audio from './RadioEp6.mp3';
 
 // image thumbnails used for Radio eps
 import ep1_cover from './radio_ep1.png';
@@ -11,6 +12,7 @@ import ep2_cover from './radio_ep2.png';
 import ep3_cover from './radio_ep3.png';
 import ep4_cover from './radio_ep4.png';
 import ep5_cover from './radio_ep5.png';
+import ep6_cover from './radio_ep6.png';
 
 // The list of objects where each entry is representing the info for each radio episode
 export const episodes = [
@@ -52,6 +54,14 @@ export const episodes = [
     src: ep5Audio,
     epTitle: 'Blue Eyed Soul White Dragon',
     thumbnail: ep5_cover,
-    alt:'Modified version of the Blue Eyes White Dragon from YuGiOh. Displays Card of the Dragon with [......]. Displays artist watermark and the font "Episode" with a [.....] flame with the number 5 representing the fifth episode.'
-  }      
+    alt:'Modified version of the Blue Eyes White Dragon from YuGiOh. Displays Card of the Dragon with black shades and a bass guitar.'
+  },
+  {
+    id: 6,
+    title:'Episode 6:',
+    src: ep6Audio,
+    epTitle: 'High School of Rock',
+    thumbnail: ep6_cover,
+    alt:'Edited a highschool photo of myself. Has me with green flame hair, red shades and red scarf with white stars and an easter egg with Rawr XD on the paper'
+  }
 ];

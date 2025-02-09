@@ -13,6 +13,7 @@ import ep3_cover from './radio_ep3.png';
 import ep4_cover from './radio_ep4.png';
 import ep5_cover from './radio_ep5.png';
 import ep6_cover from './radio_ep6.png';
+import ep7_cover from './radio_ep7.png';
 
 // The list of objects where each entry is representing the info for each radio episode
 export const episodes = [
@@ -63,5 +64,13 @@ export const episodes = [
     epTitle: 'High School of Rock',
     thumbnail: ep6_cover,
     alt:'Edited a highschool photo of myself. Has me with green flame hair, red shades and red scarf with white stars and an easter egg with Rawr XD on the paper'
+  },
+  {
+    id: 7,
+    title:'Episode 7:',
+    src: null,
+    epTitle: 'For All The Lovers',
+    thumbnail: ep7_cover,
+    alt:'An edited picture of Arthur holding a vinyl with a heart shaped labeling with heart shaped glasses and flame hair.'
   }
 ];

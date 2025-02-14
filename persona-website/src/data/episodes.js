@@ -5,6 +5,7 @@ import ep3Audio from './RadioEp3.mp3';
 import ep4Audio from './RadioEp4.mp3';
 import ep5Audio from './RadioEp5.mp3';
 import ep6Audio from './RadioEp6.mp3';
+import ep7Audio from './RadioEp7.mp3';
 
 // image thumbnails used for Radio eps
 import ep1_cover from './radio_ep1.png';
@@ -68,7 +69,7 @@ export const episodes = [
   {
     id: 7,
     title:'Episode 7:',
-    src: null,
+    src: ep7Audio,
     epTitle: 'For All The Lovers',
     thumbnail: ep7_cover,
     alt:'An edited picture of Arthur holding a vinyl with a heart shaped labeling with heart shaped glasses and flame hair.'

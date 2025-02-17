@@ -78,6 +78,13 @@ export const RADIO_EPS = [
             { id: 'ep_6_song_6', songTitle: 'Wolf Like Me', artistCredit: 'TV On The Radio'}
         ]
     },
+    {
+        // Episode 7
+        id: 7,
+        radioTrackList: [
+            {id: 999, songTitle: "Valentine's Mix", artistCredit: "Full List : Coming Soon"}
+        ]
+    },
 ];
 
 // The list of Social Vinyl
@@ -102,7 +109,7 @@ export const VINYL_LIST = [
 
 // The banner text for the HomePage
 export const bannerTexts = [
-  'The Sixth Episode of EddPerience Radio is out NOW!!!',
+  'The Seventh Episode of EddPerience Radio is out NOW!!!',
   'Turning My Thoughts Into Reality',
   "A Creative Mind Is Useless Under Capitalism When It Doesn't Make Money",
   'Did You Drink Water Yet?',

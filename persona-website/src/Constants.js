@@ -85,6 +85,18 @@ export const RADIO_EPS = [
             {id: 999, songTitle: "Valentine's Mix", artistCredit: "Full List : Coming Soon"}
         ]
     },
+    {
+        // Episode 8
+        id: 8,
+        radioTrackList: [
+            { id: 'ep_8_song_1', songTitle: 'Seven Steps to Heaven', artistCredit: 'Miles Davis'},
+            { id: 'ep_8_song_2', songTitle: 'Wave', artistCredit: 'Ahmand Jamal Trio'},
+            { id: 'ep_8_song_3', songTitle: 'Nardis', artistCredit: 'Bill Evans Trio'}, 
+            { id: 'ep_8_song_4', songTitle: 'Nothing Serious', artistCredit: 'Roy Hargrove'},
+            { id: 'ep_8_song_5', songTitle: 'Rush', artistCredit: 'Seatbelts'},
+            { id: 'ep_8_song_6', songTitle: 'My Favorite Things', artistCredit: 'John Coltrane'}
+        ]
+    },
 ];
 
 // The list of Social Vinyl
@@ -109,7 +121,7 @@ export const VINYL_LIST = [
 
 // The banner text for the HomePage
 export const bannerTexts = [
-  'The Seventh Episode of EddPerience Radio is out NOW!!!',
+  'The Eighth Episode of EddPerience Radio is out NOW!!!',
   'Turning My Thoughts Into Reality',
   "A Creative Mind Is Useless Under Capitalism When It Doesn't Make Money",
   'Did You Drink Water Yet?',

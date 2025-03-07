@@ -82,7 +82,23 @@ export const RADIO_EPS = [
         // Episode 7
         id: 7,
         radioTrackList: [
-            {id: 999, songTitle: "Valentine's Mix", artistCredit: "Full List : Coming Soon"}
+            { id: 'ep_7_song_1', songTitle: 'If You Love Me', artistCredit: 'Brownstone'},
+            { id: 'ep_7_song_2', songTitle: 'All That I Can Say', artistCredit: 'Mary J Blige'},
+            { id: 'ep_7_song_3', songTitle: 'Closer (Ode to You)', artistCredit: 'Ravyn Lenae'}, 
+            { id: 'ep_7_song_4', songTitle: 'Be Your Girl (Kaytranada Mix)', artistCredit: 'Teedra Moses (ft Kaytranada)'},
+            { id: 'ep_7_song_5', songTitle: 'I Knew That Love', artistCredit: 'Eighties Ladies'},
+            { id: 'ep_7_song_6', songTitle: 'Love Can Be', artistCredit: 'Vince Staples'},
+            { id: 'ep_7_song_7', songTitle: 'Cameo Lover', artistCredit: 'Kimbra'},
+            { id: 'ep_7_song_8', songTitle: 'Rock With You', artistCredit: 'Michael Jackson'},
+            { id: 'ep_7_song_9', songTitle: "Why Don't We Fall in Love", artistCredit: 'Amerie'}, 
+            { id: 'ep_7_song_10', songTitle: 'Nite and Day', artistCredit: 'Al B. Sure!'},
+            { id: 'ep_7_song_11', songTitle: 'All I Do', artistCredit: 'Stevie Wonder'},
+            { id: 'ep_7_song_12', songTitle: 'You Don’t Know My Name', artistCredit: 'Alicia Keys'},
+            { id: 'ep_7_song_13', songTitle: 'Make It Last Forever', artistCredit: 'Keith Sweat'},
+            { id: 'ep_7_song_14', songTitle: 'A Song About Love', artistCredit: 'Lonnie Liston Smith & the Cosmic Echoes'},
+            { id: 'ep_7_song_15', songTitle: 'Love, Love, Love', artistCredit: 'Donny Hathaway'},
+            { id: 'ep_7_song_16', songTitle: 'Tender Kisses', artistCredit: 'Tracie Spencer'},
+            { id: 'ep_7_song_17', songTitle: 'Whenever, Whatever, Wherever', artistCredit: 'Maxwell'},
         ]
     },
     {

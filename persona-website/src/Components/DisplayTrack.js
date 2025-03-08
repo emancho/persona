@@ -31,7 +31,7 @@ const DisplayTrack = ({
         </div>
         <div className="episode_listing">
             <Typography variant="h4" align="center">{currentTrack.title}</Typography>
-            <Typography variant="h5" align="center">{'~' + currentTrack.epTitle + '~'}</Typography>
+            <Typography variant="h5" align="center">{'~ ' + currentTrack.epTitle + ' ~'}</Typography>
         </div>
       </div>
     </>

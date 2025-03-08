@@ -6,7 +6,7 @@ import ep4Audio from './RadioEp4.mp3';
 import ep5Audio from './RadioEp5.mp3';
 import ep6Audio from './RadioEp6.mp3';
 import ep7Audio from './RadioEp7.mp3';
-//import ep8Audio from './RadioEp8.mp3';
+import ep8Audio from './RadioEp8.mp3';
 
 // image thumbnails used for Radio eps
 import ep1_cover from './radio_ep1.png';
@@ -79,8 +79,8 @@ export const episodes = [
   {
     id: 8,
     title:'Episode 8:',
-    src: null,
-    epTitle: 'The Jazz Fingas',
+    src: ep8Audio,
+    epTitle: 'Jazz Hands',
     thumbnail: ep8_cover,
     alt:'An edited picture of Jazz players playing instruments. They all have music notes for heads except one that has flame hair and sleek shades.'
   }

@@ -25,7 +25,7 @@ function HomePage(){
       bannerDisplay={true}
       mainContent={
           <HomePageMainContent
-            imagePath={"/images/HomepageImgv4.gif"} 
+            imagePath={"HomepageImgv4.gif"} 
             imageAlt={"Blurred gif of my cute self."}
             imageWidth={500} 
             imageHeight={600}

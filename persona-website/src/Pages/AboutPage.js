@@ -48,7 +48,7 @@ function AboutPage() {
           }
           topSection={
             <ArtistImage 
-              path={"/images/AboutMeImg.png"}
+              path={"AboutMeImg.png"}
               altDesc={"A very attractive man smiling very attractively."}
               w={280}
               h={300} 

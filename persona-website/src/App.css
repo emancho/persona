@@ -170,3 +170,21 @@ body {
 .track-avatar-hover:hover {
   transform: scale(1.1);
 }
+
+/*===== Css Styling for icon on Radio Page ======*/
+.track-avatar-clickable {
+  position: relative;
+}
+
+.track-avatar-clickable:active {
+  transform: scale(0.95);
+  background-color: rgba(76, 175, 80, 0.1);
+}
+
+/* Hover effect still works on desktop */
+@media (hover: hover) {
+  .track-avatar-clickable:hover {
+    transform: scale(1.1);
+    background-color: rgba(76, 175, 80, 0.1);
+  }
+}

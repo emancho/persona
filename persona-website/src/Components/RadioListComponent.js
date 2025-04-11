@@ -9,7 +9,7 @@ import {
     Avatar,
     Box,
     ListSubheader } from '@mui/material';
-import MusicNote from '@mui/icons-material/MusicNote';
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 //== CSS
 import '../App.css';
 
@@ -56,7 +56,7 @@ const SongItem = memo(({ episode, onTrackClick, currentTime }) => {
       }
     };
   
-    // Determine if this track is currently playing (only if it has a timestamp)
+    // Determine if this track is currently playing
     const isCurrentlyPlaying = hasTimestamp && 
       currentTime >= episode.timestamp && 
       (episode.nextSongTimestamp ? currentTime < episode.nextSongTimestamp : true);
@@ -70,15 +70,27 @@ const SongItem = memo(({ episode, onTrackClick, currentTime }) => {
         }}
       >
         <ListItemAvatar 
-          onClick={hasTimestamp ? handleClick : undefined} // Only add click handler if timestamp exists
+          onClick={hasTimestamp ? handleClick : undefined}
           style={{ 
-            cursor: hasTimestamp ? 'pointer' : 'default', // Only change cursor if clickable
-            transition: hasTimestamp ? 'transform 0.2s' : 'none'
+            cursor: hasTimestamp ? 'pointer' : 'default',
+            transition: 'all 0.2s ease',
+            // Increase touch target size slightly for mobile
+            padding: hasTimestamp ? '4px' : '0',
+            margin: hasTimestamp ? '-4px' : '0',
+            borderRadius: '50%',
           }}
-          className={hasTimestamp ? "track-avatar-hover" : ""}
+          className={hasTimestamp ? "track-button-avatar" : ""}
+          title={hasTimestamp ? "Play this track" : ""}
         >
-          <Avatar>
-            <MusicNote />
+          <Avatar sx={{ 
+            backgroundColor: isCurrentlyPlaying ? '#4caf50' : hasTimestamp ? '#f5f5f5' : '#e0e0e0',
+            // Add a subtle shadow for clickable icons to make them look like buttons
+            boxShadow: hasTimestamp ? '0px 2px 4px rgba(0, 0, 0, 0.2)' : 'none',
+            // Slight elevation for currently playing
+            transform: isCurrentlyPlaying ? 'translateY(-2px)' : 'none',
+            transition: 'all 0.2s ease',
+          }}>
+            <PlayArrowIcon color={isCurrentlyPlaying ? "white" : hasTimestamp ? "action" : "disabled"} />
           </Avatar>
         </ListItemAvatar>
         <ListItemText
@@ -125,30 +137,54 @@ const RadioList = memo(({ listOfEpisodes, onTrackClick, currentTime }) => {
         };
       });
     }, [listOfEpisodes]);
+
+    // Check if any of the episodes have timestamps
+    const hasAnyTimestamps = useMemo(() => {
+        return listOfEpisodes.some(
+            track => typeof track.timestamp === 'number' && !isNaN(track.timestamp)
+    );
+    }, [listOfEpisodes]);
   
     return (
-      <Box display="flex" justifyContent="center" alignItems="center">
-        <List
-          sx={listStyles}
-          subheader={
-            <ListSubheader
-              component="div"
-              sx={subheaderStyles}
+        <Box display="flex" justifyContent="center" alignItems="center">
+            <List
+                sx={listStyles}
+                subheader={
+                <>
+                    <ListSubheader
+                    component="div"
+                    sx={subheaderStyles}
+                    >
+                    Track List
+                    </ListSubheader>
+                    {hasAnyTimestamps && (
+                    <ListSubheader
+                        component="div"
+                        sx={{
+                        textAlign: 'center',
+                        fontSize: '14px',
+                        backgroundColor: '#f8f8f8',
+                        fontStyle: 'italic',
+                        padding: '6px',
+                        color: '#666',
+                        }}
+                    >
+                        Tap the icon to jump to a specific track
+                    </ListSubheader>
+                    )}
+                </>
+                }
             >
-              Track List
-            </ListSubheader>
-          }
-        >
-          {enhancedEpisodes.map(episode => (
-            <SongItem 
-              key={episode.id} 
-              episode={episode} 
-              onTrackClick={onTrackClick}
-              currentTime={currentTime}
-            />
-          ))}
-        </List>
-      </Box>
+            {enhancedEpisodes.map(episode => (
+                <SongItem 
+                key={episode.id} 
+                episode={episode} 
+                onTrackClick={onTrackClick}
+                currentTime={currentTime}
+                />
+            ))}
+            </List>
+        </Box>
     );
   });
 

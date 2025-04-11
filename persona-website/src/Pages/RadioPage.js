@@ -53,7 +53,7 @@ function RadioPage() {
   }, [trackIndex, totalTracks, audioRef]);
 
   const handlePrev = useCallback(() => {
-    // Don't allow going below the first track (index 0)
+    // Condition that doesn't allow going below the first track due to out of bounds
     if (trackIndex <= 0) return;
     
     // Shifts current episode to the previous track

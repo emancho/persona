@@ -3,21 +3,22 @@ import {
   useState, 
   useEffect, 
   useRef, 
-  useCallback 
+  useCallback,
+  memo
 } from 'react';
 //== Playback icons
 import {
-IoPlaySharp,
-IoPauseSharp,
+  IoPlaySharp,
+  IoPauseSharp,
 } from 'react-icons/io5';
 import { CgPlayForwards } from "react-icons/cg";
 import { CgPlayBackwards } from "react-icons/cg";
 
 //== Volume icons
 import {
-IoMdVolumeHigh,
-IoMdVolumeOff,
-IoMdVolumeLow,
+  IoMdVolumeHigh,
+  IoMdVolumeOff,
+  IoMdVolumeLow,
 } from 'react-icons/io';
 //== Data
 import {
@@ -32,7 +33,8 @@ Component Description:
   Controls :- Component that represents the controls (Playback and Volume) for the radio page.
 */
 
-const Controls = ({
+// Memoized controls to prevent unnecessary re-renders
+const Controls = memo(({
   trackIndex,
   audioRef,
   progressBarRef,
@@ -43,48 +45,75 @@ const Controls = ({
   isPlaying,
   setIsPlaying
 }) => {
-const [volume, setVolume] = useState(100);
-const [muteVolume, setMuteVolume] = useState(false);
+  const [volume, setVolume] = useState(100);
+  const [muteVolume, setMuteVolume] = useState(false);
+  const playAnimationRef = useRef();
 
-// The function responsible for swapping between play and pause 
-const togglePlayPause = () => {
-  setIsPlaying((prev) => !prev);
-};
+  // The function responsible for swapping between play and pause 
+  const togglePlayPause = useCallback(() => {
+    setIsPlaying((prev) => !prev);
+  }, [setIsPlaying]);
 
-const playAnimationRef = useRef();
+  // Optimize the repeat function with useCallback to prevent recreating on every render
+  const repeat = useCallback(() => {
+    if (audioRef.current && progressBarRef.current) {
+      const currentTime = audioRef.current.currentTime;
+      setTimeProgress(currentTime);
+      progressBarRef.current.value = currentTime;
+      progressBarRef.current.style.setProperty(
+        '--range-progress',
+        `${(progressBarRef.current.value / duration) * 100}%`
+      );
+      playAnimationRef.current = requestAnimationFrame(repeat);
+    }
+  }, [audioRef, duration, progressBarRef, setTimeProgress]);
 
-
-// OG Code Behavior
-const repeat = useCallback(() => {
-  if (progressBarRef.current) {
-    const currentTime = audioRef.current ? audioRef.current.currentTime : 0;
-    setTimeProgress(currentTime);
-    progressBarRef.current.value = currentTime;
-    progressBarRef.current.style.setProperty(
-      '--range-progress',
-      `${(progressBarRef.current.value / duration) * 100}%`
-    );
-    playAnimationRef.current = requestAnimationFrame(repeat);
-  }
-}, [audioRef, duration, progressBarRef, setTimeProgress]);
-
-// useEffect relating to the play feature
-useEffect(() => {
+  // Manage play state effect
+  useEffect(() => {
+    if (!audioRef.current) return;
+    
     if (isPlaying) {
       audioRef.current.play();
+      playAnimationRef.current = requestAnimationFrame(repeat);
     } else {
       audioRef.current.pause();
+      if (playAnimationRef.current) {
+        cancelAnimationFrame(playAnimationRef.current);
+      }
     }
-    playAnimationRef.current = requestAnimationFrame(repeat);
+    
+    // Cleanup function to cancel animation frame when component unmounts
+    return () => {
+      if (playAnimationRef.current) {
+        cancelAnimationFrame(playAnimationRef.current);
+      }
+    };
   }, [isPlaying, audioRef, repeat]);
 
-// useEffect relating to state of volume being muted
-useEffect(() => {
-    if (audioRef) {
-      audioRef.current.volume = volume / 100;
-      audioRef.current.muted = muteVolume;
-    }
+  // Handle volume changes
+  useEffect(() => {
+    if (!audioRef.current) return;
+    
+    audioRef.current.volume = volume / 100;
+    audioRef.current.muted = muteVolume;
   }, [volume, audioRef, muteVolume]);
+
+  // Memoized handler for volume toggle
+  const toggleMute = useCallback(() => {
+    setMuteVolume(prev => !prev);
+  }, []);
+
+  // Memoized handler for volume change
+  const handleVolumeChange = useCallback((e) => {
+    setVolume(e.target.value);
+  }, []);
+
+  // Get appropriate volume icon based on current volume
+  const VolumeIcon = muteVolume || volume < 5 
+    ? IoMdVolumeOff 
+    : volume < 40 
+      ? IoMdVolumeLow 
+      : IoMdVolumeHigh;
 
   return (
     <Grid container direction="column" spacing={1} justifyContent="center">
@@ -132,21 +161,15 @@ useEffect(() => {
 
       {/* Mute Button and Volume Slider */}
       <Grid item xs={12} style={{ textAlign: 'center', marginTop: '10px' }}>
-        <button onClick={() => setMuteVolume((prev) => !prev)}>
-          {muteVolume || volume < 5 ? (
-            <IoMdVolumeOff size={VOLUME_BUTTON_SIZE} />
-          ) : volume < 40 ? (
-            <IoMdVolumeLow size={VOLUME_BUTTON_SIZE} />
-          ) : (
-            <IoMdVolumeHigh size={VOLUME_BUTTON_SIZE} />
-          )}
+        <button onClick={toggleMute}>
+          <VolumeIcon size={VOLUME_BUTTON_SIZE} />
         </button>
         <input
           type="range"
           min={0}
           max={100}
           value={volume}
-          onChange={(e) => setVolume(e.target.value)}
+          onChange={handleVolumeChange}
           style={{
             background: `linear-gradient(to right, #f50 ${volume}%, #ccc ${volume}%)`,
             marginLeft: '10px',
@@ -155,7 +178,7 @@ useEffect(() => {
         />
       </Grid>
     </Grid>
-    );
-};
+  );
+});
 
 export default Controls;

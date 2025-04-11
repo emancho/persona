@@ -166,3 +166,7 @@ body {
     font-size: 4vw; /* Increase font size for smaller screens */
   }
 }
+/* The css style for the avatar hover section*/
+.track-avatar-hover:hover {
+  transform: scale(1.1);
+}

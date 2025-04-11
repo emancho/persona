@@ -7,75 +7,75 @@ export const VOLUME_BUTTON_SIZE = 18;
 // Radio Show Dets
 export const RADIO_EPS = [
     {
-        // Episode 1
+        // For Episode 1
         id: 1,
         radioTrackList: [
-            { id: 'ep_1_song_1', songTitle: 'Boogie Oogie Oogie', artistCredit: 'A Taste of Honey' , timestamp: 0 },
-            { id: 'ep_1_song_2', songTitle: 'Freefall', artistCredit: 'KAYTRANADA (ft. Durand Bernarr)', timestamp: 0  },
-            { id: 'ep_1_song_3', songTitle: 'The Highs & The Lows', artistCredit: 'Chance the Rapper (ft. Joey Bada$$)', timestamp: 0  }, 
-            { id: 'ep_1_song_4', songTitle: 'KAYTRANADA_WAITIN_115 BPM', artistCredit: 'Kelela & KAYTRANADA', timestamp: 0  },
-            { id: 'ep_1_song_5', songTitle: 'The Boss', artistCredit: 'Diana Ross', timestamp: 0  },
-            { id: 'ep_1_song_6', songTitle: 'Somtimes', artistCredit: 'DMX', timestamp: 0 }
+        { id: 'ep_1_song_1', songTitle: 'Boogie Oogie Oogie', artistCredit: 'A Taste of Honey', timestamp: 27 },
+        { id: 'ep_1_song_2', songTitle: 'Freefall', artistCredit: 'KAYTRANADA (ft. Durand Bernarr)', timestamp: 366 },
+        { id: 'ep_1_song_3', songTitle: 'The Highs & The Lows', artistCredit: 'Chance the Rapper (ft. Joey Bada$$)', timestamp: 554 },
+        { id: 'ep_1_song_4', songTitle: 'KAYTRANADA_WAITIN_115 BPM', artistCredit: 'Kelela & KAYTRANADA', timestamp: 825 },
+        { id: 'ep_1_song_5', songTitle: 'The Boss', artistCredit: 'Diana Ross', timestamp: 1161 },
+        { id: 'ep_1_song_6', songTitle: 'Somtimes', artistCredit: 'DMX', timestamp: 1414 }
         ]
-    },
+    }, 
     {
-        // Episode 2
+        // For Episode 2
         id: 2,
         radioTrackList: [
-            { id: 'ep_2_song_1', songTitle: 'A Little Bit of Love', artistCredit: 'Brenda Russell', timestamp: 0 },
-            { id: 'ep_2_song_2', songTitle: 'Born to Love', artistCredit: 'Peabo Bryson & Roberta Flack', timestamp: 0 },
-            { id: 'ep_2_song_3', songTitle: 'I Love Me Some Him', artistCredit: 'Toni Braxton', timestamp: 0 }, 
-            { id: 'ep_2_song_4', songTitle: 'Luv U Better', artistCredit: 'LL Cool J', timestamp: 0 },
-            { id: 'ep_2_song_5', songTitle: 'Ribbon In the Sky', artistCredit: 'Stevie Wonder', timestamp: 0  },
-            { id: 'ep_2_song_6', songTitle: 'Share Your Love ', artistCredit: 'Angela Bofill', timestamp: 0  }
+        { id: 'ep_2_song_1', songTitle: 'A Little Bit of Love', artistCredit: 'Brenda Russell', timestamp: 30 },
+        { id: 'ep_2_song_2', songTitle: 'Born to Love', artistCredit: 'Peabo Bryson & Roberta Flack', timestamp: 319 },
+        { id: 'ep_2_song_3', songTitle: 'I Love Me Some Him', artistCredit: 'Toni Braxton', timestamp: 601 },
+        { id: 'ep_2_song_4', songTitle: 'Luv U Better', artistCredit: 'LL Cool J', timestamp: 922 },
+        { id: 'ep_2_song_5', songTitle: 'Ribbon In the Sky', artistCredit: 'Stevie Wonder', timestamp: 1177 },
+        { id: 'ep_2_song_6', songTitle: 'Share Your Love', artistCredit: 'Angela Bofill', timestamp: 1559 }
         ]
     },
     {
-        // Episode 3
+        // For Episode 3
         id: 3,
         radioTrackList: [
-            { id: 'ep_3_song_1', songTitle: 'Full Moon', artistCredit: 'Brandy', timestamp: 0 },
-            { id: 'ep_3_song_2', songTitle: 'Love Will Save the Day', artistCredit: 'Whitney Houston', timestamp: 0 },
-            { id: 'ep_3_song_3', songTitle: 'Just Like', artistCredit: 'Marvin Gaye', timestamp: 0 }, 
-            { id: 'ep_3_song_4', songTitle: 'One Step Ahead', artistCredit: 'Aretha Franklin', timestamp: 0 },
-            { id: 'ep_3_song_5', songTitle: 'Nothing Can Stop Me', artistCredit: 'Cissy Houston', timestamp: 0  },
-            { id: 'ep_3_song_6', songTitle: 'Never Knew Love Like This Before', artistCredit: 'Stephanie Mills', timestamp: 0  }
+        { id: 'ep_3_song_1', songTitle: 'Full Moon', artistCredit: 'Brandy', timestamp: 27 },
+        { id: 'ep_3_song_2', songTitle: 'Love Will Save the Day', artistCredit: 'Whitney Houston', timestamp: 273.5 },
+        { id: 'ep_3_song_3', songTitle: 'Just Like', artistCredit: 'Marvin Gaye', timestamp: 606.5 },
+        { id: 'ep_3_song_4', songTitle: 'One Step Ahead', artistCredit: 'Aretha Franklin', timestamp: 856 },
+        { id: 'ep_3_song_5', songTitle: 'Nothing Can Stop Me', artistCredit: 'Cissy Houston', timestamp: 1022 },
+        { id: 'ep_3_song_6', songTitle: 'Never Knew Love Like This Before', artistCredit: 'Stephanie Mills', timestamp: 1338 }
         ]
     },
     {
-        // Episode 4
+        // For Episode 4
         id: 4,
         radioTrackList: [
-            { id: 'ep_4_song_1', songTitle: 'You Gotta Be', artistCredit: `Des’ree`, timestamp: 0 },
-            { id: 'ep_4_song_2', songTitle: 'Cranes in the Sky', artistCredit: 'Solange', timestamp: 0 },
-            { id: 'ep_4_song_3', songTitle: 'Alright', artistCredit: 'Kendrick Lamar', timestamp: 0 }, 
-            { id: 'ep_4_song_4', songTitle: 'Golden', artistCredit: 'Jill Scott', timestamp: 0 },
-            { id: 'ep_4_song_5', songTitle: 'It Gets Better (With Time)', artistCredit: 'The Internet', timestamp: 0  },
-            { id: 'ep_4_song_6', songTitle: `Someday We’ll All Be Free`, artistCredit: 'Donny Hathaway', timestamp: 0  }
+        { id: 'ep_4_song_1', songTitle: 'You Gotta Be', artistCredit: 'Des\'ree', timestamp: 30 },
+        { id: 'ep_4_song_2', songTitle: 'Cranes in the Sky', artistCredit: 'Solange', timestamp: 285.5 },
+        { id: 'ep_4_song_3', songTitle: 'Alright', artistCredit: 'Kendrick Lamar', timestamp: 568 },
+        { id: 'ep_4_song_4', songTitle: 'Golden', artistCredit: 'Jill Scott', timestamp: 775 },
+        { id: 'ep_4_song_5', songTitle: 'It Gets Better (With Time)', artistCredit: 'The Internet', timestamp: 1001 },
+        { id: 'ep_4_song_6', songTitle: 'Someday We\'ll All Be Free', artistCredit: 'Donny Hathaway', timestamp: 1288 }
         ]
     },
     {
-        // Episode 5
+        // For Episode 5
         id: 5,
         radioTrackList: [
-            { id: 'ep_5_song_1', songTitle: 'Nakamarra', artistCredit: `Hiatus Kaiyote (ft Q-Tip)`, timestamp: 0 },
-            { id: 'ep_5_song_2', songTitle: 'The List', artistCredit: 'Moonchild', timestamp: 0 },
-            { id: 'ep_5_song_3', songTitle: "Leavin'", artistCredit: 'Jesse McCartney', timestamp: 0 }, 
-            { id: 'ep_5_song_4', songTitle: 'Take It From Here', artistCredit: 'Justin Timberlake', timestamp: 0 },
-            { id: 'ep_5_song_5', songTitle: 'Wake Up Alone', artistCredit: 'Amy Winehouse', timestamp: 0  },
-            { id: 'ep_5_song_6', songTitle: 'Open Your Eyes', artistCredit: 'Bobby Caldwell', timestamp: 0  }
+        { id: 'ep_5_song_1', songTitle: 'Nakamarra', artistCredit: 'Hiatus Kaiyote (ft Q-Tip)', timestamp: 29 },
+        { id: 'ep_5_song_2', songTitle: 'The List', artistCredit: 'Moonchild', timestamp: 314 },
+        { id: 'ep_5_song_3', songTitle: 'Leavin\'', artistCredit: 'Jesse McCartney', timestamp: 634.3 },
+        { id: 'ep_5_song_4', songTitle: 'Take It From Here', artistCredit: 'Justin Timberlake', timestamp: 862 },
+        { id: 'ep_5_song_5', songTitle: 'Wake Up Alone', artistCredit: 'Amy Winehouse', timestamp: 1251.3 },
+        { id: 'ep_5_song_6', songTitle: 'Open Your Eyes', artistCredit: 'Bobby Caldwell', timestamp: 1511.3 }
         ]
     },
     {
-        // Episode 6
+        // For Episode 6
         id: 6,
         radioTrackList: [
-            { id: 'ep_6_song_1', songTitle: 'When You Were Young', artistCredit: 'The Killers', timestamp: 0 },
-            { id: 'ep_6_song_2', songTitle: 'Thnks fr th Mmrs', artistCredit: 'Fall Out Boy', timestamp: 0 },
-            { id: 'ep_6_song_3', songTitle: 'An Honest Mistake', artistCredit: 'The Bravery', timestamp: 0 }, 
-            { id: 'ep_6_song_4', songTitle: 'Sun Red Sky Blue', artistCredit: 'Kenna', timestamp: 0 },
-            { id: 'ep_6_song_5', songTitle: 'Laser Life', artistCredit: 'The Blood Brothers', timestamp: 0 },
-            { id: 'ep_6_song_6', songTitle: 'Wolf Like Me', artistCredit: 'TV On The Radio', timestamp: 0 }
+        { id: 'ep_6_song_1', songTitle: 'When You Were Young', artistCredit: 'The Killers', timestamp: 25 },
+        { id: 'ep_6_song_2', songTitle: 'Thnks fr th Mmrs', artistCredit: 'Fall Out Boy', timestamp: 258 },
+        { id: 'ep_6_song_3', songTitle: 'An Honest Mistake', artistCredit: 'The Bravery', timestamp: 472 },
+        { id: 'ep_6_song_4', songTitle: 'Sun Red Sky Blue', artistCredit: 'Kenna', timestamp: 706 },
+        { id: 'ep_6_song_5', songTitle: 'Laser Life', artistCredit: 'The Blood Brothers', timestamp: 965 },
+        { id: 'ep_6_song_6', songTitle: 'Wolf Like Me', artistCredit: 'TV On The Radio', timestamp: 1156 }
         ]
     },
     {
@@ -105,12 +105,12 @@ export const RADIO_EPS = [
         // Episode 8
         id: 8,
         radioTrackList: [
-            { id: 'ep_8_song_1', songTitle: 'Seven Steps to Heaven', artistCredit: 'Miles Davis', timestamp: 100 },
-            { id: 'ep_8_song_2', songTitle: 'Wave', artistCredit: 'Ahmad Jamal Trio', timestamp: 200 },
-            { id: 'ep_8_song_3', songTitle: 'Nardis', artistCredit: 'Bill Evans Trio', timestamp: 500 }, 
-            { id: 'ep_8_song_4', songTitle: 'Nothing Serious', artistCredit: 'Roy Hargrove', timestamp: 800 },
-            { id: 'ep_8_song_5', songTitle: 'Rush', artistCredit: 'Seatbelts', timestamp: 900 },
-            { id: 'ep_8_song_6', songTitle: 'My Favorite Things', artistCredit: 'John Coltrane', timestamp: 1200 }
+            { id: 'ep_8_song_1', songTitle: 'Seven Steps to Heaven', artistCredit: 'Miles Davis', timestamp: 23 },
+            { id: 'ep_8_song_2', songTitle: 'Wave', artistCredit: 'Ahmad Jamal Trio', timestamp: 413 },
+            { id: 'ep_8_song_3', songTitle: 'Nardis', artistCredit: 'Bill Evans Trio', timestamp: 692 },
+            { id: 'ep_8_song_4', songTitle: 'Nothing Serious', artistCredit: 'Roy Hargrove', timestamp: 1058 },
+            { id: 'ep_8_song_5', songTitle: 'Rush', artistCredit: 'Seatbelts', timestamp: 1306 },
+            { id: 'ep_8_song_6', songTitle: 'My Favorite Things', artistCredit: 'John Coltrane', timestamp: 1556 }
         ]
     },
 ];

@@ -9,7 +9,6 @@ export const RADIO_EPS = [
     {
         // For Episode 1
         id: 1,
-        spotifyPlaylist: 'https://open.spotify.com/playlist/1WXGupsxZz32P8GJWnRib9',
         radioTrackList: [
         { id: 'ep_1_song_1', songTitle: 'Boogie Oogie Oogie', artistCredit: 'A Taste of Honey', timestamp: 27 },
         { id: 'ep_1_song_2', songTitle: 'Freefall', artistCredit: 'KAYTRANADA (ft. Durand Bernarr)', timestamp: 366 },
@@ -22,7 +21,6 @@ export const RADIO_EPS = [
     {
         // For Episode 2
         id: 2,
-        spotifyPlaylist: 'https://open.spotify.com/playlist/2E8FRoDsad94svsZtILY9F',
         radioTrackList: [
         { id: 'ep_2_song_1', songTitle: 'A Little Bit of Love', artistCredit: 'Brenda Russell', timestamp: 30 },
         { id: 'ep_2_song_2', songTitle: 'Born to Love', artistCredit: 'Peabo Bryson & Roberta Flack', timestamp: 319 },
@@ -35,7 +33,6 @@ export const RADIO_EPS = [
     {
         // For Episode 3
         id: 3,
-        spotifyPlaylist: 'https://open.spotify.com/playlist/6priAr5j5GKoAwzwbT2A2v',
         radioTrackList: [
         { id: 'ep_3_song_1', songTitle: 'Full Moon', artistCredit: 'Brandy', timestamp: 27 },
         { id: 'ep_3_song_2', songTitle: 'Love Will Save the Day', artistCredit: 'Whitney Houston', timestamp: 273.5 },
@@ -48,7 +45,6 @@ export const RADIO_EPS = [
     {
         // For Episode 4
         id: 4,
-        spotifyPlaylist: 'https://open.spotify.com/playlist/4AXhiiX6VGu6zigMktI2vN',
         radioTrackList: [
         { id: 'ep_4_song_1', songTitle: 'You Gotta Be', artistCredit: 'Des\'ree', timestamp: 30 },
         { id: 'ep_4_song_2', songTitle: 'Cranes in the Sky', artistCredit: 'Solange', timestamp: 285.5 },
@@ -61,7 +57,6 @@ export const RADIO_EPS = [
     {
         // For Episode 5
         id: 5,
-        spotifyPlaylist: 'https://open.spotify.com/playlist/5fJklBZw8vOPYSHvijDumU',
         radioTrackList: [
         { id: 'ep_5_song_1', songTitle: 'Nakamarra', artistCredit: 'Hiatus Kaiyote (ft Q-Tip)', timestamp: 29 },
         { id: 'ep_5_song_2', songTitle: 'The List', artistCredit: 'Moonchild', timestamp: 314 },
@@ -74,7 +69,6 @@ export const RADIO_EPS = [
     {
         // For Episode 6
         id: 6,
-        spotifyPlaylist: 'https://open.spotify.com/playlist/1RbH0nYjPbch0d2OxfXpmC',
         radioTrackList: [
         { id: 'ep_6_song_1', songTitle: 'When You Were Young', artistCredit: 'The Killers', timestamp: 25 },
         { id: 'ep_6_song_2', songTitle: 'Thnks fr th Mmrs', artistCredit: 'Fall Out Boy', timestamp: 258 },
@@ -87,7 +81,6 @@ export const RADIO_EPS = [
     {
         // Episode 7
         id: 7,
-        spotifyPlaylist: 'https://open.spotify.com/playlist/0Aka3OgIZacuOZoBGMxiWU',
         radioTrackList: [
             { id: 'ep_7_song_1', songTitle: 'If You Love Me', artistCredit: 'Brownstone'},
             { id: 'ep_7_song_2', songTitle: 'All That I Can Say', artistCredit: 'Mary J Blige'},
@@ -111,7 +104,6 @@ export const RADIO_EPS = [
     {
         // Episode 8
         id: 8,
-        spotifyPlaylist: 'https://open.spotify.com/playlist/74RNXR4MAwHd5ijuyL0OGO',
         radioTrackList: [
             { id: 'ep_8_song_1', songTitle: 'Seven Steps to Heaven', artistCredit: 'Miles Davis', timestamp: 23 },
             { id: 'ep_8_song_2', songTitle: 'Wave', artistCredit: 'Ahmad Jamal Trio', timestamp: 413 },

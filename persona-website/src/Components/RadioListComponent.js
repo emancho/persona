@@ -1,5 +1,5 @@
 //== Libs
-import React, { memo, useMemo, useState } from "react";
+import React, { memo, useMemo } from "react";
 //== Material UI
 import { 
     List,
@@ -8,11 +8,8 @@ import {
     ListItemAvatar,
     Avatar,
     Box,
-    IconButton,
-    Snackbar,
     ListSubheader } from '@mui/material';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
-import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd';
 //== CSS
 import '../App.css';
 
@@ -106,31 +103,7 @@ const SongItem = memo(({ episode, onTrackClick, currentTime }) => {
 
 // Memoize the entire RadioList component to prevent unnecessary re-renders
 
-const RadioList = memo(({ listOfEpisodes, spotifyLink, onTrackClick, currentTime }) => {
-  const [snackbarOpen, setSnackbarOpen] = useState(false);
-
-  // Handle copying Spotify playlist link to clipboard
-  const handleCopyToClipboard = () => {
-    if (spotifyLink) {
-      navigator.clipboard.writeText(spotifyLink)
-      .then(() => {
-        setSnackbarOpen(true);
-      })
-      .catch(err => {
-        console.error('Failed to copy playlist link: ', err);
-        });
-      }
-  };
-
-  // Handle closing the snackbar
-  const handleCloseSnackbar = (event, reason) => {
-      if (reason === 'clickaway') {
-          return;
-      }
-      setSnackbarOpen(false);
-  };
-
-
+const RadioList = memo(({ listOfEpisodes, onTrackClick, currentTime }) => {
     // Only enhance tracks that have valid timestamps
     const enhancedEpisodes = useMemo(() => {
       // First identify which tracks have timestamps
@@ -174,20 +147,6 @@ const RadioList = memo(({ listOfEpisodes, spotifyLink, onTrackClick, currentTime
   
     return (
         <Box display="flex" justifyContent="center" alignItems="center">
-          {/* Notification for clipboard copy */}
-            <Snackbar
-                  open={snackbarOpen}
-                  autoHideDuration={3000}
-                  onClose={handleCloseSnackbar}
-                  message="Episode's Spotify Playlist Copied"
-                  anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
-                  sx={{
-                      '& .MuiSnackbarContent-root': {
-                          backgroundColor: '#787D87',
-                          color: 'white',
-                      }
-                  }}
-            />
             <List
                 sx={listStyles}
                 subheader={
@@ -196,25 +155,7 @@ const RadioList = memo(({ listOfEpisodes, spotifyLink, onTrackClick, currentTime
                     component="div"
                     sx={subheaderStyles}
                     >
-                    <span>Track List</span>
-                        {spotifyLink && (
-                            <IconButton 
-                                aria-label="copy spotify playlist link" 
-                                onClick={handleCopyToClipboard}
-                                size="small"
-                                sx={{
-                                    backgroundColor: '#74B525',
-                                    color: '#FFFFFF',
-                                    '&:hover': {
-                                        backgroundColor: '#1AA34A',
-                                    },
-                                    marginLeft: '10px',
-                                }}
-                                title="Copy Spotify playlist link"
-                            >
-                                <PlaylistAddIcon />
-                            </IconButton>
-                        )}
+                    Track List
                     </ListSubheader>
                     {hasAnyTimestamps && (
                     <ListSubheader
@@ -236,10 +177,10 @@ const RadioList = memo(({ listOfEpisodes, spotifyLink, onTrackClick, currentTime
             >
             {enhancedEpisodes.map(episode => (
                 <SongItem 
-                  key={episode.id} 
-                  episode={episode} 
-                  onTrackClick={onTrackClick}
-                  currentTime={currentTime}
+                key={episode.id} 
+                episode={episode} 
+                onTrackClick={onTrackClick}
+                currentTime={currentTime}
                 />
             ))}
             </List>

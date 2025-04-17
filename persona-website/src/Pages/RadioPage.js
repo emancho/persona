@@ -116,8 +116,7 @@ function RadioPage() {
           }
           bottomSection={            
           <RadioList 
-            listOfEpisodes={curTrackList.radioTrackList}
-            spotifyLink={curTrackList.spotifyPlaylist} 
+            listOfEpisodes={curTrackList.radioTrackList} 
             onTrackClick={jumpToTimestamp}
             currentTime={timeProgress}
           />

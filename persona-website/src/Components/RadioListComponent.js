@@ -169,7 +169,7 @@ const RadioList = memo(({ listOfEpisodes, onTrackClick, currentTime }) => {
                         color: '#666',
                         }}
                     >
-                        ~ Tap the play buttton below to jump to a specific track ~
+                        ~ Tap Play Button to skip to the track ~
                     </ListSubheader>
                     )}
                 </>

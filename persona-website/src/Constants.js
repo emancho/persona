@@ -4,6 +4,78 @@ export const PLAYBACK_BUTTON_SIZE = 45;
 // Radio Playback Buttons
 export const VOLUME_BUTTON_SIZE = 18;
 
+if (!process.env.REACT_APP_CDN_DOMAIN) {
+    throw new Error("CDN_DOMAIN environment variable is not set.");
+}
+const DOMAIN = process.env.REACT_APP_CDN_DOMAIN;
+export const RADIO_EP_INFO = [
+    {
+      id: 1,
+      title:'Episode 1:',
+      src: DOMAIN + 'RadioEp1.mp3',
+      epTitle: 'Trusting the process',
+      thumbnail: DOMAIN + 'radio_ep1.png',
+      alt:'A sideway containing pink hue color flowers on green grass. Displays artist watermark and the title: Ep.1'
+    },  
+    {
+      id: 2,
+      title:'Episode 2:',
+      src: DOMAIN + 'RadioEp2.mp3',
+      epTitle: 'All About Love',
+      thumbnail: DOMAIN + 'radio_ep2.png',
+      alt:'A display of white petaled flowers with bee landed on one of them. Displays artist watermark and the title: Ep.2'
+    },
+    {
+      id: 3,
+      title:'Episode 3:',
+      src: DOMAIN + 'RadioEp3.mp3',
+      epTitle: 'Can I Get An Amen',
+      thumbnail: DOMAIN + 'radio_ep3.png',
+      alt:'A display of church with a blue sky filled with white clouds. There is a sun in the sky with sunshades and the prayer hand emoji, surrounded by a halo crown. Displays artist watermark and the title: Ep.3'
+    }, 
+    {
+      id: 4,
+      title:'Episode 4:',
+      src: DOMAIN + 'RadioEp4.mp3',
+      epTitle: 'Things Gon Be Aight',
+      thumbnail: DOMAIN + 'radio_ep4.png',
+      alt:'A display of pink hued flowers after a rainy day. Displays artist watermark and the font "Episode" with a pink hued flame with the number 4 representing the fourth episode.'
+    },
+    {
+      id: 5,
+      title:'Episode 5:',
+      src: DOMAIN + 'RadioEp5.mp3',
+      epTitle: 'Blue Eyed Soul White Dragon',
+      thumbnail: DOMAIN + 'radio_ep5.png',
+      alt:'Modified version of the Blue Eyes White Dragon from YuGiOh. Displays Card of the Dragon with black shades and a bass guitar.'
+    },
+    {
+      id: 6,
+      title:'Episode 6:',
+      src: DOMAIN + 'RadioEp6.mp3',
+      epTitle: 'High School of Rock',
+      thumbnail: DOMAIN + 'radio_ep6.png',
+      alt:'Edited a highschool photo of myself. Has me with green flame hair, red shades and red scarf with white stars and an easter egg with Rawr XD on the paper'
+    },
+    {
+      id: 7,
+      title:'Episode 7:',
+      src: DOMAIN + 'RadioEp7.mp3',
+      epTitle: 'For All The Lovers',
+      thumbnail: DOMAIN + 'radio_ep7.png',
+      alt:'An edited picture of Arthur holding a vinyl with a heart shaped labeling with heart shaped glasses and flame hair.'
+    },
+    {
+      id: 8,
+      title:'Episode 8:',
+      src: DOMAIN + 'RadioEp8.mp3',
+      epTitle: 'Jazz Hands',
+      thumbnail: DOMAIN + 'radio_ep8.png',
+      alt:'An edited picture of Jazz players playing instruments. They all have music notes for heads except one that has flame hair and sleek shades.'
+    }
+  ];
+
+
 // Radio Show Dets
 export const RADIO_EPS = [
     {
@@ -120,16 +192,16 @@ export const VINYL_LIST = [
     {
         id: 1,
         name: 'Tik Tok', 
-        path: process.env.PUBLIC_URL + '/images/tok_vinyl_case_only.png',
-        altPath: process.env.PUBLIC_URL + '/images/tok_vinyl.png',
+        path: process.env.REACT_APP_CDN_DOMAIN + 'tok_vinyl_case_only.png',
+        altPath: process.env.REACT_APP_CDN_DOMAIN + 'tok_vinyl.png',
         descipt: 'Tik Tok Vinyl connecting to social media',
         webref: 'https://www.tiktok.com/@edollarsigns'
     }
     ,{
         id:2,
         name: 'Instagram', 
-        path: process.env.PUBLIC_URL + '/images/insta_vinyl_case_only.png',
-        altPath: process.env.PUBLIC_URL + '/images/insta_vinyl.png',
+        path: process.env.REACT_APP_CDN_DOMAIN + 'insta_vinyl_case_only.png',
+        altPath: process.env.REACT_APP_CDN_DOMAIN + 'insta_vinyl.png',
         descipt: 'Instagram Vinyl connecting to social media',
         webref: 'https://www.instagram.com/ededd_or_eddy'
     }

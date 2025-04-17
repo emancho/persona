@@ -9,7 +9,7 @@
 export const listOfProjects = [
     {
         id:1,
-        img:  `${process.env.PUBLIC_URL}/images/radio_cover.png`,
+        img:  `${process.env.REACT_APP_CDN_DOMAIN}radio_cover.png`,
         projTitle:'EDDPerience Radio',
         projDesc: 'Tune in to your friendly neighborhood radio host, DJ Eddperience. This project is where I share songs I listen to in the form of a radio show. This project will be a series, so expect updated episodes in the future!',
         projAction:'REDIRECT',
@@ -17,7 +17,7 @@ export const listOfProjects = [
     },
     {
         id:2,
-        img: `${process.env.PUBLIC_URL}/images/proj1.png`,
+        img: `${process.env.REACT_APP_CDN_DOMAIN}proj1.png`,
         projTitle:'The Gals Just Want to Dance',
         projDesc: 'This project is a music album of tracks that women wanna dance to. The album is planned to have 6 or more songs and will be inspired by multiple genres (Funk, Disco, R&B, House, Etc). Album cover is based on a true story and is one of my inspirations behind making this album.',
         projAction:'POPUP',
@@ -25,7 +25,7 @@ export const listOfProjects = [
     },
     {
         id:3,
-        img: `${process.env.PUBLIC_URL}/images/techbro_drac.png`,
+        img: `${process.env.REACT_APP_CDN_DOMAIN}techbro_drac.png`,
         projTitle:'Tech Bro Dracula',
         projDesc: `This project is a script I'm working on using Dracula's public domain. The premise is that Dracula is struggling to survive in a world filled with modern-day technology and apps, making it challenging to suck blood while staying incognito. To avoid dying from starvation, Dracula reluctantly embraces the very thing he hates—technology—and transforms into a Tech Bro to satisfy his hunger.`,
         projAction:'POPUP',

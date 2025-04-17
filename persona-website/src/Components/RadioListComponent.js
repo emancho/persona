@@ -162,14 +162,14 @@ const RadioList = memo(({ listOfEpisodes, onTrackClick, currentTime }) => {
                         component="div"
                         sx={{
                         textAlign: 'center',
-                        fontSize: '14px',
-                        backgroundColor: '#f8f8f8',
+                        fontSize: '15px',
+                        backgroundColor: '#fefefe',
                         fontStyle: 'italic',
                         padding: '6px',
                         color: '#666',
                         }}
                     >
-                        Tap the icon to jump to a specific track
+                        ~ Tap the play buttton below to jump to a specific track ~
                     </ListSubheader>
                     )}
                 </>

@@ -93,7 +93,7 @@ const WebpageTemplate = ({bannerDisplay=false, mainContent}) => {
             {/*=== Footer Segment ===*/}
             <Grid item xs={12}>
                 <Box sx={footerStyles}>
-                    <Typography variant="body2">© 2024 Ed__d w/o the War. All rights reserved.</Typography>
+                    <Typography variant="body2">© 2025 Ed__d w/o the War. All rights reserved.</Typography>
                 </Box>
             </Grid>
         </Grid>

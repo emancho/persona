@@ -72,6 +72,14 @@ export const RADIO_EP_INFO = [
       epTitle: 'Jazz Hands',
       thumbnail: DOMAIN + 'radio_ep8.png',
       alt:'An edited picture of Jazz players playing instruments. They all have music notes for heads except one that has flame hair and sleek shades.'
+    },
+    {
+      id: 9,
+      title:'Episode 9:',
+      src: DOMAIN + 'RadioEp9.mp3',
+      epTitle: "I'm Every Woman",
+      thumbnail: DOMAIN + 'radio_ep9.png',
+      alt:"An outline of a woman with headpones and shades holding a vinyl that connects to her headphones. Behind her displays albums covers relating to the songs in the episode with a border that displays the words: I'm Every Woman"
     }
   ];
 
@@ -167,7 +175,7 @@ export const RADIO_EPS = [
             { id: 'ep_7_song_11', songTitle: 'All I Do', artistCredit: 'Stevie Wonder'},
             { id: 'ep_7_song_12', songTitle: 'You Don’t Know My Name', artistCredit: 'Alicia Keys'},
             { id: 'ep_7_song_13', songTitle: 'Make It Last Forever', artistCredit: 'Keith Sweat'},
-            { id: 'ep_7_song_14', songTitle: 'A Song About Love', artistCredit: 'Lonnie Liston Smith & the Cosmic Echoes'},
+            { id: 'ep_7_song_14', songTitle: 'A Song Of Love', artistCredit: 'Lonnie Liston Smith & the Cosmic Echoes'},
             { id: 'ep_7_song_15', songTitle: 'Love, Love, Love', artistCredit: 'Donny Hathaway'},
             { id: 'ep_7_song_16', songTitle: 'Tender Kisses', artistCredit: 'Tracie Spencer'},
             { id: 'ep_7_song_17', songTitle: 'Whenever, Whatever, Wherever', artistCredit: 'Maxwell'},
@@ -185,6 +193,32 @@ export const RADIO_EPS = [
             { id: 'ep_8_song_6', songTitle: 'My Favorite Things', artistCredit: 'John Coltrane', timestamp: 1556 }
         ]
     },
+    {
+      // Episode 9
+      id: 9,
+      radioTrackList: [
+          { id: 'ep_9_song_1', songTitle: 'Contact', artistCredit: 'Kelela'},
+          { id: 'ep_9_song_2', songTitle: 'On My Mind (Jorja Smith X Preditah)', artistCredit: 'Jorja Smith, Preditah'},
+          { id: 'ep_9_song_3', songTitle: 'Someone To Call My Lover', artistCredit: 'Janet Jackson'},
+          { id: 'ep_9_song_4', songTitle: 'Persuasive (with SZA)', artistCredit: 'Doechii, SZA'},
+          { id: 'ep_9_song_5', songTitle: 'COZY', artistCredit: 'Beyoncé'},
+          { id: 'ep_9_song_6', songTitle: 'Venom', artistCredit: 'Ravyn Lenae'},
+          { id: 'ep_9_song_7', songTitle: 'Boyz', artistCredit: 'M.I.A'},
+          { id: 'ep_9_song_8', songTitle: 'Miss Camaraderie', artistCredit: 'Azealia Banks'},
+          { id: 'ep_9_song_9', songTitle: 'I Must Apologise', artistCredit: 'PinkPantheress'},
+          { id: 'ep_9_song_10', songTitle: 'Gabby (ft. Janelle Monáe)', artistCredit: 'The Internet, Janelle Monáe'},
+          { id: 'ep_9_song_11', songTitle: 'Pressure', artistCredit: 'Ari Lennox'},
+          { id: 'ep_9_song_12', songTitle: 'Pour It Up', artistCredit: 'Rihanna'},
+          { id: 'ep_9_song_13', songTitle: 'Know You Now', artistCredit: 'Amy Winehouse'},
+          { id: 'ep_9_song_14', songTitle: "Didn't Cha Know", artistCredit: 'Erykah Badu'},
+          { id: 'ep_9_song_15', songTitle: 'Almeda', artistCredit: 'Solange'},
+          { id: 'ep_9_song_16', songTitle: 'Never Lose Me', artistCredit: 'Flo Milli'},
+          { id: 'ep_9_song_17', songTitle: 'Jerk Ribs', artistCredit: 'Kelis'},
+          { id: 'ep_9_song_18', songTitle: 't r a n s p a r e n t s o u l (ft. Travis Barker) ', artistCredit: 'WILLOW, Travis Barker'},
+          { id: 'ep_9_song_19', songTitle: 'Quicksand', artistCredit: 'SZA'},
+          { id: 'ep_9_song_20', songTitle: "I'm Every Woman", artistCredit: 'Whitney Houston'}
+      ]
+  },
 ];
 
 // The list of Social Vinyl
@@ -209,7 +243,7 @@ export const VINYL_LIST = [
 
 // The banner text for the HomePage
 export const bannerTexts = [
-  'The Eighth Episode of EddPerience Radio is out NOW!!!',
+  'The Ninth Episode of EddPerience Radio is out NOW!!!',
   'Turning My Thoughts Into Reality',
   "A Creative Mind Is Useless Under Capitalism When It Doesn't Make Money",
   'Did You Drink Water Yet?',

@@ -8,6 +8,7 @@ if (!process.env.REACT_APP_CDN_DOMAIN) {
     throw new Error("CDN_DOMAIN environment variable is not set.");
 }
 const DOMAIN = process.env.REACT_APP_CDN_DOMAIN;
+// The Information containing each episode
 export const RADIO_EP_INFO = [
     {
       id: 1,
@@ -80,11 +81,19 @@ export const RADIO_EP_INFO = [
       epTitle: "I'm Every Woman",
       thumbnail: DOMAIN + 'radio_ep9.png',
       alt:"An outline of a woman with headpones and shades holding a vinyl that connects to her headphones. Behind her displays albums covers relating to the songs in the episode with a border that displays the words: I'm Every Woman"
+    },
+    {
+      id: 10,
+      title:'Episode 10:',
+      src: DOMAIN + 'RadioEp10.mp3',
+      epTitle: "A Beach Ting",
+      thumbnail: DOMAIN + 'radio_ep10.png',
+      alt:"The radio host holds a pineapple drink while having shades and a flame head. The setting is a beach with speakers in the water, sea animals and a mermaid. This is the cover of the 10th episode"
     }
   ];
 
 
-// Radio Show Dets
+// Radio Show Song List Per Episode
 export const RADIO_EPS = [
     {
         // For Episode 1
@@ -219,6 +228,22 @@ export const RADIO_EPS = [
           { id: 'ep_9_song_20', songTitle: "I'm Every Woman", artistCredit: 'Whitney Houston'}
       ]
   },
+  {
+    // Episode 10
+    id: 10,
+    radioTrackList: [
+        { id: 'ep_10_song_intro', songTitle: 'Body Language - Intro', artistCredit: 'Kali Uchis', timestamp: 0},
+        { id: 'ep_10_song_1', songTitle: 'Count Contessa', artistCredit: 'Azealia Banks, Lone', timestamp: 26},
+        { id: 'ep_10_song_2', songTitle: 'Do 2 Me', artistCredit: 'KAYTRANADA ft.Anderson .Paak & SiR', timestamp: 334},
+        { id: 'ep_10_song_3', songTitle: 'U Say', artistCredit: 'Goldlink ft. Tyler,The Creator & Jay Princr', timestamp: 587},
+        { id: 'ep_10_song_4', songTitle: 'Closer to Me -edit', artistCredit: 'Kokoroko', timestamp: 805},
+        { id: 'ep_10_song_5', songTitle: 'Pop Thieves (Make It Feel Good)', artistCredit: 'Childish Gambino ft Jaden Smith', timestamp: 1036},
+        { id: 'ep_10_song_outro', songTitle: 'Dontcha', artistCredit: 'The Internet', timestamp: 1253},
+        { id: 'ep_10_song_6', songTitle: 'All Night', artistCredit: 'Chance The Rapper ft Knox Fortune', timestamp: 1297}
+    ]
+
+
+  },
 ];
 
 // The list of Social Vinyl
@@ -243,7 +268,7 @@ export const VINYL_LIST = [
 
 // The banner text for the HomePage
 export const bannerTexts = [
-  'The Ninth Episode of EddPerience Radio is out NOW!!!',
+  'The Tenth Episode of EddPerience Radio is out NOW!!!',
   'Turning My Thoughts Into Reality',
   "A Creative Mind Is Useless Under Capitalism When It Doesn't Make Money",
   'Did You Drink Water Yet?',

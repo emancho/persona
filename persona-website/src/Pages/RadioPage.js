@@ -1,5 +1,6 @@
 //=== React Lib && CSS
 import React, { useRef, useState, useCallback, useMemo } from 'react';
+import _ from 'lodash';
 import '../App.css';
 //== Components 
 import AnimatedText from '../Components/AnimatedText';
@@ -8,7 +9,7 @@ import WebpageTemplate from "../Components/WebpageTemplate";
 import TrackControlComponent from '../Components/TrackControlComponent'
 import RadioList from '../Components/RadioListComponent'
 //== Data
-import { RADIO_EPS, RADIO_EP_INFO } from '../Constants'
+import { RADIO_EP_TRACKLIST, RADIO_EP_INFO } from '../Constants'
 
 // == Description:
 // The Radio Page - This page is the Radio Show page. This page has the location of all radio episodes.
@@ -18,12 +19,15 @@ function RadioPage() {
   // The initial track representing the most recent radio episode
   const totalTracks = useMemo(() => RADIO_EP_INFO.length, []);
   const initTrack = totalTracks - 1;
+
+  // The list of epispdes passed into the dropdown 
+  const epList = _.map(RADIO_EP_INFO, ({ id, epTitle }) => ({ id, epTitle }))
   
   // states
   const [trackIndex, setTrackIndex] = useState(initTrack);
   const [currentTrack, setCurrentTrack] = useState(RADIO_EP_INFO[initTrack]);
   const [timeProgress, setTimeProgress] = useState(0);
-  const [curTrackList, setCurTrackList] = useState(RADIO_EPS[initTrack]);
+  const [curTrackList, setCurTrackList] = useState(RADIO_EP_TRACKLIST[initTrack]);
   const [duration, setDuration] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   
@@ -31,18 +35,34 @@ function RadioPage() {
   const audioRef = useRef(null);
   const progressBarRef = useRef(null);
 
+  // The function that handles the changing of the episodes using the dropdown
+  const handleTrackSelect = useCallback((event) => {
+    // Get the ID of the selected track from the dropdown event
+    const selectedTrackId = event.target.value;
+
+    // Find the index of the selected track in your main data array
+    const newTrackIndex = RADIO_EP_INFO.findIndex(track => track.id === selectedTrackId);
+
+    // If the track is found, update all the relevant states
+    if (newTrackIndex !== -1) {
+      setTrackIndex(newTrackIndex);
+      setCurrentTrack(RADIO_EP_INFO[newTrackIndex]);
+      setCurTrackList(RADIO_EP_TRACKLIST[newTrackIndex]);
+    }
+  }, []); 
+
   // Memoize event handlers to prevent unnecessary re-renders
   const handleNext = useCallback(() => {
     // When hitting the next button on the last episode, navigate to the first episode
     if (trackIndex >= totalTracks - 1) {
       setTrackIndex(0);
       setCurrentTrack(RADIO_EP_INFO[0]);
-      setCurTrackList(RADIO_EPS[0]);
+      setCurTrackList(RADIO_EP_TRACKLIST[0]);
     } else {
       const nextIndex = trackIndex + 1;
       setTrackIndex(nextIndex);
       setCurrentTrack(RADIO_EP_INFO[nextIndex]);
-      setCurTrackList(RADIO_EPS[nextIndex]);
+      setCurTrackList(RADIO_EP_TRACKLIST[nextIndex]);
     }
     
     // Plays the next ep of the Radio Show when the play button is in pause state 
@@ -59,7 +79,7 @@ function RadioPage() {
     const prevIndex = trackIndex - 1;
     setTrackIndex(prevIndex);
     setCurrentTrack(RADIO_EP_INFO[prevIndex]);
-    setCurTrackList(RADIO_EPS[prevIndex]);
+    setCurTrackList(RADIO_EP_TRACKLIST[prevIndex]);
     
     // Plays the previous ep of the Radio Show when the play button is in pause state
     if (audioRef.current && audioRef.current.paused) { 
@@ -101,6 +121,8 @@ function RadioPage() {
             <TrackControlComponent
               currentTrack={currentTrack}
               trackIndex={trackIndex}
+              trackList={epList}
+              onTrackChange={handleTrackSelect}
               audioRef={audioRef}
               setDuration={setDuration}
               progressBarRef={progressBarRef}

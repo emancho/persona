@@ -1,7 +1,9 @@
 //== React Lib
 import React, { memo } from 'react';
+import _ from 'lodash';
 //== Material UI
-import { Grid } from '@mui/material';
+import { Grid, FormControl, InputLabel, Select, MenuItem } from '@mui/material';
+import { styled, alpha } from '@mui/material/styles';
 //== Components
 import DisplayTrack from './DisplayTrack';
 import ProgressBar from './ProgressBar';
@@ -12,6 +14,7 @@ Component Description:
     TrackControlComponent :- This component is a combination of the DisplayTrack, ProgressBar, and Controls components
 */
 
+// The sx prop for the Display Track  
 const RadioContentDisplay = {
   display: 'flex',
   justifyContent: 'center',  // Centers horizontally
@@ -24,14 +27,47 @@ const RadioContentDisplay = {
   border: '2px solid white' 
 };
 
+// The sx prop for the progress bar section
 const ProgressBarSectionStyle = {
   padding: '40px 0',  // Adjust the value '20px' as needed for top and bottom padding
 };
+
+//=== The style utlity for the Select component in the Dropdown selection
+const StyledTrackSelect = styled(Select)(({ theme }) => ({
+  backgroundColor: '#f5f5f5',
+  borderRadius: '8px',
+  '&:hover': {
+    backgroundColor: '#eeeeee',
+  },
+  '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+    borderColor: theme.palette.primary.main,
+    borderWidth: '2px',
+  },
+  '.MuiSelect-icon': {
+    color: theme.palette.primary.main,
+  },
+}));
+
+// The style ultity for the MenuItem component in the Dropdown selection
+const StyledTrackMenuItem = styled(MenuItem)(({ theme }) => ({
+  '&:hover': {
+    backgroundColor: theme.palette.action.hover,
+  },
+  '&.Mui-selected': {
+    backgroundColor: alpha(theme.palette.primary.main, theme.palette.action.selectedOpacity),
+    fontWeight: theme.typography.fontWeightMedium,
+    '&:hover': {
+       backgroundColor: alpha(theme.palette.primary.main, theme.palette.action.selectedOpacity + theme.palette.action.hoverOpacity),
+    }
+  },
+}));
 
 // Memoize the component to prevent unnecessary re-renders
 const TrackControlComponent = memo(({
   currentTrack,
   trackIndex,
+  trackList,
+  onTrackChange,
   audioRef,
   setDuration,
   duration,
@@ -70,6 +106,34 @@ const TrackControlComponent = memo(({
         onLoadedMetadata={onLoadedMetadata}
         onEnded={onEnded}
       />
+
+      {/* Section for the Dropdown menu */}
+      <Grid item sx={{ width: '100%', padding: '20px 0' }}>
+        <FormControl fullWidth>
+          <InputLabel 
+            id="track-select-label" 
+            sx={{ fontWeight: 'bold' }}
+          >
+            Current Episode:
+          </InputLabel>
+          <StyledTrackSelect
+            labelId="track-select-label"
+            id="track-select"
+            value={currentTrack.id}
+            label="Select Episode"
+            onChange={onTrackChange}
+          >
+            {_.map(trackList, (ep) => (
+              <StyledTrackMenuItem
+                key={ep.id}
+                value={ep.id}
+              >
+                {"Ep." + ep.id + ": " + ep.epTitle}
+              </StyledTrackMenuItem>
+            ))}
+          </StyledTrackSelect>
+        </FormControl>
+      </Grid>
 
       {/* Display Track Section */}
       <Grid item sx={RadioContentDisplay}>

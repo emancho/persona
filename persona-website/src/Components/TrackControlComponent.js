@@ -2,8 +2,8 @@
 import React, { memo } from 'react';
 import _ from 'lodash';
 //== Material UI
-import { Grid, FormControl, InputLabel, Select, MenuItem } from '@mui/material';
-import { styled, alpha } from '@mui/material/styles';
+import { Grid, FormControl, Select, MenuItem } from '@mui/material';
+import { styled } from '@mui/material/styles';
 //== Components
 import DisplayTrack from './DisplayTrack';
 import ProgressBar from './ProgressBar';
@@ -34,8 +34,8 @@ const ProgressBarSectionStyle = {
 
 //=== The style utlity for the Select component in the Dropdown selection
 const StyledTrackSelect = styled(Select)(({ theme }) => ({
-  backgroundColor: '#f5f5f5',
-  borderRadius: '8px',
+  backgroundColor: '#e8f0e8',
+  borderRadius: '14px',
   '&:hover': {
     backgroundColor: '#eeeeee',
   },
@@ -51,13 +51,13 @@ const StyledTrackSelect = styled(Select)(({ theme }) => ({
 // The style ultity for the MenuItem component in the Dropdown selection
 const StyledTrackMenuItem = styled(MenuItem)(({ theme }) => ({
   '&:hover': {
-    backgroundColor: theme.palette.action.hover,
+    backgroundColor: '#e8f1e8',
   },
   '&.Mui-selected': {
-    backgroundColor: alpha(theme.palette.primary.main, theme.palette.action.selectedOpacity),
+    backgroundColor: '#c0d9c0',
     fontWeight: theme.typography.fontWeightMedium,
     '&:hover': {
-       backgroundColor: alpha(theme.palette.primary.main, theme.palette.action.selectedOpacity + theme.palette.action.hoverOpacity),
+       backgroundColor: '#c0d9c0'
     }
   },
 }));
@@ -108,27 +108,23 @@ const TrackControlComponent = memo(({
       />
 
       {/* Section for the Dropdown menu */}
-      <Grid item sx={{ width: '100%', padding: '20px 0' }}>
+      <Grid item sx={{ width: '100%', padding: '10px 0' }}>
         <FormControl fullWidth>
-          <InputLabel 
-            id="track-select-label" 
-            sx={{ fontWeight: 'bold' }}
-          >
-            Current Episode:
-          </InputLabel>
           <StyledTrackSelect
-            labelId="track-select-label"
             id="track-select"
             value={currentTrack.id}
-            label="Select Episode"
             onChange={onTrackChange}
+            displayEmpty
+            renderValue={ 
+              ()=> {return 'Select An Episode'}
+            }
           >
             {_.map(trackList, (ep) => (
               <StyledTrackMenuItem
                 key={ep.id}
                 value={ep.id}
               >
-                {"Ep." + ep.id + ": " + ep.epTitle}
+                {"Ep." + ep.id + " : " + ep.epTitle}
               </StyledTrackMenuItem>
             ))}
           </StyledTrackSelect>

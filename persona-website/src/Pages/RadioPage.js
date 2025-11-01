@@ -30,6 +30,7 @@ function RadioPage() {
   const [curTrackList, setCurTrackList] = useState(RADIO_EP_TRACKLIST[initTrack]);
   const [duration, setDuration] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [initialSelect, setTrack] = useState(false); 
   
   // Mutable ref objects tied to the audio and progress bar
   const audioRef = useRef(null);
@@ -48,6 +49,7 @@ function RadioPage() {
       setTrackIndex(newTrackIndex);
       setCurrentTrack(RADIO_EP_INFO[newTrackIndex]);
       setCurTrackList(RADIO_EP_TRACKLIST[newTrackIndex]);
+      setTrack(true)
     }
   }, []); 
 
@@ -122,6 +124,7 @@ function RadioPage() {
               currentTrack={currentTrack}
               trackIndex={trackIndex}
               trackList={epList}
+              initSelect={initialSelect}
               onTrackChange={handleTrackSelect}
               audioRef={audioRef}
               setDuration={setDuration}

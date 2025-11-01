@@ -1,5 +1,5 @@
 //== React Lib
-import React, { memo } from 'react';
+import React, { memo} from 'react';
 import _ from 'lodash';
 //== Material UI
 import { Grid, FormControl, Select, MenuItem } from '@mui/material';
@@ -67,6 +67,7 @@ const TrackControlComponent = memo(({
   currentTrack,
   trackIndex,
   trackList,
+  initSelect,
   onTrackChange,
   audioRef,
   setDuration,
@@ -79,6 +80,7 @@ const TrackControlComponent = memo(({
   isPlaying,
   setIsPlaying
 }) => {
+
   // Handles loading the metadata (such as duration) once the audio file is ready
   const onLoadedMetadata = () => {
     const seconds = audioRef.current.duration;
@@ -115,9 +117,15 @@ const TrackControlComponent = memo(({
             value={currentTrack.id}
             onChange={onTrackChange}
             displayEmpty
-            renderValue={ 
-              ()=> {return 'Select An Episode'}
-            }
+            renderValue={() => {
+              // If nothing is selected (initial state), show the placeholder.
+              if (!initSelect) {
+                return 'Select An Episode';
+              }
+
+              // Once an item is selected, display its actual text.
+              return `Ep.${currentTrack.id}: ${currentTrack.epTitle}`;
+            }}
           >
             {_.map(trackList, (ep) => (
               <StyledTrackMenuItem

@@ -89,12 +89,20 @@ export const RADIO_EP_INFO = [
       epTitle: "A Beach Ting",
       thumbnail: DOMAIN + 'radio_ep10.png',
       alt:"The radio host holds a pineapple drink while having shades and a flame head. The setting is a beach with speakers in the water, sea animals and a mermaid. This is the cover of the 10th episode"
-    }
+    },
+    // {
+    //   id: 11,
+    //   title:'Episode 11:',
+    //   src: null,
+    //   epTitle: "Come To My House",
+    //   thumbnail: DOMAIN + 'radio_ep11.png',
+    //   alt:""
+    // }
   ];
 
 
 // Radio Show Song List Per Episode
-export const RADIO_EPS = [
+export const RADIO_EP_TRACKLIST = [
     {
         // For Episode 1
         id: 1,
@@ -241,9 +249,14 @@ export const RADIO_EPS = [
         { id: 'ep_10_song_outro', songTitle: 'Dontcha', artistCredit: 'The Internet', timestamp: 1253},
         { id: 'ep_10_song_6', songTitle: 'All Night', artistCredit: 'Chance The Rapper ft Knox Fortune', timestamp: 1297}
     ]
-
-
   },
+  // {
+  //   // Episode 11
+  //   id: 11,
+  //   radioTrackList: [
+  //       { id: 'ep_11_song1', songTitle: 'Song Title', artistCredit: 'TEST TEST'},
+  //   ]
+  // },
 ];
 
 // The list of Social Vinyl

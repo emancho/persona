@@ -1,7 +1,9 @@
 //== React Lib
-import React, { memo } from 'react';
+import React, { memo} from 'react';
+import _ from 'lodash';
 //== Material UI
-import { Grid } from '@mui/material';
+import { Grid, FormControl, Select, MenuItem } from '@mui/material';
+import { styled } from '@mui/material/styles';
 //== Components
 import DisplayTrack from './DisplayTrack';
 import ProgressBar from './ProgressBar';
@@ -12,6 +14,7 @@ Component Description:
     TrackControlComponent :- This component is a combination of the DisplayTrack, ProgressBar, and Controls components
 */
 
+// The sx prop for the Display Track  
 const RadioContentDisplay = {
   display: 'flex',
   justifyContent: 'center',  // Centers horizontally
@@ -24,14 +27,48 @@ const RadioContentDisplay = {
   border: '2px solid white' 
 };
 
+// The sx prop for the progress bar section
 const ProgressBarSectionStyle = {
   padding: '40px 0',  // Adjust the value '20px' as needed for top and bottom padding
 };
+
+//=== The style utlity for the Select component in the Dropdown selection
+const StyledTrackSelect = styled(Select)(({ theme }) => ({
+  backgroundColor: '#e8f0e8',
+  borderRadius: '14px',
+  '&:hover': {
+    backgroundColor: '#eeeeee',
+  },
+  '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+    borderColor: theme.palette.primary.main,
+    borderWidth: '2px',
+  },
+  '.MuiSelect-icon': {
+    color: theme.palette.primary.main,
+  },
+}));
+
+// The style ultity for the MenuItem component in the Dropdown selection
+const StyledTrackMenuItem = styled(MenuItem)(({ theme }) => ({
+  '&:hover': {
+    backgroundColor: '#e8f1e8',
+  },
+  '&.Mui-selected': {
+    backgroundColor: '#c0d9c0',
+    fontWeight: theme.typography.fontWeightMedium,
+    '&:hover': {
+       backgroundColor: '#c0d9c0'
+    }
+  },
+}));
 
 // Memoize the component to prevent unnecessary re-renders
 const TrackControlComponent = memo(({
   currentTrack,
   trackIndex,
+  trackList,
+  initSelect,
+  onTrackChange,
   audioRef,
   setDuration,
   duration,
@@ -43,6 +80,7 @@ const TrackControlComponent = memo(({
   isPlaying,
   setIsPlaying
 }) => {
+
   // Handles loading the metadata (such as duration) once the audio file is ready
   const onLoadedMetadata = () => {
     const seconds = audioRef.current.duration;
@@ -70,6 +108,36 @@ const TrackControlComponent = memo(({
         onLoadedMetadata={onLoadedMetadata}
         onEnded={onEnded}
       />
+
+      {/* Section for the Dropdown menu */}
+      <Grid item sx={{ width: '100%', padding: '10px 0' }}>
+        <FormControl fullWidth>
+          <StyledTrackSelect
+            id="track-select"
+            value={currentTrack.id}
+            onChange={onTrackChange}
+            displayEmpty
+            renderValue={() => {
+              // If nothing is selected (initial state), show the placeholder.
+              if (!initSelect) {
+                return 'Select An Episode';
+              }
+
+              // Once an item is selected, display its actual text.
+              return `Ep.${currentTrack.id}: ${currentTrack.epTitle}`;
+            }}
+          >
+            {_.map(trackList, (ep) => (
+              <StyledTrackMenuItem
+                key={ep.id}
+                value={ep.id}
+              >
+                {"Ep." + ep.id + " : " + ep.epTitle}
+              </StyledTrackMenuItem>
+            ))}
+          </StyledTrackSelect>
+        </FormControl>
+      </Grid>
 
       {/* Display Track Section */}
       <Grid item sx={RadioContentDisplay}>

@@ -90,14 +90,14 @@ export const RADIO_EP_INFO = [
       thumbnail: DOMAIN + 'radio_ep10.png',
       alt:"The radio host holds a pineapple drink while having shades and a flame head. The setting is a beach with speakers in the water, sea animals and a mermaid. This is the cover of the 10th episode"
     },
-    // {
-    //   id: 11,
-    //   title:'Episode 11:',
-    //   src: null,
-    //   epTitle: "Come To My House",
-    //   thumbnail: DOMAIN + 'radio_ep11.png',
-    //   alt:""
-    // }
+    {
+      id: 11,
+      title:'Episode 11:',
+      src: null,
+      epTitle: "Come To My House",
+      thumbnail: DOMAIN + 'radio_ep11.png',
+      alt:""
+    }
   ];
 
 
@@ -250,13 +250,13 @@ export const RADIO_EP_TRACKLIST = [
         { id: 'ep_10_song_6', songTitle: 'All Night', artistCredit: 'Chance The Rapper ft Knox Fortune', timestamp: 1297}
     ]
   },
-  // {
-  //   // Episode 11
-  //   id: 11,
-  //   radioTrackList: [
-  //       { id: 'ep_11_song1', songTitle: 'Song Title', artistCredit: 'TEST TEST'},
-  //   ]
-  // },
+  {
+    // Episode 11
+    id: 11,
+    radioTrackList: [
+        { id: 'ep_11_song1', songTitle: 'Song Title', artistCredit: 'TEST TEST'},
+    ]
+  },
 ];
 
 // The list of Social Vinyl
@@ -281,7 +281,7 @@ export const VINYL_LIST = [
 
 // The banner text for the HomePage
 export const bannerTexts = [
-  'The Tenth Episode of EddPerience Radio is out NOW!!!',
+  'The Eleventh Episode of EddPerience Radio is out NOW!!!',
   'Turning My Thoughts Into Reality',
   "A Creative Mind Is Useless Under Capitalism When It Doesn't Make Money",
   'Did You Drink Water Yet?',

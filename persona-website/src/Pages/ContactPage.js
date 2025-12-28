@@ -60,7 +60,7 @@ const SocialLinksSection = () => {
       {/* The Grid containing the vinyls */}
       <Grid container spacing={4} justifyContent="center">
         {_.map(VINYL_LIST, (obj) => (
-          <Grid item key={obj.name}>
+          <Grid key={obj.name}>
             <Card>
               <HoverableCardMedia
                 name={obj.name}

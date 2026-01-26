@@ -110,7 +110,7 @@ const TrackControlComponent = memo(({
       />
 
       {/* Section for the Dropdown menu */}
-      <Grid item sx={{ width: '100%', padding: '10px 0' }}>
+      <Grid sx={{ width: '100%', padding: '10px 0' }}>
         <FormControl fullWidth>
           <StyledTrackSelect
             id="track-select"
@@ -140,12 +140,12 @@ const TrackControlComponent = memo(({
       </Grid>
 
       {/* Display Track Section */}
-      <Grid item sx={RadioContentDisplay}>
+      <Grid sx={RadioContentDisplay}>
         <DisplayTrack currentTrack={currentTrack} />
       </Grid>
 
       {/* Progress Bar Section */}
-      <Grid item sx={ProgressBarSectionStyle}>
+      <Grid sx={ProgressBarSectionStyle}>
         <ProgressBar
           progressBarRef={progressBarRef}
           audioRef={audioRef}
@@ -155,7 +155,7 @@ const TrackControlComponent = memo(({
       </Grid>
 
       {/* Radio Controls Section */}
-      <Grid item id="radioControl_section">
+      <Grid id="radioControl_section">
         <Controls
           trackIndex={trackIndex}
           audioRef={audioRef}

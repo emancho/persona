@@ -41,8 +41,15 @@ function ProjectsPage() {
           />
         }
         topSection={    
-          <Typography variant="h6" className="responsive-typography">
-            {projCaption}
+          <Typography 
+            variant="h6" 
+            sx={{ 
+              fontSize: { xs: '4vw', sm: '2vw' }, // Responsive logic right here
+              textAlign: 'center',                // Center-aligns the text
+              color: '#0a3e0a',                 // Dark green color for the caption
+              py: 2                               // padding-top and padding-bottom
+            }}>
+              {projCaption}
           </Typography>
           }
           topStyle={captionStyle}

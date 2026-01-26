@@ -26,7 +26,7 @@ import {
   VOLUME_BUTTON_SIZE
 } from '../Constants'
 //== Components
-import {Box, Grid, Typography} from '@mui/material';
+import {Box, Grid, Typography, Stack} from '@mui/material';
 
 /*
 Component Description:
@@ -116,8 +116,8 @@ const Controls = memo(({
       : IoMdVolumeHigh;
 
   return (
-    <Grid container direction="column" spacing={1} justifyContent="center">
-      <Grid item>
+    <Stack spacing={1} justifyContent="center">
+      <Grid>
         <Box display="flex" alignItems="center" justifyContent="center">
         
         {/* Previous Button */}
@@ -160,7 +160,7 @@ const Controls = memo(({
       </Grid>
 
       {/* Mute Button and Volume Slider */}
-      <Grid item xs={12} style={{ textAlign: 'center', marginTop: '10px' }}>
+      <Grid size={12} style={{ textAlign: 'center', marginTop: '10px' }}>
         <button onClick={toggleMute}>
           <VolumeIcon size={VOLUME_BUTTON_SIZE} />
         </button>
@@ -177,7 +177,7 @@ const Controls = memo(({
           }}
         />
       </Grid>
-    </Grid>
+    </Stack>
   );
 });
 

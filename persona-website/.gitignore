@@ -18,6 +18,7 @@
 .env.test.local
 .env.production.local
 devReport/devNotes.txt
+.env
 
 # Ignore everything in the folder
 src/data/*

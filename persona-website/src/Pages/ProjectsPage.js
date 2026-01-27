@@ -42,7 +42,7 @@ function ProjectsPage() {
         }
         topSection={    
           <Typography 
-            variant="h6" 
+            variant="body2" 
             sx={{ 
               fontSize: { xs: '4vw', sm: '2vw' }, // Responsive logic right here
               textAlign: 'center',                // Center-aligns the text

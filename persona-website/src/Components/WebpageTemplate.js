@@ -48,7 +48,7 @@ const WebpageTemplate = ({bannerDisplay=false, mainContent}) => {
             sm: '70%',                 // 70% width on small screens
             md: '70%',                 // 70% width on medium and larger screens
         },
-        maxWidth: '800px',             // Limits the maximum width of the content area to 800px, preventing it from becoming too wide on larger screens
+        maxWidth: '600px',             // Limits the maximum width of the content area to 800px, preventing it from becoming too wide on larger screens
         boxSizing: 'border-box',       // Ensures that the padding is included in the width calculation, preventing overflow
         textAlign: 'center',           // Centers the text horizontally within the content area
         margin: '20px auto',           // Centers the content area horizontally within its parent container by applying equal left and right margins
@@ -78,15 +78,15 @@ const WebpageTemplate = ({bannerDisplay=false, mainContent}) => {
                 container 
                 spacing={2} 
                 size={{ 
-                    flexGrow: 1, // Make this Grid item grow to fill available space in the Stack
-                    padding: '20px',
-                    justifyContent: 'center',  // Center content horizontally within the grid container
-                    alignItems: 'center',      // Center content vertically within the grid container
-                    display: 'flex', // Ensure this Grid acts as a flex container for its children for justifyContent/alignItems to work
-                    flexDirection: 'column', // Or 'row' depending on desired internal layout
+                    flexGrow: 1,                // Make this Grid item grow to fill available space in the Stack
+                    padding: '20px',            // Padding for the main content section
+                    justifyContent: 'center',   // Center content horizontally within the grid container
+                    alignItems: 'center',       // Center content vertically within the grid container
+                    display: 'flex',            // Ensure this Grid acts as a flex container for its children for justifyContent/alignItems to work
+                    flexDirection: 'column',    // Or 'row' depending on desired internal layout
                 }}
             >
-                <Grid size={{xs:12, md:8}}>
+                <Grid size={{xs:12, md:12}}>
                     <Box sx={mainContentStyles}>
                         {mainContent}
                     </Box>
@@ -96,7 +96,7 @@ const WebpageTemplate = ({bannerDisplay=false, mainContent}) => {
             {/*=== Footer Segment ===*/}
             <Grid size={12}>
                 <Box sx={footerStyles}>
-                    <Typography variant="body2">© 2025 Ed__d w/o the War. All rights reserved.</Typography>
+                    <Typography variant="body2">© 2026 Ed__d w/o the War. All rights reserved.</Typography>
                 </Box>
             </Grid>
         </Stack>

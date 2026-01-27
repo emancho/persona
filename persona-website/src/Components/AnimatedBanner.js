@@ -21,8 +21,8 @@ const AnimatedBanner = () => {
     const animation = animate(textRef.current, {
       translateX: ['100%', '-100%'],
       duration: 15000,
-      ease: 'linear',  // Changed from 'eases' to 'ease'
-      onComplete: () => {  // Changed from 'complete' to 'onComplete'
+      ease: 'linear',  
+      onComplete: () => { 
       setTimeout(() => {
         const nextIndex = index === 0 
         ? Math.floor(Math.random() * (bannerTexts.length - 1)) + 1 

@@ -1,6 +1,6 @@
 //== React Libs
 import React, { useEffect, useRef, useState } from 'react';
-import anime from 'animejs';
+import { animate } from 'animejs';
 //== Material UI
 import Typography from '@mui/material/Typography';
 //== Data
@@ -18,26 +18,23 @@ const AnimatedBanner = () => {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    const animation = anime({
-      targets: textRef.current,
+    const animation = animate(textRef.current, {
       translateX: ['100%', '-100%'],
       duration: 15000,
-      easing: 'linear',
-      complete: () => {
-        setTimeout(() => {
-          // After the animation completes, select the next string
-          const nextIndex = index === 0 
-            ? Math.floor(Math.random() * (bannerTexts.length - 1)) + 1 
-            : Math.floor(Math.random() * bannerTexts.length);
-          setIndex(nextIndex);
-          
-          setCurrentText(bannerTexts[nextIndex]);
-          
-        }, 0);
-      }
-    });
+      ease: 'linear',  
+      onComplete: () => { 
+      setTimeout(() => {
+        const nextIndex = index === 0 
+        ? Math.floor(Math.random() * (bannerTexts.length - 1)) + 1 
+        : Math.floor(Math.random() * bannerTexts.length);
+      setIndex(nextIndex);
+      setCurrentText(bannerTexts[nextIndex]);
+      }, 0);
+  }
+});
 
-    return () => animation.pause(); // Cleanup animation on unmount
+
+    return () => animation.cancel(); // Cleanup animation on unmount
   }, [index]);
 
   return (

@@ -1,6 +1,6 @@
 //== React Libs
 import React, { useEffect, useRef } from 'react';
-import anime from 'animejs';
+import { animate } from 'animejs';
 
 /*
 Component Description:
@@ -11,12 +11,11 @@ const AnimatedText = ({title}) => {
   const textRef = useRef(null);
 
   useEffect(() => {
-    anime({
-      targets: textRef.current,
+    animate(textRef.current, {
       opacity: [0, 1],
       translateY: [-50, 0],
       duration: 1500,
-      easing: 'easeInOutQuad'
+      ease: 'out(2)'  // v4 uses different easing functions
     });
   }, []);
 

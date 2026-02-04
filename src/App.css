@@ -1,3 +1,42 @@
+/*================= Responsive Styling for Desktop/Mobile =================*/
+/* Change layout for mobile devices */
+@media (max-width: 830px) {
+  .navbar {
+    flex-direction: column;
+  }
+  .nav-item {
+    width: 100%;
+  }
+  .nav-links {
+    flex-direction: column; /* Change to vertical layout */
+  }
+}
+
+/* Change layout for larger screens */
+@media (min-width: 769px) {
+  .navbar {
+    flex-direction: row;
+  }
+  .nav-item {
+    flex: 1; /* Makes items evenly distribute in the row */
+    text-align: center; /* Center-align text */
+  }
+}
+
+/* Responsive Design: Adjust for smaller screens if necessary */
+@media screen and (max-width: 600px) {
+  .container {
+    flex-direction: column;
+  }
+}
+
+/* Adjust font size for smaller screens */
+@media (max-width: 600px) {
+  .responsive-typography {
+    font-size: 4vw; /* Increase font size for smaller screens */
+  }
+}
+/*=================================================================*/
 body {
   background-color: #8FBC8F; /* Light Emerald Green Background */
   margin: 0;
@@ -39,58 +78,24 @@ body {
   color: black;
 }
 
-/* Change layout for mobile devices */
-@media (max-width: 830px) {
-  .navbar {
-    flex-direction: column;
-  }
-  .nav-item {
-    width: 100%;
-  }
-  .nav-links {
-    flex-direction: column; /* Change to vertical layout */
-  }
-}
-
-/* Change layout for larger screens */
-@media (min-width: 769px) {
-  .navbar {
-    flex-direction: row;
-  }
-  .nav-item {
-    flex: 1; /* Makes items evenly distribute in the row */
-    text-align: center; /* Center-align text */
-  }
-}
-
-/* Responsive Design: Adjust for smaller screens if necessary */
-@media screen and (max-width: 600px) {
-  .container {
-    flex-direction: column;
-  }
-}
-
-.song-subHeader{
-  background-color:'#3f51b5';
-  font-size: '20px';
-}
-
 /*==== Image Styling for Radio Episode Image ===*/
 .audio-image {
   max-width: 500px; /* Set maximum width */
-  max-height: 650px; /* Set maximum height */
-  overflow: hidden;
-  align-items: center;
+  margin: 0 auto;   /* Center the container */
+  display: flex;   /* Use flexbox for centering */
+  justify-content: center;  /* Center horizontally */
 }
 .audio-image img {
-  width: 95%; /* Set the width of the image to fill its container */
+  width: 100%; /* Set the width of the image to fill its container */
   height: auto; /* Automatically adjust the height to maintain aspect ratio */
   border: 2px solid white;
 }
 
 /* Container for the progress bar section */
 .progress-bar {
-  width: 75%;          /* Full width of the container */
+  width: 75%;           /* Full width of the container */
+  margin: 0 auto;       /* Center the progress bar */
+  display: block;       /* Make it a block element */
   height: 8px;          /* Adjust the height to increase thickness */
   appearance: none;     /* Remove default styling */
   background: #ccc;     /* Background color of the track */
@@ -147,6 +152,11 @@ body {
   font-family: Roboto, sans-serif; /* Custom font family */
 }
 
+.song-subHeader{
+  background-color:'#3f51b5';
+  font-size: '20px';
+}
+
 /*================= Typography for page captions ====*/
 /* General responsive styling */
 .responsive-typography {
@@ -160,12 +170,6 @@ body {
   margin: 0 auto; /* Center-aligns the text horizontally */
 }
 
-/* Adjust font size for smaller screens */
-@media (max-width: 600px) {
-  .responsive-typography {
-    font-size: 4vw; /* Increase font size for smaller screens */
-  }
-}
 /* The css style for the avatar hover section*/
 .track-avatar-hover:hover {
   transform: scale(1.1);

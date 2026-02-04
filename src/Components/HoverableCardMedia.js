@@ -28,7 +28,7 @@ function HoverableCardMedia({name, path, altPath, descipt, webref}) {
   return (
       <Grid container spacing={4} justifyContent="center">
         {/* Single Card */}
-        <Grid item>
+        <Grid>
           <Card
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}

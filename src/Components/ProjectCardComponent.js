@@ -2,7 +2,7 @@
 import React, { useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 //== Material UI
-import { Card, Box, CardMedia, CardContent, Typography, CardActions, Button } from '@mui/material';
+import { Card, Box, CardMedia, CardContent, Typography, CardActions, Button, Stack } from '@mui/material';
 
 /*
 Component Description:
@@ -68,8 +68,10 @@ function ProjectCardComponent({
             </CardMedia>
             </Box>
             <CardContent>
-                <Typography variant="h4" color="#000000" sx={{ textDecoration: 'underline' }}>{projTitle}</Typography>
-                <Typography variant="h6" color="#000000">{message}</Typography>
+                <Stack spacing={2}>
+                    <Typography variant="h4" color="#000000" sx={{ textDecoration: 'underline' }}>{projTitle}</Typography>
+                    <Typography variant="body1" color="#000000">{message}</Typography>
+                </Stack>
             </CardContent>
             <CardActions>
                 <Button size="large" onClick={clickAction(projAction)}>{buttonMessage}</Button>

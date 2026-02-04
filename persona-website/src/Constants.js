@@ -9,6 +9,8 @@ if (!process.env.REACT_APP_CDN_DOMAIN) {
 }
 const DOMAIN = process.env.REACT_APP_CDN_DOMAIN;
 // The Information containing each episode
+// In case cover art is completed before the audio, 'RadioTestAudio.mp3' can be used as a placeholder
+
 export const RADIO_EP_INFO = [
     {
       id: 1,
@@ -90,14 +92,22 @@ export const RADIO_EP_INFO = [
       thumbnail: DOMAIN + 'radio_ep10.png',
       alt:"The radio host holds a pineapple drink while having shades and a flame head. The setting is a beach with speakers in the water, sea animals and a mermaid. This is the cover of the 10th episode"
     },
-    // {
-    //   id: 11,
-    //   title:'Episode 11:',
-    //   src: null,
-    //   epTitle: "Come To My House",
-    //   thumbnail: DOMAIN + 'radio_ep11.png',
-    //   alt:""
-    // }
+    {
+      id: 11,
+      title:'Episode 11:',
+      src: DOMAIN + 'RadioTestAudio.mp3',
+      epTitle: "Come To My House",
+      thumbnail: DOMAIN + 'radio_ep11.png',
+      alt:"Dancefloor filled with people dancing and having a good time with different colored shades and fire heads attached."
+    },
+    {
+      id: 12,
+      title:'Episode 12:',
+      src: DOMAIN + 'RadioEp12.mp3',
+      epTitle: "SPACE ADVENTURE",
+      thumbnail: DOMAIN + 'radio_ep12.png',
+      alt:"A space entity in a vast galaxy with a black hole in it's hand and a human hand reaching out from within the black hole."
+    }
   ];
 
 
@@ -250,13 +260,20 @@ export const RADIO_EP_TRACKLIST = [
         { id: 'ep_10_song_6', songTitle: 'All Night', artistCredit: 'Chance The Rapper ft Knox Fortune', timestamp: 1297}
     ]
   },
-  // {
-  //   // Episode 11
-  //   id: 11,
-  //   radioTrackList: [
-  //       { id: 'ep_11_song1', songTitle: 'Song Title', artistCredit: 'TEST TEST'},
-  //   ]
-  // },
+  {
+    // Episode 11
+    id: 11,
+    radioTrackList: [
+        { id: 'ep_11_song1', songTitle: 'Song Title', artistCredit: 'TEST TEST'},
+    ]
+  },
+    {
+    // Episode 12
+    id: 12,
+    radioTrackList: [
+        { id: 'ep_11_song1', songTitle: 'Song Title', artistCredit: 'TEST TEST'},
+    ]
+  },
 ];
 
 // The list of Social Vinyl
@@ -281,7 +298,7 @@ export const VINYL_LIST = [
 
 // The banner text for the HomePage
 export const bannerTexts = [
-  'The Tenth Episode of EddPerience Radio is out NOW!!!',
+  'TWO NEW EPS (11/12) of EddPerience Radio are out NOW!!!',
   'Turning My Thoughts Into Reality',
   "A Creative Mind Is Useless Under Capitalism When It Doesn't Make Money",
   'Did You Drink Water Yet?',

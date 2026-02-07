@@ -1,12 +1,12 @@
 name = "persona"
 compatibility_date = "2024-02-06"
 
-# This section defines your project as a Worker with a static asset binding.
-# This is different from the [pages_build_output] configuration and is
-# more appropriate for projects deployed with `npx wrangler deploy`.
+# This declares the main entrypoint of the Worker.
+# It tells Cloudflare that this is NOT an assets-only project.
+main = "./build/_worker.js"
+
+# This section defines the static assets and creates the `ASSETS`
+# binding that our worker script will use to access them.
 [assets]
 directory = "./build"
-# This flag tells the asset binding itself how to handle 404s.
-# Instead of returning a 404, it will internally serve the entrypoint.
-not_found_handling = "single-page-application"
-binding = "ASSETS" # This binding is required but will be used implicitly.
+binding = "ASSETS"

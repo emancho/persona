@@ -1,10 +1,7 @@
-name = "persona-website"
+name = "persona"
 compatibility_date = "2024-02-06"
-main = "build/_worker.js"
-
-[build]
-command = "npm run build"
-watch_dir = "src"
+main = "./build/_worker.js"
 
 [assets]
-bucket = "build"
+directory = "./build"
+binding = "ASSETS"

@@ -1,8 +1,12 @@
 name = "persona"
 compatibility_date = "2024-02-06"
 
-[pages_build_output]
-dir = "./build"
-# This is the modern flag that tells Cloudflare to handle SPA routing.
-# All requests that don't match a static file will serve index.html.
-single_page_application = true
+# This section defines your project as a Worker with a static asset binding.
+# This is different from the [pages_build_output] configuration and is
+# more appropriate for projects deployed with `npx wrangler deploy`.
+[assets]
+directory = "./build"
+# This flag tells the asset binding itself how to handle 404s.
+# Instead of returning a 404, it will internally serve the entrypoint.
+not_found_handling = "single-page-application"
+binding = "ASSETS" # This binding is required but will be used implicitly.

@@ -1,5 +1,5 @@
 name = "r2-proxy-worker"
-main = "r2-proxy.js"
+main = "functions/api/r2-proxy.js"
 compatibility_date = "2024-02-06" # Using current date as compatibility_date
 
 [[r2_buckets]]

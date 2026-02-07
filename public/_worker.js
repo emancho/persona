@@ -1,47 +1,39 @@
 /**
- * A resilient Cloudflare Worker for a Single-Page Application (SPA).
- * This version explicitly checks the status code of the asset fetch.
- * It does not rely on the asset server throwing an exception.
+ * A self-contained Cloudflare Worker for a Single-Page Application (SPA).
+ *
+ * This worker embeds the content of index.html directly to bypass any issues
+ * with the env.ASSETS.fetch() binding for the main entrypoint.
  *
  * Logic:
- * 1. Fetch the requested asset from the Pages asset server.
- * 2. Check the response status code. If it's 404, it's a client-side route.
- * 3. If it's a 404, discard the response and fetch index.html instead.
- * 4. Otherwise, return the original response.
+ * 1. Store the known content of index.html in a constant.
+ * 2. Check if the request is for a static asset (has a file extension).
+ * 3. If it is an asset, serve it using env.ASSETS.fetch().
+ * 4. If it is not an asset (a client-side route), serve the hardcoded HTML.
 */
+
+// The full content of your build/index.html file.
+const INDEX_HTML = `<!doctype html><html lang="en"><head><meta charset="utf-8"/><link rel="icon" href="/favicon.ico"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#000000"/><meta name="description" content="Web site created using create-react-app"/><link rel="apple-touch-icon" href="/logo192.png"/><link rel="manifest" href="/manifest.json"/><title>Ed_d w/o the War - The Artist</title><script defer="defer" src="/static/js/main.8456edad.js"></script><link href="/static/css/main.57b293a0.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div></body></html>`;
+
 export default {
   async fetch(request, env) {
-    // Get the requested URL path
     const url = new URL(request.url);
     const path = url.pathname;
 
-    // We can skip this check for actual files with extensions.
-    // This is an optimization to avoid checking for index.html for every css, js, png file etc.
+    // Check if the path has a file extension.
+    // This simple check is effective for distinguishing assets from SPA routes.
     const hasFileExtension = path.lastIndexOf('.') > path.lastIndexOf('/');
 
+    // If it's an asset, fetch it from the asset server.
     if (hasFileExtension) {
       return env.ASSETS.fetch(request);
     }
-    
-    // Fetch from the asset server.
-    const assetResponse = await env.ASSETS.fetch(request);
 
-    // If the asset server returns a 404, it's a client-side route.
-    // Serve the main index.html file instead.
-    if (assetResponse.status === 404) {
-      // Fetch and serve index.html
-      const indexResponse = await env.ASSETS.fetch(new Request(new URL("/index.html", request.url), request));
-      
-      return new Response(indexResponse.body, {
-        ...indexResponse,
-        status: 200,
-        headers: {
-          'Content-Type': 'text/html;charset=UTF-8',
-        },
-      });
-    }
-
-    // If the asset was found (e.g. status 200), return it directly.
-    return assetResponse;
+    // Otherwise, it's an SPA route. Serve the embedded index.html.
+    return new Response(INDEX_HTML, {
+      headers: {
+        'Content-Type': 'text/html;charset=UTF-8',
+      },
+      status: 200
+    });
   }
 };

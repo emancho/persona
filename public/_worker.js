@@ -1,28 +1,37 @@
 /**
- * This is a simplified and robust Cloudflare Worker for a Single-Page Application (SPA).
- * It follows the recommended pattern:
- * 1. Try to fetch the requested asset directly from the Pages asset server.
- * 2. If the asset is not found (e.g., /projects), it's a client-side route.
- * 3. In that case, fetch and serve the main entrypoint of the application (index.html).
- * This avoids maintaining brittle lists of routes or assets.
+ * A resilient Cloudflare Worker for a Single-Page Application (SPA).
+ * This version explicitly checks the status code of the asset fetch.
+ * It does not rely on the asset server throwing an exception.
+ *
+ * Logic:
+ * 1. Fetch the requested asset from the Pages asset server.
+ * 2. Check the response status code. If it's 404, it's a client-side route.
+ * 3. If it's a 404, discard the response and fetch index.html instead.
+ * 4. Otherwise, return the original response.
 */
 export default {
   async fetch(request, env) {
-    // First, try to fetch the request as a static asset from the Pages asset server.
-    try {
-      // env.ASSETS.fetch() will throw an error if the asset is not found.
-      return await env.ASSETS.fetch(request);
-    } catch (e) {
-      // If the asset is not found, we fall through to the SPA routing logic below.
-    }
+    // Get the requested URL path
+    const url = new URL(request.url);
+    const path = url.pathname;
 
-    // If the asset was not found, it's likely a SPA route.
-    // Fetch and serve the index.html, which is the entrypoint for the SPA.
-    try {
-      const indexRequest = new Request(new URL("/index.html", request.url), request);
-      const indexResponse = await env.ASSETS.fetch(indexRequest);
+    // We can skip this check for actual files with extensions.
+    // This is an optimization to avoid checking for index.html for every css, js, png file etc.
+    const hasFileExtension = path.lastIndexOf('.') > path.lastIndexOf('/');
+
+    if (hasFileExtension) {
+      return env.ASSETS.fetch(request);
+    }
+    
+    // Fetch from the asset server.
+    const assetResponse = await env.ASSETS.fetch(request);
+
+    // If the asset server returns a 404, it's a client-side route.
+    // Serve the main index.html file instead.
+    if (assetResponse.status === 404) {
+      // Fetch and serve index.html
+      const indexResponse = await env.ASSETS.fetch(new Request(new URL("/index.html", request.url), request));
       
-      // Return index.html with a 200 status code to allow the client-side router to handle the path.
       return new Response(indexResponse.body, {
         ...indexResponse,
         status: 200,
@@ -30,9 +39,9 @@ export default {
           'Content-Type': 'text/html;charset=UTF-8',
         },
       });
-    } catch (e) {
-      // If index.html itself cannot be found, then the project is misconfigured.
-      return new Response('Application error: index.html not found', { status: 404 });
     }
+
+    // If the asset was found (e.g. status 200), return it directly.
+    return assetResponse;
   }
 };

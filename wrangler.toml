@@ -1,9 +1,7 @@
 name = "persona"
-main = "./workers-site/index.js"
-compatibility_date = "2024-01-01" # You can update this to a more recent date
+compatibility_date = "2024-01-01"
 
-[site]
-bucket = "./build"
-
-[env.production]
-# Add any production-specific environment variables here if needed
+# This section replaces the old [site] configuration and the need for a custom script.
+# It tells Wrangler where your static files are and that it should be treated as an SPA.
+[vars]
+ASSETS = { bucket = "./build", spa = true }

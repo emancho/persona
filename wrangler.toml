@@ -1,7 +1,5 @@
-name = "persona"
-compatibility_date = "2024-01-01"
+name = "persona-website"
+compatibility_date = "2024-02-06"
 
-# This section replaces the old [site] configuration and the need for a custom script.
-# It tells Wrangler where your static files are and that it should be treated as an SPA.
-[vars]
-ASSETS = { bucket = "./build", spa = true }
+[pages]
+"build-output-dir" = "build"

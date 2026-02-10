@@ -261,20 +261,28 @@ export const RADIO_EP_TRACKLIST = [
 
 // The list of Social Vinyl
 export const VINYL_LIST = [
+      {
+        id:1,
+        name: 'Substack', 
+        path: process.env.REACT_APP_CDN_DOMAIN + 'substack_vinyl_cover.png',
+        altPath: process.env.REACT_APP_CDN_DOMAIN + 'substack_vinyl.png',
+        descipt: 'Substack Vinyl connecting to substack profile',
+        webref: 'https://substack.com/@eddwithoutthewar'
+    },
     {
-        id: 1,
+        id: 2,
         name: 'Tik Tok', 
         path: process.env.REACT_APP_CDN_DOMAIN + 'tok_vinyl_case_only.png',
         altPath: process.env.REACT_APP_CDN_DOMAIN + 'tok_vinyl.png',
-        descipt: 'Tik Tok Vinyl connecting to social media',
+        descipt: 'Tik Tok Vinyl connecting to TikTok profile',
         webref: 'https://www.tiktok.com/@edollarsigns'
-    }
-    ,{
-        id:2,
+    },
+    {
+        id:3,
         name: 'Instagram', 
         path: process.env.REACT_APP_CDN_DOMAIN + 'insta_vinyl_case_only.png',
         altPath: process.env.REACT_APP_CDN_DOMAIN + 'insta_vinyl.png',
-        descipt: 'Instagram Vinyl connecting to social media',
+        descipt: 'Instagram Vinyl connecting to Instagram profile',
         webref: 'https://www.instagram.com/ededd_or_eddy'
     }
 ]

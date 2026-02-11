@@ -7,6 +7,8 @@ import MainContentComponent from '../Components/MainContentComponent';
 import WebpageTemplate from "../Components/WebpageTemplate";
 //=== Material UI
 import Typography from '@mui/material/Typography';
+//== Assets
+import aboutMeImg from '../Assets/static/AboutMeImg.png';
 
 // == Description:
 // The About Me Page - This Page consist of a very attractive face and a little bit of background on the owner of the website
@@ -48,7 +50,7 @@ function AboutPage() {
           }
           topSection={
             <ArtistImage 
-              path={"AboutMeImg.png"}
+              path={aboutMeImg}
               altDesc={"A very attractive man smiling very attractively."}
               w={280}
               h={300} 

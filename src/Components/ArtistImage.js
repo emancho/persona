@@ -13,7 +13,7 @@ function ArtistImage({path, altDesc, w, h}){
         <CardMedia
             component="img"
             sx={{ width: w ,height: h, objectFit: "contain" }}
-            image={process.env.REACT_APP_CDN_DOMAIN + path}
+            image={path}
             alt={altDesc}
       />
     );

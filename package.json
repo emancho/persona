@@ -1,7 +1,7 @@
 {
   "name": "persona-website",
   "version": "1.0.0",
-  "homepage": "https://eddwothewar.com",
+  "homepage": "https://eddwithoutthewar.com",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.14.0",

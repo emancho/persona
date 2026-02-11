@@ -1,0 +1,19 @@
+{
+  "name": "persona",
+  "main": "functions/api/r2-proxy.js",
+  "compatibility_date": "2024-02-06",
+  "r2_buckets": [
+    {
+      "binding": "MY_BUCKET",
+      "bucket_name": "eddwithoutthewar-bucket"
+    }
+  ],
+  "assets": {
+    "bucket": "eddwithoutthewar-bucket", // Specify the R2 bucket for assets
+    "directory": "./dist"                 // Your build output directory
+  },
+  "routes": [
+    "eddwithoutthewar.com/*"          // All requests to my-custom-domain.com
+    // "sub.my-domain.com/docs/*"         // Only requests the subdomain
+  ]
+}

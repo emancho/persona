@@ -4,35 +4,7 @@ import tokVinylCase from './Assets/static/tok_vinyl_case_only.png';
 import instaVinyl from './Assets/static/insta_vinyl.png';
 import instaVinylCase from './Assets/static/insta_vinyl_case_only.png';
 
-//=== Episode Imports
-// Audio Imports
-import ep1Audio from './Assets/ep/audio/RadioEp1.mp3';
-import ep2Audio from './Assets/ep/audio/RadioEp2.mp3';
-import ep3Audio from './Assets/ep/audio/RadioEp3.mp3';
-import ep4Audio from './Assets/ep/audio/RadioEp4.mp3';
-import ep5Audio from './Assets/ep/audio/RadioEp5.mp3';
-import ep6Audio from './Assets/ep/audio/RadioEp6.mp3';
-import ep7Audio from './Assets/ep/audio/RadioEp7.mp3';
-import ep8Audio from './Assets/ep/audio/RadioEp8.mp3';
-import ep9Audio from './Assets/ep/audio/RadioEp9.mp3';
-import ep10Audio from './Assets/ep/audio/RadioEp10.mp3';
-// import ep11Audio from './Assets/ep/audio/RadioEp11.mp3';
-// import ep12Audio from './Assets/ep/audio/RadioEp12.mp3';
-
-// Img Imports
-import ep1Img from './Assets/ep/imgs/radio_ep1.png';
-import ep2Img from './Assets/ep/imgs/radio_ep2.png';
-import ep3Img from './Assets/ep/imgs/radio_ep3.png';
-import ep4Img from './Assets/ep/imgs/radio_ep4.png';
-import ep5Img from './Assets/ep/imgs/radio_ep5.png';
-import ep6Img from './Assets/ep/imgs/radio_ep6.png';
-import ep7Img from './Assets/ep/imgs/radio_ep7.png';
-import ep8Img from './Assets/ep/imgs/radio_ep8.png';
-import ep9Img from './Assets/ep/imgs/radio_ep9.png';
-import ep10Img from './Assets/ep/imgs/radio_ep10.png';
-// import ep11Img from './Assets/ep/imgs/radio_ep11.png';
-// import ep12Img from './Assets/ep/imgs/radio_ep12.png';
-
+const R2_DOMAIN = 'https://r2.eddwithoutthewar.com/';
 //=======================================================
 // Radio Playback Buttons
 export const PLAYBACK_BUTTON_SIZE = 45;
@@ -45,81 +17,81 @@ export const RADIO_EP_INFO = [
     {
       id: 1,
       title:'Episode 1:',
-      src: ep1Audio,
+      src: R2_DOMAIN + 'RadioEp1.mp3',
       epTitle: 'Trusting the process',
-      thumbnail: ep1Img,
+      thumbnail: R2_DOMAIN + 'radio_ep1.png', 
       alt:'A sideway containing pink hue color flowers on green grass. Displays artist watermark and the title: Ep.1'
     },  
     {
       id: 2,
       title:'Episode 2:',
-      src: ep2Audio,
+      src: R2_DOMAIN + 'RadioEp2.mp3',
       epTitle: 'All About Love',
-      thumbnail: ep2Img,
+      thumbnail: R2_DOMAIN + 'radio_ep2.png',
       alt:'A display of white petaled flowers with bee landed on one of them. Displays artist watermark and the title: Ep.2'
     },
     {
       id: 3,
       title:'Episode 3:',
-      src: ep3Audio,
+      src: R2_DOMAIN + 'RadioEp3.mp3',
       epTitle: 'Can I Get An Amen',
-      thumbnail: ep3Img,
+      thumbnail: R2_DOMAIN + 'radio_ep3.png',
       alt:'A display of church with a blue sky filled with white clouds. There is a sun in the sky with sunshades and the prayer hand emoji, surrounded by a halo crown. Displays artist watermark and the title: Ep.3'
     }, 
     {
       id: 4,
       title:'Episode 4:',
-      src: ep4Audio,
+      src: R2_DOMAIN + 'RadioEp4.mp3',
       epTitle: 'Things Gon Be Aight',
-      thumbnail: ep4Img,
+      thumbnail: R2_DOMAIN + 'radio_ep4.png',
       alt:'A display of pink hued flowers after a rainy day. Displays artist watermark and the font "Episode" with a pink hued flame with the number 4 representing the fourth episode.'
     },
     {
       id: 5,
       title:'Episode 5:',
-      src: ep5Audio,
+      src: R2_DOMAIN + 'RadioEp5.mp3',
       epTitle: 'Blue Eyed Soul White Dragon',
-      thumbnail: ep5Img,
+      thumbnail: R2_DOMAIN + 'radio_ep5.png',
       alt:'Modified version of the Blue Eyes White Dragon from YuGiOh. Displays Card of the Dragon with black shades and a bass guitar.'
     },
     {
       id: 6,
       title:'Episode 6:',
-      src: ep6Audio,
+      src: R2_DOMAIN + 'RadioEp6.mp3',
       epTitle: 'High School of Rock',
-      thumbnail: ep6Img,
+      thumbnail: R2_DOMAIN + 'radio_ep6.png',
       alt:'Edited a highschool photo of myself. Has me with green flame hair, red shades and red scarf with white stars and an easter egg with Rawr XD on the paper'
     },
     {
       id: 7,
       title:'Episode 7:',
-      src: ep7Audio,
+      src: R2_DOMAIN + 'RadioEp7.mp3',
       epTitle: 'For All The Lovers',
-      thumbnail: ep7Img,
+      thumbnail: R2_DOMAIN + 'radio_ep7.png',
       alt:'An edited picture of Arthur holding a vinyl with a heart shaped labeling with heart shaped glasses and flame hair.'
     },
     {
       id: 8,
       title:'Episode 8:',
-      src: ep8Audio,
+      src: R2_DOMAIN + 'RadioEp8.mp3',
       epTitle: 'Jazz Hands',
-      thumbnail: ep8Img,
+      thumbnail: R2_DOMAIN + 'radio_ep8.png',
       alt:'An edited picture of Jazz players playing instruments. They all have music notes for heads except one that has flame hair and sleek shades.'
     },
     {
       id: 9,
       title:'Episode 9:',
-      src: ep9Audio,
+      src: R2_DOMAIN + 'RadioEp9.mp3',
       epTitle: "I'm Every Woman",
-      thumbnail: ep9Img,
+      thumbnail: R2_DOMAIN + 'radio_ep9.png',
       alt:"An outline of a woman with headpones and shades holding a vinyl that connects to her headphones. Behind her displays albums covers relating to the songs in the episode with a border that displays the words: I'm Every Woman"
     },
     {
       id: 10,
       title:'Episode 10:',
-      src: ep10Audio,
+      src: R2_DOMAIN + 'RadioEp10.mp3',
       epTitle: "A Beach Ting",
-      thumbnail: ep10Img,
+      thumbnail: R2_DOMAIN + 'radio_ep10.png',
       alt:"The radio host holds a pineapple drink while having shades and a flame head. The setting is a beach with speakers in the water, sea animals and a mermaid. This is the cover of the 10th episode"
     },
   ];

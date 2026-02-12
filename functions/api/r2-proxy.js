@@ -1,45 +1,78 @@
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
-    let key = url.pathname.slice(1);
+    let requestPath = url.pathname;
 
-    // 1. Handle root path or directories (serve index.html)
-    if (key === "" || key.endsWith("/")) {
-      key += "index.html";
+    // Define your explicit route mappings for SPA routes
+    // All these routes should serve the main index.html file for the client-side router
+    const routeMappings = {
+      '/': 'index.html',
+      '/aboutMe': 'index.html',
+      '/contact': 'index.html',
+      '/projects': 'index.html',
+      '/radioPage': 'index.html',
+      // The wildcard route "*" in app.js is effectively handled by the SPA fallback logic
+    };
+
+    let r2Key;
+
+    // Check if the requestPath has an explicit mapping
+    if (routeMappings[requestPath]) {
+      r2Key = routeMappings[requestPath];
+    } else {
+      // Fallback to the original logic for other paths
+      r2Key = requestPath.slice(1); // Remove leading slash
+    }
+
+    // If you accidentally uploaded the 'build' folder itself, set this to 'build/'
+    // Otherwise, leave it as ''
+    const prefix = ''; 
+
+    // 1. Handle root or directory requests
+    if (r2Key === "" || r2Key.endsWith("/")) {
+      r2Key += "index.html";
     }
 
     try {
-      let object = await env.MY_BUCKET.get(key);
+      // Try to get the object from R2
+      let object = await env.MY_BUCKET.get(prefix + r2Key);
 
-      // 2. SPA Fallback Logic:
-      // If the specific file isn't found, and it doesn't look like a direct asset request (no dot),
-      // serve index.html to let React Router handle the URL.
-      if (object === null && !key.includes('.')) {
-        object = await env.MY_BUCKET.get("index.html");
+      // 2. SPA Fallback Logic
+      // If not found, and the request is likely a navigation (doesn't have a file extension)
+      if (object === null && !r2Key.includes('.')) {
+        console.log(`SPA Fallback: ${r2Key} not found, trying index.html`);
+        object = await env.MY_BUCKET.get(prefix + "index.html");
       }
 
+      // 3. Final 404 check
       if (object === null) {
-        return new Response('404 Not Found', { status: 404 });
+        return new Response(`404 Not Found: The file "${r2Key}" (or index.html fallback) was not found in your R2 bucket.`, { 
+          status: 404,
+          headers: { "Content-Type": "text/plain" }
+        });
       }
 
       const headers = new Headers();
       object.writeHttpMetadata(headers);
       headers.set('ETag', object.etag);
 
-      // 3. Optimized Caching
-      // Static assets (JS, CSS, Images, MP3s) usually have hashes or are static: cache for 1 year.
-      // HTML files and others: cache for 1 hour to allow for updates.
-      const isStaticAsset = key.includes('/static/') || (key.includes('.') && !key.endsWith('.html'));
-      
-      if (isStaticAsset) {
-        headers.set('Cache-Control', 'public, max-age=31536000, immutable');
-      } else {
-        headers.set('Cache-Control', 'public, max-age=3600');
+      // 5. CORS Headers
+      const origin = request.headers.get('Origin');
+      const allowedOrigins = ['https://eddwithoutthewar.com', 'http://localhost:3000'];
+      if (allowedOrigins.includes(origin)) {
+        headers.set('Access-Control-Allow-Origin', origin);
+        headers.set('Access-Control-Allow-Methods', 'GET, HEAD, OPTIONS');
+        headers.set('Access-Control-Allow-Headers', '*');
       }
 
-      return new Response(object.body, {
-        headers,
-      });
+      // 4. Cache Control
+      const isStaticAsset = r2Key.includes('/static/') || (r2Key.includes('.') && !r2Key.endsWith('.html'));
+      headers.set('Cache-Control', isStaticAsset 
+        ? 'public, max-age=31536000, immutable' 
+        : 'public, max-age=3600'
+      );
+
+      return new Response(object.body, { headers });
     } catch (e) {
       return new Response('Error fetching object: ' + e.message, { status: 500 });
     }

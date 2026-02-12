@@ -1,5 +1,3 @@
-//=== React Libraries 
-import React from "react";
 //=== Material UI Icon buttons
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import SkipNextIcon from '@mui/icons-material/SkipNext'; 
@@ -7,6 +5,8 @@ import SkipPrevIcon from '@mui/icons-material/SkipPrevious';
 //=== Components
 import HomePageMainContent from '../Components/HomePageMainContent'
 import WebpageTemplate from "../Components/WebpageTemplate";
+//== Assets
+import HomepageImg from '../Assets/static/HomepageImgv4.gif';
 
 // == Description:
 // Homepage - This page is the home page. This page contains the component layout that is similar to a music player. The
@@ -25,7 +25,7 @@ function HomePage(){
       bannerDisplay={true}
       mainContent={
           <HomePageMainContent
-            imagePath={"HomepageImgv4.gif"} 
+            imagePath={HomepageImg} 
             imageAlt={"Blurred gif of my cute self."}
             imageWidth={500} 
             imageHeight={600}

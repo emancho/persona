@@ -1,5 +1,3 @@
-//== React Lib
-import React from 'react';
 //== Material UI
 import { Box } from '@mui/material';
 //== Components

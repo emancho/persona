@@ -1,0 +1,11 @@
+name = "persona"
+main = "src/index.js"
+compatibility_date = "2024-02-06"
+
+[[r2_buckets]]
+binding = "MY_BUCKET"
+bucket_name = "eddwithoutthewar-bucket"
+
+[[routes]]
+pattern = "eddwithoutthewar.com/*"
+custom_domain = true

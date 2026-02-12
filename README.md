@@ -20,15 +20,17 @@ The website is structured into several main pages:
 
 ### 1. Home Page (`src/Pages/HomePage.js`)
 
-*   **Description:** The main landing page, designed with a music player-like interface for navigation.
+*   **Description:** The main landing page, designed with a music player-like interface for navigation to other sections of the website.
 *   **Key Components:**
     *   `WebpageTemplate`: Provides the overall page structure including a banner.
     *   `HomePageMainContent`: Displays the central content of the home page, including an image and navigation buttons.
-    *   Material UI Icons (`PlayArrowIcon`, `SkipNextIcon`, `SkipPrevIcon`): Used for navigation buttons linking to About, Projects, and Contact pages respectively.
+    *   Material UI Icons (`PlayArrowIcon`, `SkipNextIcon`, `SkipPrevIcon`): Used for intuitive navigation buttons linking to About, Projects, and Contact pages respectively.
+    *   `AnimatedBanner`: Provides dynamic visual effects for the top banner section.
+    *   `NavBar`: Facilitates consistent navigation across the site.
 
 ### 2. About Page (`src/Pages/AboutPage.js`)
 
-*   **Description:** Provides background information about the website owner.
+*   **Description:** Provides background information about the website owner, including a bio and a visually engaging "Behind the Artist" section.
 *   **Key Components:**
     *   `WebpageTemplate`: Standard page layout.
     *   `MainContentComponent`: Structures the title, an image section, and a text bio section.
@@ -38,7 +40,7 @@ The website is structured into several main pages:
 
 ### 3. Contact Page (`src/Pages/ContactPage.js`)
 
-*   **Description:** Contains links to social media profiles and a newsletter signup.
+*   **Description:** Contains links to social media profiles and a newsletter signup form.
 *   **Key Components:**
     *   `WebpageTemplate`: Standard page layout.
     *   `MainContentComponent`: Structures the title, newsletter section, and social links section.
@@ -100,3 +102,4 @@ Your app is ready to be deployed!
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
 If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
